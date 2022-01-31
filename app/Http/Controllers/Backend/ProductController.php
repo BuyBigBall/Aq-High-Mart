@@ -272,29 +272,56 @@ class ProductController extends Controller
     {
         $imgs = $request->multi_img;
 
-		foreach ($imgs as $id => $img) {
-	    $imgDel = ModelsImage::findOrFail($id);
-	    unlink($imgDel->photo_name);
-
-    	$make_name = hexdec(uniqid()).'.'.$img->getClientOriginalExtension();
-        $upload_location = 'upload/products/multi_images/';
-    	Image::make($img)->resize(600,600)->save($upload_location.$make_name);
-    	$uploadPath = $upload_location.$make_name;
-
-    	ModelsImage::where('id',$id)->update([
-    		'photo_name' => $uploadPath,
-    		'updated_at' => Carbon::now(),
-
-    	]);
-
-	 } // end foreach
-
-    $notification = array(
-			'message' => 'Product Image Updated Successfully',
-			'alert-type' => 'info'
-		);
+        foreach ($imgs as $id => $img) 
+        {
+            if(empty($id))
+            {
+                $product_id = $request->product_id;
+                $make_name = hexdec(uniqid()).'.'.$img->getClientOriginalExtension();
+                $upload_location = 'upload/products/multi_images/';
+                Image::make($img)->resize(600,600)->save($upload_location.$make_name);
+                $uploadPath = $upload_location.$make_name;
+                
+                ModelsImage::create([
+                    'product_id' =>   $product_id,
+                    'photo_name' => $uploadPath,
+                    'updated_at' => Carbon::now(),
+                ]);
+            }
+            else
+            {
+                $imgDel = ModelsImage::findOrFail($id);
+                unlink($imgDel->photo_name);
+                
+                $make_name = hexdec(uniqid()).'.'.$img->getClientOriginalExtension();
+                $upload_location = 'upload/products/multi_images/';
+                Image::make($img)->resize(600,600)->save($upload_location.$make_name);
+                $uploadPath = $upload_location.$make_name;
+                
+                ModelsImage::where('id',$id)->update([
+                    'photo_name' => $uploadPath,
+                    'updated_at' => Carbon::now(),
+    
+                ]);
+            }
+        } // end foreach
+        
+        $notification = array(
+                'message' => '产品图片更新成功。',
+                'alert-type' => 'info'
+            );
 
 		return redirect()->back()->with($notification);
+    }
+    public function deleteImage(Request $request, $image_id)
+    {
+        ModelsImage::where('id', $image_id)->delete();
+
+        $notification = array(
+            'message' => '产品图片删除成功。',
+            'alert-type' => 'info'
+        );
+        return redirect()->back()->with($notification);
     }
 
     public function changeStatus(Request $request)

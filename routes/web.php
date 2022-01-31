@@ -169,6 +169,7 @@ Route::middleware(['auth:admin'])->group(function(){
         Route::post('/products/image/update', [ProductController::class, 'MultiImageUpdate'])->name('update-product-image');
         Route::resource('/products', ProductController::class);
         Route::get('/changestatus', [ProductController::class, 'changeStatus'])->name('change-product-status');
+        Route::get('/products/image/delete/{image_id}', [ProductController::class, 'deleteimage'])->name('delete-multiimage');
 
         // slider routes
         Route::resource('/slider', AdminSliderController::class);

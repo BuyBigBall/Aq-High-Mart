@@ -2,9 +2,9 @@
 
 @section('dashboard_content')
     @include('admin.dashboard_layout.breadcrumb', [
-    'name' => 'Product',
+    'name' => '产品',
     'url' => "products.index",
-    'section_name' => 'Edit Product'
+    'section_name' => '编辑产品'
     ])
     <section class="content">
         <div class="row">
@@ -416,27 +416,46 @@
                             @csrf
                             <div class="row row-sm">
                                 @foreach($product->images as $img)
-                            <div class="col-md-3">
-                                <div class="card">
-                                    <img src="{{ asset($img->photo_name) }}" class="card-img-top" style="height: 100px; width: 100px;">
-                                    <div class="card-body">
-                                        <h5 class="card-title">
-                                        <a href="" class="btn btn-sm btn-danger" id="delete" title="Delete Data"><i class="fa fa-trash"></i> </a>
-                                        </h5>
-                                    <p class="card-text">
-                                        <div class="form-group">
-                                            <label class="form-control-label">Change Image <span class="tx-danger">*</span></label>
-                                            <input class="form-control" type="file"
-                                        name="multi_img[ {{ $img->id }} ]">
+                                <div class="col-md-3">
+                                    <div class="card">
+                                        <img src="{{ asset($img->photo_name) }}" class="card-img-top" style="height: 100px; width: 100px;">
+                                        <div class="card-body">
+                                            <h5 class="card-title">
+                                            <a href="{{ route('delete-multiimage', $img->id)}}" class="btn btn-sm btn-danger" id="delete" title="Delete Data"><i class="fa fa-trash"></i> </a>
+                                            </h5>
+                                        <p class="card-text">
+                                            <div class="form-group">
+                                                <label class="form-control-label">Change Image 
+                                                    <!-- <span class="tx-danger" style="color:red;">*</span> -->
+                                            </label>
+                                                <input class="form-control" type="file"
+                                            name="multi_img[ {{ $img->id }} ]">
+                                            </div>
+                                        </p>
                                         </div>
-                                    </p>
                                     </div>
-                                </div>
-                            </div><!--  end col md 3		 -->
+                                </div><!--  end col md 3		 -->
                                 @endforeach
+                                <div class="col-md-12">
+                                    <div class="card">
+                                        <img src="" class="card-img-top hidden" style="height: 100px; width: 100px;">
+                                        <div class="card-body">
+                                            <h5 class="card-title hidden">
+                                                <a href="" class="btn btn-sm btn-danger" id="delete" title="Delete Data"><i class="fa fa-trash"></i> </a>
+                                            </h5>
+                                        <p class="card-text">
+                                            <div class="form-group">
+                                                <label class="form-control-label">添加图片 <span class="tx-danger" style="color:red;">*</span></label>
+                                                <input class="form-control" type="file" name="multi_img[0]">
+                                            </div>
+                                        </p>
+                                        </div>
+                                    </div>
+                                </div><!--  end col md 3		 -->                                
                             </div>
                             <div class="text-xs-right">
-                                <input type="submit" class="btn btn-rounded btn-primary mb-5" value="Update Image">
+                                <input type="hidden" value="{{ $product->id }}" id="hProduct_Id" name="product_id" />
+                                <input type="submit" class="btn btn-rounded btn-primary mb-5" value="更新图像">
                             </div>
                             <br><br>
                         </form>

@@ -49,19 +49,19 @@
         e.preventDefault();
         var link = $(this).attr("href");
                   Swal.fire({
-                    title: 'Are you sure?',
-                    text: "Delete This Data?",
+                    title: '你确定吗？',
+                    text: "删除此数据？",
                     icon: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
                     cancelButtonColor: '#d33',
-                    confirmButtonText: 'Yes, delete it!'
+                    confirmButtonText: '是的，删除它！'
                   }).then((result) => {
                     if (result.isConfirmed) {
                       window.location.href = link
                       Swal.fire(
-                        'Deleted!',
-                        'Your file has been deleted.',
+                        '已删除！',
+                        '您的文件已被删除。',
                         'success'
                       )
                     }
