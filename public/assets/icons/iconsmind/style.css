@@ -6281,3 +6281,8 @@
 .iconsmind-Zootool:before {
 	content: "\ee25";
 }
+
+.hidden
+{
+	display: none;
+}

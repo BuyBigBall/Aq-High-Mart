@@ -26,7 +26,7 @@
                                                 <tr role="row">
                                                     <th>#</th>
                                                     <th>Image</th>
-                                                    <th>Product Name EN</th>
+                                                    <th>产品名称</th>
                                                     <th>Product Qty</th>
                                                     <th>Purchase Price</th>
                                                     <th>Selling Price</th>
@@ -41,7 +41,7 @@
                                                     <td>
                                                         <img src="{{ asset($item->product_thumbnail) }}" alt=""  style="width: 70px; height:70px;">
                                                     </td>
-                                                    <td class="sorting_1">{{ $item->product_name_en }}</td>
+                                                    <td class="sorting_1">{{ $item->product_name_bn }}</td>
                                                     <td>{{ $item->product_qty }}</td>
                                                     <td>{{ $item->purchase_price }}</td>
                                                     <td>{{ $item->selling_price }}</td>

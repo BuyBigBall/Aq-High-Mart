@@ -23,7 +23,7 @@
                             <div class="form-group">
                                 <h5>Sub Category Name EN <span class="text-danger">*</span></h5>
                                 <div class="controls">
-                                    <input type="text" value="{{ old('subcategory_name_en', $subcategory->subcategory_name_en) }}" name="subcategory_name_en" class="form-control" required="" data-validation-required-message="This field is required"> <div class="help-block"></div>
+                                    <input type="text" value="{{ old('subcategory_name_en', $subcategory->subcategory_name_en) }}" name="subcategory_name_en" class="form-control" required="" data-validation-required-message="这是必填栏"> <div class="help-block"></div>
                                 </div>
                                 @error('subcategory_name_en')
                                     <span class="alert text-danger">{{ $message }}</span>
@@ -32,7 +32,7 @@
                             <div class="form-group">
                                 <h5>Sub Category Name BN <span class="text-danger">*</span></h5>
                                 <div class="controls">
-                                    <input type="text" value="{{ old('subcategory_name_bn', $subcategory->subcategory_name_en) }}" name="subcategory_name_bn" class="form-control" required="" data-validation-required-message="This field is required"> <div class="help-block"></div>
+                                    <input type="text" value="{{ old('subcategory_name_bn', $subcategory->subcategory_name_en) }}" name="subcategory_name_bn" class="form-control" required="" data-validation-required-message="这是必填栏"> <div class="help-block"></div>
                                 </div>
                                 @error('subcategory_name_bn')
                                     <span class="alert text-danger">{{ $message }}</span>
@@ -41,7 +41,7 @@
                             <div class="form-group">
                                 <h5>Category Name <span class="text-danger">*</span></h5>
                                 {{-- <div class="controls">
-                                    <input type="file" name="category_image" class="form-control" required="" data-validation-required-message="This field is required"> <div class="help-block"></div>
+                                    <input type="file" name="category_image" class="form-control" required="" data-validation-required-message="这是必填栏"> <div class="help-block"></div>
                                 </div> --}}
                                 <select class="custom-select" aria-label="Default select example" name="category_id">
                                     {{-- <option selected>Open this select menu</option> --}}

@@ -22,7 +22,7 @@
                             <div class="form-group">
                                 <h5>Category Name EN <span class="text-danger">*</span></h5>
                                 <div class="controls">
-                                    <input type="text" name="category_name_en" class="form-control" required="" data-validation-required-message="This field is required"> <div class="help-block"></div>
+                                    <input type="text" name="category_name_en" class="form-control" required="" data-validation-required-message="这是必填栏"> <div class="help-block"></div>
                                 </div>
                                 @error('category_name_en')
                                     <span class="alert text-danger">{{ $message }}</span>
@@ -31,7 +31,7 @@
                             <div class="form-group">
                                 <h5>Category Name BN <span class="text-danger">*</span></h5>
                                 <div class="controls">
-                                    <input type="text" name="category_name_bn" class="form-control" required="" data-validation-required-message="This field is required"> <div class="help-block"></div>
+                                    <input type="text" name="category_name_bn" class="form-control" required="" data-validation-required-message="这是必填栏"> <div class="help-block"></div>
                                 </div>
                                 @error('category_name_bn')
                                     <span class="alert text-danger">{{ $message }}</span>
@@ -49,7 +49,7 @@
                             <div class="form-group">
                                 <h5>category Image <span class="text-danger">*</span></h5>
                                 <div class="controls">
-                                    <input type="file" name="category_image" class="form-control" required="" data-validation-required-message="This field is required"> <div class="help-block"></div>
+                                    <input type="file" name="category_image" class="form-control" required="" data-validation-required-message="这是必填栏"> <div class="help-block"></div>
                                 </div>
                                 @error('category_image')
                                     <span class="alert text-danger">{{ $message }}</span>

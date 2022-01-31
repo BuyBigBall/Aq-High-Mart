@@ -22,7 +22,7 @@
                             <div class="form-group">
                                 <h5>Division Name <span class="text-danger">*</span></h5>
                                 <div class="controls">
-                                    <input type="text" name="division_name" class="form-control" required=""  value="{{old('division_name',$division->division_name) }}" data-validation-required-message="This field is required"> <div class="help-block"></div>
+                                    <input type="text" name="division_name" class="form-control" required=""  value="{{old('division_name',$division->division_name) }}" data-validation-required-message="这是必填栏"> <div class="help-block"></div>
                                 </div>
                                 @error('division_name')
                                     <span class="alert text-danger">{{ $message }}</span>

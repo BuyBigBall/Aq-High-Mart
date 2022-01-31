@@ -102,7 +102,7 @@
     <thead style="background-color: green; color:#FFFFFF;">
         <tr class="font">
         {{-- <th>Image</th> --}}
-        <th>Product Name</th>
+        <th>产品名称</th>
         <th>Size</th>
         <th>Color</th>
         <th>Code</th>

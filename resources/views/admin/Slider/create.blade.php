@@ -33,7 +33,7 @@
                             <div class="form-group">
                                 <h5>Slider Name <span class="text-danger">*</span></h5>
                                 <div class="controls">
-                                    <input type="text" name="slider_name" class="form-control" required="" data-validation-required-message="This field is required"> <div class="help-block"></div>
+                                    <input type="text" name="slider_name" class="form-control" required="" data-validation-required-message="这是必填栏"> <div class="help-block"></div>
                                 </div>
                                 @error('slider_name')
                                     <span class="alert text-danger">{{ $message }}</span>
@@ -65,7 +65,7 @@
                             <div class="form-group">
                                 <h5>Slider Image <span class="text-danger">*</span></h5>
                                 <div class="controls">
-                                    <input type="file" name="slider_image" class="form-control" required="" data-validation-required-message="This field is required"
+                                    <input type="file" name="slider_image" class="form-control" required="" data-validation-required-message="这是必填栏"
                                     onchange="sliderShow(this)"> <div class="help-block"></div>
                                 </div>
                                 @error('slider_image')

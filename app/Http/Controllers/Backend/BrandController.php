@@ -8,7 +8,7 @@ use App\Http\Requests\BrandUpdateRequest;
 use App\Models\Brand;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
-use Image;
+use Intervention\Image\Facades\Image;
 
 class BrandController extends Controller
 {

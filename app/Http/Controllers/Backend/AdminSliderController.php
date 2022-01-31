@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\SliderStoreRequest;
 use App\Models\Slider;
 use Illuminate\Http\Request;
-use Image;
+use Intervention\Image\Facades\Image;
 
 class AdminSliderController extends Controller
 {

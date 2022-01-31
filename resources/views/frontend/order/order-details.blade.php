@@ -137,7 +137,7 @@
                                 <label for=""> Image</label>
                             </td>
                             <td class="col-md-3">
-                                <label for=""> Product Name </label>
+                                <label for=""> 产品名称 </label>
                             </td>
                             <td class="col-md-3">
                                 <label for=""> Product Code</label>

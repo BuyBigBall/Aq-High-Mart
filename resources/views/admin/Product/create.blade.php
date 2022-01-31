@@ -13,14 +13,14 @@
                 <div class="box">
                     <div class="box-header with-border d-flex justify-content-between align-items-center">
                         <h3 class="box-title">Add New Product</h3>
-                        <a href="{{ route('subsubcategories.index') }}" class="btn btn-primary">Back List Product</a>
+                        <a href="{{ route('subsubcategories.index') }}" class="btn btn-primary">返回列表产品</a>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
                         <form action="{{ route('products.store') }}" method="post" enctype="multipart/form-data">
                             @csrf
                             {{-- First row start--}}
-                            <h5 class="text-warning">Product Related Category and Brand Selection Area</h5>
+                            <h5 class="text-warning">产品相关类别和品牌选择区</h5>
                             <hr>
                             <div class="row">
                                 <div class="col-md-3">
@@ -75,15 +75,15 @@
                                 </div>
                             </div>
                             {{-- First row end --}}
-                            <h5 class="text-warning mt-4">Product Basic Information Area</h5>
+                            <h5 class="text-warning mt-4">产品基本信息区</h5>
                             <hr>
                             {{-- Second row start --}}
                             <div class="row">
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <h5>Product Name EN <span class="text-danger">*</span></h5>
+                                        <h5>产品名称 EN <span class="text-danger">*</span></h5>
                                         <div class="controls">
-                                            <input type="text" name="product_name_en" class="form-control" required="" data-validation-required-message="This field is required"> <div class="help-block"></div>
+                                            <input type="text" name="product_name_en" class="form-control" required="" data-validation-required-message="这是必填栏"> <div class="help-block"></div>
                                         </div>
                                         @error('product_name_en')
                                             <span class="alert text-danger">{{ $message }}</span>
@@ -92,9 +92,9 @@
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <h5>Product Name BN <span class="text-danger">*</span></h5>
+                                        <h5>产品名称 BN <span class="text-danger">*</span></h5>
                                         <div class="controls">
-                                            <input type="text" name="product_name_bn" class="form-control" required="" data-validation-required-message="This field is required"> <div class="help-block"></div>
+                                            <input type="text" name="product_name_bn" class="form-control" required="" data-validation-required-message="这是必填栏"> <div class="help-block"></div>
                                         </div>
                                         @error('product_name_bn')
                                             <span class="alert text-danger">{{ $message }}</span>
@@ -116,7 +116,7 @@
                                     <div class="form-group">
                                         <h5>Product Qty <span class="text-danger">*</span></h5>
                                         <div class="controls">
-                                            <input type="number" name="product_qty" class="form-control" required="" data-validation-required-message="This field is required"> <div class="help-block"></div>
+                                            <input type="number" name="product_qty" class="form-control" required="" data-validation-required-message="这是必填栏"> <div class="help-block"></div>
                                         </div>
                                         @error('product_qty')
                                             <span class="alert text-danger">{{ $message }}</span>
@@ -219,7 +219,7 @@
                                         <h5>Selling Price <span class="text-danger">*</span></h5>
                                         <div class="controls input-group mb-3">
                                             <span class="input-group-text">$0.00</span>
-                                            <input type="number" name="selling_price" class="form-control" required="" data-validation-required-message="This field is required"> <div class="help-block"></div>
+                                            <input type="number" name="selling_price" class="form-control" required="" data-validation-required-message="这是必填栏"> <div class="help-block"></div>
                                         </div>
                                         @error('selling_price')
                                             <span class="alert text-danger">{{ $message }}</span>
@@ -306,7 +306,7 @@
                                     <div class="form-group">
                                         <h5>Product Thumbnail <span class="text-danger">*</span></h5>
                                         <div class="controls">
-                                            <input type="file" name="product_thumbnail" class="form-control" required="" data-validation-required-message="This field is required"
+                                            <input type="file" name="product_thumbnail" class="form-control" required="" data-validation-required-message="这是必填栏"
                                             onChange="mainThumbnailShow(this)"> <div class="help-block"></div>
                                         </div>
                                         @error('product_thumbnail')

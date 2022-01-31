@@ -153,7 +153,7 @@
                                             <label for=""> Image</label>
                                         </td>
                                         <td class="text-dark">
-                                            <label for=""> Product Name </label>
+                                            <label for=""> 产品名称 </label>
                                         </td>
                                         <td class="text-dark">
                                             <label for=""> Product Code</label>
