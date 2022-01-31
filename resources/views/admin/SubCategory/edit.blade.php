@@ -20,15 +20,6 @@
                         <form action="{{ route('subcategories.update', $subcategory) }}" method="post" enctype="multipart/form-data">
                             @method('put')
                             @csrf
-                            <div class="form-group hidden">
-                                <h5>Sub Category Name EN <span class="text-danger">*</span></h5>
-                                <div class="controls">
-                                    <input type="text" value="{{ old('subcategory_name_en', $subcategory->subcategory_name_en) }}" name="subcategory_name_en" class="form-control" data-validation-required-message="这是必填栏"> <div class="help-block"></div>
-                                </div>
-                                @error('subcategory_name_en')
-                                    <span class="alert text-danger">{{ $message }}</span>
-                                @enderror
-                            </div>
                             <div class="form-group">
                                 <h5>子类别名称 <span class="text-danger">*</span></h5>
                                 <div class="controls">
@@ -50,6 +41,15 @@
                                     @endforeach
                                   </select>
                                 @error('category_id')
+                                    <span class="alert text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            <div class="form-group">
+                                <h5>子类蛞蝓 <span class="text-danger">*</span></h5>
+                                <div class="controls">
+                                    <input type="text" value="{{ old('subcategory_slug_bn', $subcategory->subcategory_slug_bn) }}" name="subcategory_slug_bn" class="form-control" required="" data-validation-required-message="这是必填栏"> <div class="help-block"></div>
+                                </div>
+                                @error('subcategory_slug_bn')
                                     <span class="alert text-danger">{{ $message }}</span>
                                 @enderror
                             </div>

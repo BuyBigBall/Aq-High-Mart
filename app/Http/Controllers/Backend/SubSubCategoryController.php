@@ -47,14 +47,14 @@ class SubSubCategoryController extends Controller
         SubSubCategory::create([
             'category_id' => $request->category_id,
             'subcategory_id' => $request->subcategory_id,
-            'subsubcategory_name_en' => $request->input('subsubcategory_name_en'),
             'subsubcategory_name_bn' => $request->input('subsubcategory_name_bn'),
-            'subsubcategory_slug_en' => Str::slug($request->input('subsubcategory_name_en')),
-            'subsubcategory_slug_bn' => Str::slug($request->input('subsubcategory_name_bn')),
+            'subsubcategory_slug_bn' => $request->input('subsubcategory_slug_bn'),
+            'subsubcategory_slug_en' => '', # Str::slug($request->input('subsubcategory_name_en')),
+            'subsubcategory_name_en' => '', # $request->input('subsubcategory_name_en'),
         ]);
 
         $notification = [
-            'message' => 'Sub Sub Category Created Successfully!!!',
+            'message' => '子分类创建成功！',
             'alert-type' => 'success'
         ];
 
@@ -99,14 +99,14 @@ class SubSubCategoryController extends Controller
         $subsubCategory->update([
             'category_id' => $request->category_id,
             'subcategory_id' => $request->subcategory_id,
-            'subsubcategory_name_en' => $request->input('subsubcategory_name_en'),
             'subsubcategory_name_bn' => $request->input('subsubcategory_name_bn'),
-            'subsubcategory_slug_en' => Str::slug($request->input('subsubcategory_name_en')),
-            'subsubcategory_slug_bn' => Str::slug($request->input('subsubcategory_name_bn')),
+            'subsubcategory_slug_bn' => $request->input('subsubcategory_slug_bn'),
+            'subsubcategory_name_en' => '', # $request->input('subsubcategory_name_en'),
+            'subsubcategory_slug_en' => '', # Str::slug($request->input('subsubcategory_name_en')),
         ]);
 
         $notification = [
-            'message' => 'Sub Sub Category Updated Successfully!!!',
+            'message' => '子子类别更新成功！',
             'alert-type' => 'success'
         ];
 
@@ -125,7 +125,7 @@ class SubSubCategoryController extends Controller
         $subsubCategory->delete();
 
         $notification = [
-            'message' => 'Sub Sub Category Deleted Successfully!!!',
+            'message' => '子分类删除成功！',
             'alert-type' => 'success'
         ];
 

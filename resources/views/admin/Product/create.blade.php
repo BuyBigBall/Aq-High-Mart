@@ -2,9 +2,9 @@
 
 @section('dashboard_content')
     @include('admin.dashboard_layout.breadcrumb', [
-    'name' => 'Product',
+    'name' => '产品',
     'url' => "products.index",
-    'section_name' => 'Create Product'
+    'section_name' => '创建产品'
     ])
     <section class="content">
         <div class="row">
@@ -12,7 +12,7 @@
             <div class="col-12">
                 <div class="box">
                     <div class="box-header with-border d-flex justify-content-between align-items-center">
-                        <h3 class="box-title">Add New Product</h3>
+                        <h3 class="box-title">添加新产品</h3>
                         <a href="{{ route('subsubcategories.index') }}" class="btn btn-primary">返回列表产品</a>
                     </div>
                     <!-- /.box-header -->
@@ -29,7 +29,7 @@
                                         <select class="custom-select" aria-label="默认选择示例" name="brand_id">
                                             <option selected>选择品牌名称</option>
                                             @foreach ($brands as $brand)
-                                                <option value="{{ $brand->id }}">{{ $brand->brand_name_en }}</option>
+                                                <option value="{{ $brand->id }}">{{ $brand->brand_name_bn }}</option>
                                             @endforeach
                                         </select>
                                         @error('brand_id')
@@ -402,7 +402,7 @@
                     $('select[name="sub_subcategory_id"]').html('');
                      var d =$('select[name="subcategory_id"]').empty();
                         $.each(data, function(key, value){
-                            $('select[name="subcategory_id"]').append('<option value="'+ value.id +'">' + value.subcategory_name_en + '</option>');
+                            $('select[name="subcategory_id"]').append('<option value="'+ value.id +'">' + value.subcategory_name_bn + '</option>');
                         });
                   },
               });
@@ -420,7 +420,7 @@
                   success:function(data) {
                      var d =$('select[name="sub_subcategory_id"]').empty();
                         $.each(data, function(key, value){
-                            $('select[name="sub_subcategory_id"]').append('<option value="'+ value.id +'">' + value.subsubcategory_name_en + '</option>');
+                            $('select[name="sub_subcategory_id"]').append('<option value="'+ value.id +'">' + value.subsubcategory_name_bn + '</option>');
                         });
                   },
               });

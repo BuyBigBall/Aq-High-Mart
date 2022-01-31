@@ -48,25 +48,25 @@ class CategoryController extends Controller
             $save_url = $upload_location.$name_gen;
 
             Category::create([
-                'category_name_en' => $request->input('category_name_en'),
+                'category_name_en' => '', # $request->input('category_name_en'),
                 'category_name_bn' => $request->input('category_name_bn'),
-                'category_slug_en' => Str::slug($request->input('category_slug_en')),
-                'category_slug_bn' => Str::slug($request->input('category_slug_bn')),
+                'category_slug_en' => '', # Str::slug($request->input('category_slug_en')),
+                'category_slug_bn' => $request->input('category_slug_bn'), # Str::slug($request->input('category_slug_bn')),
                 'category_icon' => $request->input('category_icon'),
                 'category_image' => $save_url
             ]);
         }else{
             Category::create([
-                'category_name_en' => $request->input('category_name_en'),
+                'category_name_en' => '', # $request->input('category_name_en'),
                 'category_name_bn' => $request->input('category_name_bn'),
-                'category_slug_en' => Str::slug($request->input('category_slug_en')),
-                'category_slug_bn' => Str::slug($request->input('category_slug_bn')),
+                'category_slug_en' => '', # Str::slug($request->input('category_slug_en')),
+                'category_slug_bn' => $request->input('category_slug_bn'), # Str::slug($request->input('category_slug_bn')),
                 'category_icon' => $request->input('category_icon'),
             ]);
         }
 
         $notification = [
-            'message' => 'Category Created Successfully!!!',
+            'message' => '分类创建成功！',
             'alert-type' => 'success'
         ];
 
@@ -104,6 +104,7 @@ class CategoryController extends Controller
      */
     public function update(CategoryStoreRequest $request, Category $category)
     {
+
         if($request->file('category_image')){
             if($category->category_image !='default.jpg'){
                 unlink($category->category_image);
@@ -115,25 +116,25 @@ class CategoryController extends Controller
             $save_url = $upload_location.$name_gen;
 
             $category->update([
-                'category_name_en' => $request->input('category_name_en'),
+                # 'category_name_en' => $request->input('category_name_en'),
                 'category_name_bn' => $request->input('category_name_bn'),
-                'category_slug_en' => Str::slug($request->input('category_slug_en')),
-                'category_slug_bn' => Str::slug($request->input('category_slug_bn')),
+                # 'category_slug_en' => Str::slug($request->input('category_slug_en')),
+                'category_slug_bn' => $request->input('category_slug_bn'), # Str::slug($request->input('category_slug_bn')),
                 'category_icon' => $request->input('category_icon'),
                 'category_image' => $save_url
             ]);
         }else{
             $category->update([
-                'category_name_en' => $request->input('category_name_en'),
+                'category_name_en' => '', # $request->input('category_name_en'),
                 'category_name_bn' => $request->input('category_name_bn'),
-                'category_slug_en' => Str::slug($request->input('category_slug_en')),
-                'category_slug_bn' => Str::slug($request->input('category_slug_bn')),
+                'category_slug_en' => '', # Str::slug($request->input('category_slug_en')),
+                'category_slug_bn' => $request->input('category_slug_bn'), # Str::slug($request->input('category_slug_bn')),
                 'category_icon' => $request->input('category_icon'),
             ]);
         }
 
         $notification = [
-            'message' => 'Category Updated Successfully!!!',
+            'message' => '分类更新成功！',
             'alert-type' => 'info'
         ];
 

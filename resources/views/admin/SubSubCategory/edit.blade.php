@@ -20,15 +20,6 @@
                         <form action="{{ route('subsubcategories.update', $subsubCategory) }}" method="post" enctype="multipart/form-data">
                             @method('put')
                             @csrf
-                            <div class="form-group hidden">
-                                <h5>Sub Sub-Category Name EN <span class="text-danger">*</span></h5>
-                                <div class="controls">
-                                    <input type="text" value="{{ old('subsubcategory_name_en', $subsubCategory->subsubcategory_name_en) }}" name="subsubcategory_name_en" class="form-control" data-validation-required-message="这是必填栏"> <div class="help-block"></div>
-                                </div>
-                                @error('subsubcategory_name_en')
-                                    <span class="alert text-danger">{{ $message }}</span>
-                                @enderror
-                            </div>
                             <div class="form-group">
                                 <h5>子类别名称<span class="text-danger">*</span></h5>
                                 <div class="controls">
@@ -63,6 +54,15 @@
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
+                            </div>
+                            <div class="form-group">
+                                <h5>子子类别蛞蝓<span class="text-danger">*</span></h5>
+                                <div class="controls">
+                                    <input type="text" value="{{ old('subsubcategory_slug_bn', $subsubCategory->subsubcategory_slug_bn) }}" name="subsubcategory_slug_bn" class="form-control" data-validation-required-message="这是必填栏"> <div class="help-block"></div>
+                                </div>
+                                @error('subsubcategory_slug_bn')
+                                    <span class="alert text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                             <div class="text-xs-right">
                                 <button type="submit" class="btn btn-rounded btn-info">更新</button>

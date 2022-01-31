@@ -2,17 +2,17 @@
 
 @section('dashboard_content')
     @include('admin.dashboard_layout.breadcrumb', [
-    'name' => 'Sub-SubCategory',
+    'name' => '子子类别',
     'url' => "subsubcategories.index",
-    'section_name' => 'All Sub-SubCategory'
+    'section_name' => '所有子子类别'
     ])
     <section class="content">
         <div class="row">
             <div class="col-md-12 col-lg-12">
                 <div class="box">
                     <div class="box-header with-border d-flex justify-content-between align-items-center">
-                        <h3 class="box-title">All Sub-SubCategory Data Table</h3>
-                        <a href="{{ route('subsubcategories.create') }}" class="btn btn-primary">Create New Sub-SubCategory</a>
+                        <h3 class="box-title">所有子子类别数据表</h3>
+                        <a href="{{ route('subsubcategories.create') }}" class="btn btn-primary">创建新的子子类别</a>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -25,19 +25,19 @@
                                             <thead>
                                                 <tr role="row">
                                                     <th>#</th>
-                                                    <th>Sub-SubCategory Name EN</th>
-                                                    <th>SubCategory Name</th>
-                                                    <th>Category Name</th>
-                                                    <th>Action</th>
+                                                    <th>子子类别名称</th>
+                                                    <th>子类别名称</th>
+                                                    <th>分类名称</th>
+                                                    <th>动作</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 @foreach ($subsubCategories as $item)
                                                 <tr role="row" class="odd">
                                                     <td>{{ $loop->index+1 }}</td>
-                                                    <td class="sorting_1">{{ $item->subsubcategory_name_en }}</td>
-                                                    <td>{{ $item->subcategory->subcategory_name_en }}</td>
-                                                    <td>{{ $item->category->category_name_en }}</td>
+                                                    <td class="sorting_1">{{ $item->subsubcategory_name_bn }}</td>
+                                                    <td>{{ $item->subcategory->subcategory_name_bn }}</td>
+                                                    <td>{{ $item->category->category_name_bn }}</td>
                                                     <td>
                                                         <div class="input-group">
                                                             <a href="{{ route('subsubcategories.edit', $item) }}" class="btn btn-info" title="Edit Data"><i class="fa fa-pencil"></i></a>
