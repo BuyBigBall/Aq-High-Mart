@@ -2,8 +2,8 @@
 
 @section('dashboard_content')
 @include('admin.dashboard_layout.breadcrumb', [
-    'name' => 'Brands',
-    'section_name' => 'All Brands'
+    'name' => '商品品牌',
+    'section_name' => '所有品牌'
 ])
 <section class="content">
     <div class="row">

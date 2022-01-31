@@ -23,7 +23,7 @@
                             <tr>
                                 <td class="col-md-2"><img src="{{ asset($product->product_thumbnail) }}" alt="imga"></td>
                                 <td class="col-md-7">
-                                    <div class="product-name"><a href="{{ route('frontend-product-details',['id' => $product->id, 'slug' => $product->product_slug_en]) }}">
+                                    <div class="product-name"><a href="{{ route('frontend-product-details',['id' => $product->id, 'slug' => $product->product_slug_bn]) }}">
                                         @if (session()->get('language') == 'english')
                                             {{ $product->product_name_en }}
                                         @else

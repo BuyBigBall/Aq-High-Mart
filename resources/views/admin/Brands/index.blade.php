@@ -2,9 +2,9 @@
 
 @section('dashboard_content')
     @include('admin.dashboard_layout.breadcrumb', [
-    'name' => 'Brands',
+    'name' => '商品品牌',
     'url' => "brands.index",
-    'section_name' => 'All Brands'
+    'section_name' => '所有品牌'
     ])
     <section class="content">
         <div class="row">
@@ -40,16 +40,16 @@
                                             role="grid" aria-describedby="example1_info">
                                             <thead>
                                                 <tr role="row">
-                                                    <th>Brand Name EN</th>
-                                                    <th>Brand Name BN</th>
-                                                    <th>Brand Image</th>
-                                                    <th>Action</th>
+                                                    <th class="hidden">Brand Name EN</th>
+                                                    <th>品牌名称</th>
+                                                    <th>品牌形象</th>
+                                                    <th>动作</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 @foreach ($brands as $item)
                                                 <tr role="row" class="odd">
-                                                    <td class="sorting_1">{{ $item->brand_name_en }}</td>
+                                                    <td class="sorting_1 hidden">{{ $item->brand_name_en }}</td>
                                                     <td>{{ $item->brand_name_bn }}</td>
                                                     <td>
                                                         <img src="{{ asset($item->brand_image) }}" alt=""
@@ -124,7 +124,7 @@
             <div class="col-md-4 col-lg-4">
                 <div class="box">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Add New Brand</h3>
+                        <h3 class="box-title">添加新品牌</h3>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -140,7 +140,7 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <h5>Brand Name BN <span class="text-danger">*</span></h5>
+                                <h5>品牌名称 <span class="text-danger">*</span></h5>
                                 <div class="controls">
                                     <input type="text" name="brand_name_bn" class="form-control" required="" data-validation-required-message="这是必填栏"> <div class="help-block"></div>
                                 </div>

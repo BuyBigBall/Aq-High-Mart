@@ -13,7 +13,7 @@
             <div class="products">
                 <div class="product">
                     <div class="product-image">
-                        <div class="image"> <a href="{{ route('frontend-product-details',['id' => $product->id, 'slug' => $product->product_slug_en]) }}"><img
+                        <div class="image"> <a href="{{ route('frontend-product-details',['id' => $product->id, 'slug' => $product->product_slug_bn]) }}"><img
                                     src="{{ asset($product->product_thumbnail) }}" alt=""></a> </div>
                         <!-- /.image -->
 
@@ -22,7 +22,7 @@
                     <!-- /.product-image -->
 
                     <div class="product-info text-left">
-                        <h3 class="name"><a href="{{ route('frontend-product-details',['id' => $product->id, 'slug' => $product->product_slug_en]) }}">
+                        <h3 class="name"><a href="{{ route('frontend-product-details',['id' => $product->id, 'slug' => $product->product_slug_bn]) }}">
                             @if (session()->get('language') == 'english')
                                 {{ $product->product_name_en }}
                             @else
@@ -49,9 +49,9 @@
                                             class="fa fa-shopping-cart"></i> </button>
                                     <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
                                 </li>
-                                <li class="lnk wishlist"> <a class="add-to-cart" href="{{ route('frontend-product-details',['id' => $product->id, 'slug' => $product->product_slug_en]) }}" title="Wishlist"> <i
+                                <li class="lnk wishlist"> <a class="add-to-cart" href="{{ route('frontend-product-details',['id' => $product->id, 'slug' => $product->product_slug_bn]) }}" title="Wishlist"> <i
                                             class="icon fa fa-heart"></i> </a> </li>
-                                <li class="lnk"> <a class="add-to-cart" href="{{ route('frontend-product-details',['id' => $product->id, 'slug' => $product->product_slug_en]) }}" title="Compare"> <i
+                                <li class="lnk"> <a class="add-to-cart" href="{{ route('frontend-product-details',['id' => $product->id, 'slug' => $product->product_slug_bn]) }}" title="Compare"> <i
                                             class="fa fa-signal" aria-hidden="true"></i> </a> </li>
                             </ul>
                         </div>

@@ -69,6 +69,21 @@
         </ul>
     </li>
 
+    <li class="treeview {{ ($route == 'brands.index') ? 'active' : '' }}">
+        <a href="#">
+        <i data-feather="message-circle"></i>
+        <span>商品品牌</span>
+        <span class="pull-right-container">
+            <i class="fa fa-angle-right pull-right"></i>
+        </span>
+        </a>
+        <ul class="treeview-menu">
+        <li class=" {{ ($route == 'brands.index') ? 'active' : '' }}">
+            <a href="{{ route('brands.index') }}"><i class="ti-more"></i>所有品牌</a>
+        </li>
+        </ul>
+    </li>
+    
     <li class="treeview {{ Request::is('admin/orders*') ? 'active' : '' }}">
         <a href="#">
         <i data-feather="file"></i> <span>Orders</span>
@@ -107,21 +122,6 @@
         </ul>
     </li>
 
-    <li class="treeview {{ ($route == 'brands.index') ? 'active' : '' }}">
-        <a href="#">
-        <i data-feather="message-circle"></i>
-        <span>Brands</span>
-        <span class="pull-right-container">
-            <i class="fa fa-angle-right pull-right"></i>
-        </span>
-        </a>
-        <ul class="treeview-menu">
-        <li class=" {{ ($route == 'brands.index') ? 'active' : '' }}">
-            <a href="{{ route('brands.index') }}"><i class="ti-more"></i>All Brand</a>
-        </li>
-        </ul>
-    </li>
-    
     <li class="treeview {{ ($prefix == '/slider') ? 'active' : '' }}">
         <a href="#">
         <i data-feather="file"></i> <span>Slider</span>

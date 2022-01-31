@@ -40,7 +40,7 @@
                 <!-- /.hot-deal-wrapper -->
 
                 <div class="product-info text-left m-t-20">
-                    <h3 class="name"><a href="{{ route('frontend-product-details',['id' => $product->id, 'slug' => $product->product_slug_en]) }}">  @if (session()->get('language') == 'english')
+                    <h3 class="name"><a href="{{ route('frontend-product-details',['id' => $product->id, 'slug' => $product->product_slug_bn]) }}">  @if (session()->get('language') == 'english')
                         {{ $product->product_name_en }}
                         @else
                         {{ $product->product_name_bn }}

@@ -26,7 +26,7 @@
                             <div class="accordion-inner">
                                 @foreach ($category->subcategory as $subcategory)
                                 <ul>
-                                    <li><a href="{{ route('subcategory.products',['id' => $subcategory->id, 'slug' => $subcategory->subcategory_slug_en]) }}">
+                                    <li><a href="{{ route('subcategory.products',['id' => $subcategory->id, 'slug' => $subcategory->subcategory_slug_bn]) }}">
                                         @if (session()->get('language') == 'english')
                                         {{ $subcategory->subcategory_name_en }}
                                         @else

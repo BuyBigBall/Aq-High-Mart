@@ -223,7 +223,7 @@
                                                                 <ul class="links">
                                                                     @foreach ($subcategory->subsubcategory as $subsubcategory)
                                                                         <li><a
-                                                                                href="{{ route('subsubcategory.products', ['id' => $subsubcategory->id, 'slug' => $subsubcategory->subsubcategory_slug_en]) }}">
+                                                                                href="{{ route('subsubcategory.products', ['id' => $subsubcategory->id, 'slug' => $subsubcategory->subsubcategory_slug_bn]) }}">
                                                                                 @if (session()->get('language') == 'english')
                                                                                     {{ $subsubcategory->subsubcategory_name_en }}
                                                                                 @else

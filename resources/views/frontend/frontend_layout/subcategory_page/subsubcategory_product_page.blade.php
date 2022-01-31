@@ -128,7 +128,7 @@
                                             <div class="products">
                                                 <div class="product">
                                                     <div class="product-image">
-                                                        <div class="image"> <a href="{{ route('frontend-product-details',['id' => $product->id, 'slug' => $product->product_slug_en]) }}"><img
+                                                        <div class="image"> <a href="{{ route('frontend-product-details',['id' => $product->id, 'slug' => $product->product_slug_bn]) }}"><img
                                                                     src="{{ asset($product->product_thumbnail) }}"
                                                                     alt=""></a> </div>
                                                         <!-- /.image -->
@@ -144,7 +144,7 @@
                                                     <!-- /.product-image -->
                                                     </div>
                                                     <div class="product-info text-left">
-                                                        <h3 class="name"><a href="{{ route('frontend-product-details',['id' => $product->id, 'slug' => $product->product_slug_en]) }}">
+                                                        <h3 class="name"><a href="{{ route('frontend-product-details',['id' => $product->id, 'slug' => $product->product_slug_bn]) }}">
                                                             @if (session()->get('language') == 'english')
                                                                 {{ $product->product_name_en }}
                                                             @else
@@ -235,7 +235,7 @@
                                                     <!-- /.col -->
                                                     <div class="col col-sm-8 col-lg-8">
                                                         <div class="product-info">
-                                                            <h3 class="name"><a href="{{ route('frontend-product-details',['id' => $product->id, 'slug' => $product->product_slug_en]) }}">
+                                                            <h3 class="name"><a href="{{ route('frontend-product-details',['id' => $product->id, 'slug' => $product->product_slug_bn]) }}">
                                                                 @if (session()->get('language') == 'english')
                                                                 {{ $product->product_name_en }}
                                                                 @else
