@@ -30,6 +30,24 @@
             <span>Dashboard</span>
         </a>
     </li>
+
+    <li class="treeview {{ ($route == 'products.index') ? 'active' : '' }}">
+        <a href="#">
+        <i data-feather="mail"></i> <span>产品目录</span>
+        <span class="pull-right-container">
+            <i class="fa fa-angle-right pull-right"></i>
+        </span>
+        </a>
+        <ul class="treeview-menu">
+            <li class=" {{ ($route == 'products.create') ? 'active' : '' }}">
+                <a href="{{ route('products.create') }}"><i class="ti-more"></i>添加产品</a>
+            </li>
+            <li class=" {{ ($route == 'products.index') ? 'active' : '' }}">
+                <a href="{{ route('products.index') }}"><i class="ti-more"></i>管理产品</a>
+            </li>
+        </ul>
+    </li>
+
     <li class="treeview {{ Request::is('admin/orders*') ? 'active' : '' }}">
         <a href="#">
         <i data-feather="file"></i> <span>Orders</span>
@@ -99,23 +117,6 @@
             </li>
             <li class=" {{ ($route == 'subsubcategories.index') ? 'active' : '' }}">
                 <a href="{{ route('subsubcategories.index') }}"><i class="ti-more"></i>All Sub-SubCategory</a>
-            </li>
-        </ul>
-    </li>
-
-    <li class="treeview {{ ($route == 'products.index') ? 'active' : '' }}">
-        <a href="#">
-        <i data-feather="mail"></i> <span>Product Catalog</span>
-        <span class="pull-right-container">
-            <i class="fa fa-angle-right pull-right"></i>
-        </span>
-        </a>
-        <ul class="treeview-menu">
-            <li class=" {{ ($route == 'products.create') ? 'active' : '' }}">
-                <a href="{{ route('products.create') }}"><i class="ti-more"></i>Add Product</a>
-            </li>
-            <li class=" {{ ($route == 'products.index') ? 'active' : '' }}">
-                <a href="{{ route('products.index') }}"><i class="ti-more"></i>Manage Products</a>
             </li>
         </ul>
     </li>

@@ -378,7 +378,7 @@
                                 </div>
                             </div>
                             <div class="text-xs-right">
-                                <button type="submit" class="btn btn-rounded btn-info">Add Product</button>
+                                <button type="submit" class="btn btn-rounded btn-info">添加产品</button>
                             </div>
                         </form>
                     </div>

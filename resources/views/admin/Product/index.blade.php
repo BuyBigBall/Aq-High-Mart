@@ -2,17 +2,17 @@
 
 @section('dashboard_content')
     @include('admin.dashboard_layout.breadcrumb', [
-    'name' => 'Product',
+    'name' => '产品',
     'url' => "products.index",
-    'section_name' => 'All Product'
+    'section_name' => '所有产品'
     ])
     <section class="content">
         <div class="row">
             <div class="col-md-12 col-lg-12">
                 <div class="box">
                     <div class="box-header with-border d-flex justify-content-between align-items-center">
-                        <h3 class="box-title">All Product Data Table</h3>
-                        <a href="{{ route('products.create') }}" class="btn btn-primary">Create New Product</a>
+                        <h3 class="box-title">所有产品数据表</h3>
+                        <a href="{{ route('products.create') }}" class="btn btn-primary">创建新产品</a>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">

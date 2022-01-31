@@ -47,10 +47,10 @@
                 @include('frontend.frontend_layout.home_page.brandwise')
                 <!-- /.section -->
                 <!--  Category wise PRODUCTS : END  -->
-                <!--  BEST SELLER  -->
+                <!--  畅销书  -->
                 @include('frontend.frontend_layout.home_page.best-seller')
                 <!-- /.sidebar-widget -->
-                <!--  BEST SELLER : END  -->
+                <!--  畅销书 : END  -->
 
                 <!--  BLOG SLIDER  -->
                 @include('frontend.frontend_layout.home_page.blog-slider')

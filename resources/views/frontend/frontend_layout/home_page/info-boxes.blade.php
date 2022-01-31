@@ -5,10 +5,10 @@
         <div class="info-box">
         <div class="row">
             <div class="col-xs-12">
-            <h4 class="info-box-heading green">money back</h4>
+            <h4 class="info-box-heading green">退款</h4>
             </div>
         </div>
-        <h6 class="text">30 Days Money Back Guarantee</h6>
+        <h6 class="text">30天退款保证</h6>
         </div>
     </div>
     <!-- .col -->
@@ -17,10 +17,10 @@
         <div class="info-box">
         <div class="row">
             <div class="col-xs-12">
-            <h4 class="info-box-heading green">free shipping</h4>
+            <h4 class="info-box-heading green">免运费</h4>
             </div>
         </div>
-        <h6 class="text">Shipping on orders over $99</h6>
+        <h6 class="text">订单满 99 美元即可发货</h6>
         </div>
     </div>
     <!-- .col -->
@@ -29,10 +29,10 @@
         <div class="info-box">
         <div class="row">
             <div class="col-xs-12">
-            <h4 class="info-box-heading green">Special Sale</h4>
+            <h4 class="info-box-heading green">特卖</h4>
             </div>
         </div>
-        <h6 class="text">Extra $5 off on all items </h6>
+        <h6 class="text">所有商品额外减99元 </h6>
         </div>
     </div>
     <!-- .col --> 
