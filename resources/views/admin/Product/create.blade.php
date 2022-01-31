@@ -25,9 +25,9 @@
                             <div class="row">
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <h5>Brand Name <span class="text-danger">*</span></h5>
-                                        <select class="custom-select" aria-label="Default select example" name="brand_id">
-                                            <option selected>Select Brand Name</option>
+                                        <h5>品牌 <span class="text-danger">*</span></h5>
+                                        <select class="custom-select" aria-label="默认选择示例" name="brand_id">
+                                            <option selected>选择品牌名称</option>
                                             @foreach ($brands as $brand)
                                                 <option value="{{ $brand->id }}">{{ $brand->brand_name_en }}</option>
                                             @endforeach
@@ -43,7 +43,7 @@
                                         <select class="custom-select" aria-label="Default select example" name="category_id">
                                             <option selected>选择类别名称</option>
                                             @foreach ($categories as $category)
-                                                <option value="{{ $category->id }}">{{ $category->category_name_en }}</option>
+                                                <option value="{{ $category->id }}">{{ $category->category_name_bn }}</option>
                                             @endforeach
                                         </select>
                                         @error('category_id')
@@ -81,18 +81,7 @@
                             <div class="row">
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <h5>产品名称 EN <span class="text-danger">*</span></h5>
-                                        <div class="controls">
-                                            <input type="text" name="product_name_en" class="form-control" data-validation-required-message="这是必填栏"> <div class="help-block"></div>
-                                        </div>
-                                        @error('product_name_en')
-                                            <span class="alert text-danger">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="form-group">
-                                        <h5>产品名称 BN <span class="text-danger">*</span></h5>
+                                        <h5>产品名称<span class="text-danger">*</span></h5>
                                         <div class="controls">
                                             <input type="text" name="product_name_bn" class="form-control" required="" data-validation-required-message="这是必填栏"> <div class="help-block"></div>
                                         </div>
@@ -103,7 +92,7 @@
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <h5>Product SKU Code # <span class="text-danger"></span></h5>
+                                        <h5>产品 SKU 代码 # <span class="text-danger"></span></h5>
                                         <div class="controls">
                                             <input type="text" name="product_code" class="form-control"> <div class="help-block"></div>
                                         </div>
@@ -114,7 +103,18 @@
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <h5>Product Qty <span class="text-danger">*</span></h5>
+                                        <h5>产品蛞蝓 <span class="text-danger">*</span></h5>
+                                        <div class="controls">
+                                            <input type="text" name="product_slug_bn" class="form-control" data-validation-required-message="这是必填栏"> <div class="help-block"></div>
+                                        </div>
+                                        @error('product_slug_bn')
+                                            <span class="alert text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <h5>产品数量 <span class="text-danger">*</span></h5>
                                         <div class="controls">
                                             <input type="number" name="product_qty" class="form-control" required="" data-validation-required-message="这是必填栏"> <div class="help-block"></div>
                                         </div>
@@ -125,11 +125,11 @@
                                 </div>
                             </div>
                             {{-- Second row end --}}
-                            <h5 class="text-warning mt-4">Product Tag, Size, Color Information Area</h5>
+                            <h5 class="text-warning mt-4">产品标签、尺寸、颜色信息区</h5>
                             <hr>
                             {{-- Third row start --}}
                             <div class="row">
-                                <div class="col-md-2">
+                                <div class="col-md-2 hidden">
                                     <div class="form-group">
                                         <h5>Product Tag EN <span class="text-danger"></span></h5>
                                         <div class="controls">
@@ -140,9 +140,9 @@
                                         @enderror
                                     </div>
                                 </div>
-                                <div class="col-md-2">
+                                <div class="col-md-4">
                                     <div class="form-group">
-                                        <h5>Product Tag BN <span class="text-danger"></span></h5>
+                                        <h5>产品标签<span class="text-danger"></span></h5>
                                         <div class="controls">
                                             <input type="text" name="product_tags_bn" class="form-control" value="lorem, Ipsum, Amet" data-role="tagsinput"> <div class="help-block"></div>
                                         </div>
@@ -152,7 +152,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-2">
-                                    <div class="form-group">
+                                    <div class="form-group hidden">
                                         <h5>Product Size EN <span class="text-danger"></span></h5>
                                         <div class="controls">
                                             <input type="text" name="product_size_en" class="form-control" value="small,medium,large" data-role="tagsinput"> <div class="help-block"></div>
@@ -162,9 +162,9 @@
                                         @enderror
                                     </div>
                                 </div>
-                                <div class="col-md-2">
+                                <div class="col-md-4">
                                     <div class="form-group">
-                                        <h5>Product Size BN <span class="text-danger"></span></h5>
+                                        <h5>产品尺寸<span class="text-danger"></span></h5>
                                         <div class="controls">
                                             <input type="text" name="product_size_bn" class="form-control" value="small,medium,large" data-role="tagsinput">
                                             <div class="help-block"></div>
@@ -174,7 +174,7 @@
                                         @enderror
                                     </div>
                                 </div>
-                                <div class="col-md-2">
+                                <div class="col-md-2 hidden">
                                     <div class="form-group">
                                         <h5>Product Color EN <span class="text-danger"></span></h5>
                                         <div class="controls">
@@ -186,9 +186,9 @@
                                         @enderror
                                     </div>
                                 </div>
-                                <div class="col-md-2">
+                                <div class="col-md-4">
                                     <div class="form-group">
-                                        <h5>Product Color BN <span class="text-danger"></span></h5>
+                                        <h5>产品颜色 <span class="text-danger"></span></h5>
                                         <div class="controls">
                                             <input type="text" name="product_color_bn" class="form-control" value="red,green,blue" data-role="tagsinput"><div class="help-block"></div>
                                         </div>
@@ -199,13 +199,13 @@
                                 </div>
                             </div>
                             {{-- Third row end --}}
-                            <h5 class="text-warning mt-4">Product Pricing Information Area</h5>
+                            <h5 class="text-warning mt-4">产品定价信息区</h5>
                             <hr>
                             {{-- Fourth row start --}}
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <h5>Purchase Price <span class="text-danger"></span></h5>
+                                        <h5>购买价格<span class="text-danger"></span></h5>
                                         <div class="controls">
                                             <input type="number" name="purchase_price" class="form-control"> <div class="help-block"></div>
                                         </div>
@@ -216,9 +216,9 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <h5>Selling Price <span class="text-danger">*</span></h5>
+                                        <h5>售价 <span class="text-danger">*</span></h5>
                                         <div class="controls input-group mb-3">
-                                            <span class="input-group-text">$0.00</span>
+                                            <span class="input-group-text hidden">$0.00</span>
                                             <input type="number" name="selling_price" class="form-control" required="" data-validation-required-message="这是必填栏"> <div class="help-block"></div>
                                         </div>
                                         @error('selling_price')
@@ -228,7 +228,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <h5>Discount Price <span class="text-danger"></span></h5>
+                                        <h5>折扣价<span class="text-danger"></span></h5>
                                         <div class="controls">
                                             <input type="number" name="discount_price" class="form-control"
                                             > <div class="help-block"></div>
@@ -240,11 +240,11 @@
                                 </div>
                             </div>
                             {{-- Fourth row end --}}
-                            <h5 class="text-warning mt-4">Product Description Area</h5>
+                            <h5 class="text-warning mt-4">产品描述区</h5>
                             <hr>
                             {{-- Fifth row start --}}
                             <div class="row">
-                                <div class="col-md-12">
+                                <div class="col-md-12 hidden">
                                     <div class="form-group">
                                         <h5>Short Description EN <span class="text-danger"></span></h5>
                                         <div class="controls">
@@ -258,7 +258,7 @@
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <h5>Short Description BN <span class="text-danger"></span></h5>
+                                        <h5>简短描述<span class="text-danger"></span></h5>
                                         <div class="controls">
                                             <textarea name="short_description_bn" id="editor2" cols="30" rows="5" class="form-control"></textarea>
                                             <div class="help-block"></div>
@@ -272,7 +272,7 @@
                             {{-- Fifth row end --}}
                             {{-- Sixth row start --}}
                             <div class="row">
-                                <div class="col-md-12">
+                                <div class="col-md-12 hidden">
                                     <div class="form-group">
                                         <h5>Long Description EN <span class="text-danger"></span></h5>
                                         <div class="controls">
@@ -286,7 +286,7 @@
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <h5>Long Description BN <span class="text-danger"></span></h5>
+                                        <h5>详细说明<span class="text-danger"></span></h5>
                                         <div class="controls">
                                             <textarea name="long_description_bn" id="editor4" cols="30" rows="5" class="form-control"></textarea>
                                             <div class="help-block"></div>
@@ -298,13 +298,13 @@
                                 </div>
                             </div>
                             {{-- Sixth row end --}}
-                            <h5 class="text-warning mt-4">Product Image Upload Area</h5>
+                            <h5 class="text-warning mt-4">产品图片上传区</h5>
                             <hr>
                             {{-- Seventh row start --}}
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <h5>Product Thumbnail <span class="text-danger">*</span></h5>
+                                        <h5>产品缩略图<span class="text-danger">*</span></h5>
                                         <div class="controls">
                                             <input type="file" name="product_thumbnail" class="form-control" required="" data-validation-required-message="这是必填栏"
                                             onChange="mainThumbnailShow(this)"> <div class="help-block"></div>
@@ -317,7 +317,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <h5>Product Multiple Image <span class="text-danger"></span></h5>
+                                        <h5>产品多张图片 <span class="text-danger"></span></h5>
                                         <div class="controls">
                                             <input type="file" name="product_images[]" class="form-control"  multiple="" id="multiImg" > <div class="help-block"></div>
                                         </div>
@@ -330,27 +330,27 @@
                             </div>
                             {{-- Seventh row end --}}
                             {{-- Eighth row start --}}
-                            <h5 class="text-warning mt-4">Product Additional Information Area</h5>
+                            <h5 class="text-warning mt-4">产品附加信息区</h5>
                             <hr>
                             <div class="row mb-3">
                                 <div class="col-md-4">
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox" id="hot_deals" name="hot_deals" value="1">
-                                        <label class="form-check-label" for="hot_deals">Hot Deals</label>
+                                        <label class="form-check-label" for="hot_deals">热卖</label>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox"
                                         id="featured" name="featured" value="1">
-                                        <label class="form-check-label" for="featured">Featured</label>
+                                        <label class="form-check-label" for="featured">精选</label>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox"
                                         id="new_arrival" name="new_arrival" checked value="1">
-                                        <label class="form-check-label" for="new_arrival">New Arrival</label>
+                                        <label class="form-check-label" for="new_arrival">新品</label>
                                     </div>
                                 </div>
                             </div>
@@ -359,21 +359,21 @@
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox"
                                         id="special_offer" name="special_offer" value="1">
-                                        <label class="form-check-label" for="special_offer">Special Offer</label>
+                                        <label class="form-check-label" for="special_offer">特价</label>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox"
                                         id="special_deals" name="special_deals" value="1">
-                                        <label class="form-check-label" for="special_deals">Special Deals</label>
+                                        <label class="form-check-label" for="special_deals">特别优惠</label>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-check form-switch">
                                         <input class="form-check-input" type="checkbox"
                                         id="status" name="status" checked value="1">
-                                        <label class="form-check-label" for="status">Active Status</label>
+                                        <label class="form-check-label" for="status">活动状态</label>
                                     </div>
                                 </div>
                             </div>

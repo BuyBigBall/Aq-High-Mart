@@ -29,7 +29,7 @@
                                                     <th class="hidden">Category Name EN</th>
                                                     <th>分类名称</th>
                                                     <th>类别图像</th>
-                                                    <th>行动</th>
+                                                    <th>动作</th>
                                                 </tr>
                                             </thead>
                                             <tbody>

@@ -1,9 +1,8 @@
     <!-- ================================== TOP NAVIGATION ================================== -->
     <div class="side-menu animate-dropdown outer-bottom-xs">
-        <div class="head"><i class="icon fa fa-align-justify fa-fw"></i> 分类</div>
+        <div class="head"><i class="icon fa fa-align-justify fa-fw"></i>类别</div>
         <nav class="yamm megamenu-horizontal">
             <ul class="nav">
-
                 @foreach ($categories as $category)
                     <li class="dropdown menu-item"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <i class="icon {{ $category->category_icon }}" aria-hidden="true"></i>
@@ -20,7 +19,7 @@
                                         <div class="col-sm-12 col-md-3">
                                             <h2 class="title">
                                                 <a
-                                                    href="{{ route('subcategory.products', ['id' => $subcategory->id, 'slug' => $subcategory->subcategory_slug_en]) }}">
+                                                    href="{{ route('subcategory.products', ['id' => $subcategory->id, 'slug' => $subcategory->subcategory_slug_bn]) }}">
                                                     @if (session()->get('language') == 'english')
                                                         {{ $subcategory->subcategory_name_en }}
                                                     @else
@@ -32,7 +31,7 @@
                                                 @foreach ($subcategory->subsubcategory as $subsubcategory)
                                                     <li>
                                                         <a
-                                                            href="{{ route('subsubcategory.products', ['id' => $subsubcategory->id, 'slug' => $subsubcategory->subsubcategory_slug_en]) }}">
+                                                            href="{{ route('subsubcategory.products', ['id' => $subsubcategory->id, 'slug' => $subsubcategory->subsubcategory_slug_bn]) }}">
                                                             @if (session()->get('language') == 'english')
                                                                 {{ $subsubcategory->subsubcategory_name_en }}
                                                             @else

@@ -1,7 +1,7 @@
 <div class="sidebar-widget newsletter wow fadeInUp outer-bottom-small">
 <h3 class="section-title">最新资讯</h3>
 <div class="sidebar-widget-body outer-top-xs">
-    <p>Sign Up for Our Newsletter!</p>
+    <p>注册我们的通讯！</p>
     <form>
     <div class="form-group">
         <label class="sr-only" for="exampleInputEmail1">Email address</label>

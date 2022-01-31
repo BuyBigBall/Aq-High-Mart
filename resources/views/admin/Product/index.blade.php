@@ -25,13 +25,13 @@
                                             <thead>
                                                 <tr role="row">
                                                     <th>#</th>
-                                                    <th>Image</th>
+                                                    <th>图片</th>
                                                     <th>产品名称</th>
-                                                    <th>Product Qty</th>
-                                                    <th>Purchase Price</th>
-                                                    <th>Selling Price</th>
-                                                    <th>Status</th>
-                                                    <th>Action</th>
+                                                    <th>产品数量</th>
+                                                    <th>购买价格</th>
+                                                    <th>售价</th>
+                                                    <th>状态</th>
+                                                    <th>动作</th>
                                                 </tr>
                                             </thead>
                                             <tbody>

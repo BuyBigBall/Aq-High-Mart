@@ -38,7 +38,7 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <h5>分类名称 <span class="text-danger">*</span></h5>
+                                <h5>类别名称 <span class="text-danger">*</span></h5>
                                 {{-- <div class="controls">
                                     <input type="file" name="category_image" class="form-control" required="" data-validation-required-message="这是必填栏"> <div class="help-block"></div>
                                 </div> --}}
@@ -48,9 +48,9 @@
                                         <option value="{{ $category->id }}">{{ $category->category_name_bn }}</option>
                                     @endforeach
                                   </select>
-                                @error('category_id')
-                                    <span class="alert text-danger">{{ $message }}</span>
-                                @enderror
+                                  @error('category_id')
+                                      <span class="alert text-danger">{{ $message }}</span>
+                                  @enderror
                             </div>
                             <div class="text-xs-right">
                                 <button type="submit" class="btn btn-rounded btn-info">提交</button>

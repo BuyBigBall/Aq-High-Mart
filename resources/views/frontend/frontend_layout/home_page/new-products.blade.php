@@ -37,7 +37,7 @@
                     <div class="product">
                         <div class="product-image">
                         <div class="image">
-                            <a href="{{ route('frontend-product-details',['id' => $product->id, 'slug' => $product->product_slug_en]) }}">
+                            <a href="{{ route('frontend-product-details',['id' => $product->id, 'slug' => $product->product_slug_bn]) }}">
                             <img  src="{{ asset($product->product_thumbnail) }}" alt="">
                             </a>
                         </div>

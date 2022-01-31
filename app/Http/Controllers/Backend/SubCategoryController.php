@@ -98,7 +98,7 @@ class SubCategoryController extends Controller
             'subcategory_name_en' => '', # $request->input('subcategory_name_en'),
             'subcategory_name_bn' => $request->input('subcategory_name_bn'),
             'subcategory_slug_en' => '', # Str::slug($request->input('subcategory_name_en')),
-            'subcategory_slug_bn' => Str::slug($request->input('subcategory_name_bn')),
+            'subcategory_slug_bn' => Str::slug( $request->input('subcategory_name_bn') ),
         ]);
 
         $notification = [

@@ -44,7 +44,7 @@
                                         <select class="custom-select" aria-label="Default select example" name="category_id">
                                             <option selected>选择类别名称</option>
                                             @foreach ($categories as $category)
-                                                <option value="{{ $category->id }}" {{ $category->id == $product->category_id ? 'selected' : '' }}>{{ $category->category_name_en }}</option>
+                                                <option value="{{ $category->id }}" {{ $category->id == $product->category_id ? 'selected' : '' }}>{{ $category->category_name_bn }}</option>
                                             @endforeach
                                         </select>
                                         @error('category_id')
@@ -86,19 +86,7 @@
                             <hr>
                             {{-- Second row start --}}
                             <div class="row">
-                                <div class="col-md-12 hidden">
-                                    <div class="form-group">
-                                        <h5>产品名称 EN <span class="text-danger">*</span></h5>
-                                        <div class="controls">
-                                            <input type="text" name="product_name_en" value="{{ old('product_name_en', $product->product_name_en) }}"
-                                            class="form-control" data-validation-required-message="这是必填栏"> <div class="help-block"></div>
-                                        </div>
-                                        @error('product_name_en')
-                                            <span class="alert text-danger">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
+                                <div class="col-md-3">
                                     <div class="form-group">
                                         <h5>产品名称<span class="text-danger">*</span></h5>
                                         <div class="controls">
@@ -110,7 +98,7 @@
                                         @enderror
                                     </div>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-3">
                                     <div class="form-group">
                                         <h5>产品 SKU 代码 # <span class="text-danger"></span></h5>
                                         <div class="controls">
@@ -122,7 +110,19 @@
                                         @enderror
                                     </div>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <h5>产品蛞蝓<span class="text-danger">*</span></h5>
+                                        <div class="controls">
+                                            <input type="text" name="product_slug_bn" value="{{ old('product_slug_bn', $product->product_slug_bn) }}"
+                                            class="form-control" data-validation-required-message="这是必填栏"> <div class="help-block"></div>
+                                        </div>
+                                        @error('product_slug_bn')
+                                            <span class="alert text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
                                     <div class="form-group">
                                         <h5>产品数量 <span class="text-danger">*</span></h5>
                                         <div class="controls">
@@ -425,7 +425,7 @@
                                             </h5>
                                         <p class="card-text">
                                             <div class="form-group">
-                                                <label class="form-control-label">Change Image 
+                                                <label class="form-control-label">更改图像
                                                     <!-- <span class="tx-danger" style="color:red;">*</span> -->
                                             </label>
                                                 <input class="form-control" type="file"

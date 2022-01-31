@@ -28,7 +28,7 @@
                                                     <th class="hidden">SubCategory Name EN</th>
                                                     <th>子类别名称</th>
                                                     <th>类别名称</th>
-                                                    <th>行动</th>
+                                                    <th>动作</th>
                                                 </tr>
                                             </thead>
                                             <tbody>

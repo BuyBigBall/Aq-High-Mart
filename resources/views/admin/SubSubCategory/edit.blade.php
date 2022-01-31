@@ -32,7 +32,7 @@
                             <div class="form-group">
                                 <h5>子类别名称<span class="text-danger">*</span></h5>
                                 <div class="controls">
-                                    <input type="text" value="{{ old('subsubcategory_name_bn', $subsubCategory->subsubcategory_name_en) }}" name="subsubcategory_name_bn" class="form-control" required="" data-validation-required-message="这是必填栏"> <div class="help-block"></div>
+                                    <input type="text" value="{{ old('subsubcategory_name_bn', $subsubCategory->subsubcategory_name_bn) }}" name="subsubcategory_name_bn" class="form-control" required="" data-validation-required-message="这是必填栏"> <div class="help-block"></div>
                                 </div>
                                 @error('subsubcategory_name_bn')
                                     <span class="alert text-danger">{{ $message }}</span>

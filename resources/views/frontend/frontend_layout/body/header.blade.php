@@ -212,7 +212,7 @@
                                                             <div class="col-xs-12 col-sm-6 col-md-2 col-menu">
                                                                 <h2 class="title">
                                                                     <a
-                                                                        href="{{ route('subcategory.products', ['id' => $subcategory->id, 'slug' => $subcategory->subcategory_slug_en]) }}">
+                                                                        href="{{ route('subcategory.products', ['id' => $subcategory->id, 'slug' => $subcategory->subcategory_slug_bn]) }}">
                                                                         @if (session()->get('language') == 'english')
                                                                             {{ $subcategory->subcategory_name_en }}
                                                                         @else
