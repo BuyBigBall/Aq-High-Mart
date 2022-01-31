@@ -4,9 +4,9 @@
     <ul class="list-inline list-unstyled">
         <li><a href="{{ route('home') }}">Home</a></li>
         @if (request()->routeIs('category'))
-        <li class="request()->routeIs('category')? 'active': ''">Category</li>
+        <li class="request()->routeIs('category')? 'active': ''">类别</li>
         @elseif (request()->routeIs('login'))
-        <li class="request()->routeIs('login')? 'active': ''">Login</li>
+        <li class="request()->routeIs('login')? 'active': ''">登录</li>
         @else
         {{-- <li class="request()->routeIs('')? 'active': ''">{{ request()->route() }}</li> --}}
         @endif

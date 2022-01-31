@@ -2,17 +2,17 @@
 
 @section('dashboard_content')
     @include('admin.dashboard_layout.breadcrumb', [
-    'name' => 'Category',
+    'name' => '类别',
     'url' => "categories.index",
-    'section_name' => 'All Category'
+    'section_name' => '所有类别'
     ])
     <section class="content">
         <div class="row">
             <div class="col-md-12 col-lg-12">
                 <div class="box">
                     <div class="box-header with-border d-flex justify-content-between align-items-center">
-                        <h3 class="box-title">All Brands Data Table</h3>
-                        <a href="{{ route('categories.create') }}" class="btn btn-primary">Create New Category</a>
+                        <h3 class="box-title">所有类别数据表</h3>
+                        <a href="{{ route('categories.create') }}" class="btn btn-primary">创建新类别</a>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -25,11 +25,11 @@
                                             <thead>
                                                 <tr role="row">
                                                     <th>#</th>
-                                                    <th>Category ICON</th>
-                                                    <th>Category Name EN</th>
-                                                    <th>Category Name BN</th>
-                                                    <th>Category Image</th>
-                                                    <th>Action</th>
+                                                    <th>类别图标</th>
+                                                    <th class="hidden">Category Name EN</th>
+                                                    <th>分类名称</th>
+                                                    <th>类别图像</th>
+                                                    <th>行动</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -37,7 +37,7 @@
                                                 <tr role="row" class="odd">
                                                     <td>{{ $loop->index+1 }}</td>
                                                     <td>{{ $item->category_icon }}</td>
-                                                    <td class="sorting_1">{{ $item->category_name_en }}</td>
+                                                    <td class="sorting_1 hidden">{{ $item->category_name_en }}</td>
                                                     <td>{{ $item->category_name_bn }}</td>
                                                     <td>
                                                         <img src="{{ asset($item->category_image) }}" alt="" style="width: 70px; height:40px;">

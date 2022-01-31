@@ -44,14 +44,14 @@ class SubCategoryController extends Controller
     {
         SubCategory::create([
             'category_id' => $request->input('category_id'),
-            'subcategory_name_en' => $request->input('subcategory_name_en'),
+            'subcategory_name_en' => '', # $request->input('subcategory_name_en'),
             'subcategory_name_bn' => $request->input('subcategory_name_bn'),
-            'subcategory_slug_en' => Str::slug($request->input('subcategory_name_en')),
+            'subcategory_slug_en' => '', # Str::slug($request->input('subcategory_name_en')),
             'subcategory_slug_bn' => Str::slug($request->input('subcategory_name_bn')),
         ]);
 
         $notification = [
-            'message' => 'Sub Category Created Successfully!!!',
+            'message' => '子分类创建成功！',
             'alert-type' => 'success'
         ];
 
@@ -95,14 +95,14 @@ class SubCategoryController extends Controller
         $subCategory = SubCategory::findOrFail($id);
         $subCategory->update([
             'category_id' => $request->category_id,
-            'subcategory_name_en' => $request->input('subcategory_name_en'),
+            'subcategory_name_en' => '', # $request->input('subcategory_name_en'),
             'subcategory_name_bn' => $request->input('subcategory_name_bn'),
-            'subcategory_slug_en' => Str::slug($request->input('subcategory_name_en')),
+            'subcategory_slug_en' => '', # Str::slug($request->input('subcategory_name_en')),
             'subcategory_slug_bn' => Str::slug($request->input('subcategory_name_bn')),
         ]);
 
         $notification = [
-            'message' => 'Sub Category Updated Successfully!!!',
+            'message' => '子分类更新成功！',
             'alert-type' => 'success'
         ];
 
@@ -121,7 +121,7 @@ class SubCategoryController extends Controller
         $subCategory->delete();
 
         $notification = [
-            'message' => 'Sub Category Deleted Successfully!!!',
+            'message' => '子分类删除成功！',
             'alert-type' => 'success'
         ];
 

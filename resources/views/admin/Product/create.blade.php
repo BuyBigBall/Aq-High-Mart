@@ -39,9 +39,9 @@
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <h5>Category Name <span class="text-danger">*</span></h5>
+                                        <h5>分类名称 <span class="text-danger">*</span></h5>
                                         <select class="custom-select" aria-label="Default select example" name="category_id">
-                                            <option selected>Select Category Name</option>
+                                            <option selected>选择类别名称</option>
                                             @foreach ($categories as $category)
                                                 <option value="{{ $category->id }}">{{ $category->category_name_en }}</option>
                                             @endforeach
@@ -53,9 +53,9 @@
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <h5>SubCategory Name <span class="text-danger">*</span></h5>
+                                        <h5>子类别名称 <span class="text-danger">*</span></h5>
                                         <select class="custom-select" name="subcategory_id" aria-label="Default select example">
-                                            <option value="" selected="" disabled="">Select SubCategory Name</option>
+                                            <option value="" selected="" disabled="">选择子类别名称</option>
                                         </select>
                                         @error('subcategory_id')
                                             <span class="alert text-danger">{{ $message }}</span>
@@ -64,9 +64,9 @@
                                 </div>
                                 <div class="col-md-3">
                                     <div class="form-group">
-                                        <h5>Sub-SubCategory Name <span class="text-danger">*</span></h5>
+                                        <h5>子子类别名称 <span class="text-danger">*</span></h5>
                                         <select class="custom-select" name="sub_subcategory_id" aria-label="Default select example">
-                                            <option value="" selected="" disabled="">Select Sub-SubCategory Name</option>
+                                            <option value="" selected="" disabled="">选择子子类别名称</option>
                                         </select>
                                         @error('sub_subcategory_id')
                                             <span class="alert text-danger">{{ $message }}</span>
@@ -83,7 +83,7 @@
                                     <div class="form-group">
                                         <h5>产品名称 EN <span class="text-danger">*</span></h5>
                                         <div class="controls">
-                                            <input type="text" name="product_name_en" class="form-control" required="" data-validation-required-message="这是必填栏"> <div class="help-block"></div>
+                                            <input type="text" name="product_name_en" class="form-control" data-validation-required-message="这是必填栏"> <div class="help-block"></div>
                                         </div>
                                         @error('product_name_en')
                                             <span class="alert text-danger">{{ $message }}</span>

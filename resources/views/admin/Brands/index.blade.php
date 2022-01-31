@@ -11,7 +11,7 @@
             <div class="col-md-8 col-lg-8">
                 <div class="box">
                     <div class="box-header with-border">
-                        <h3 class="box-title">All Brands Data Table</h3>
+                        <h3 class="box-title">所有品牌数据表</h3>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -130,10 +130,10 @@
                     <div class="box-body">
                         <form action="{{ route('brands.store') }}" method="post" enctype="multipart/form-data">
                             @csrf
-                            <div class="form-group">
+                            <div class="form-group hidden">
                                 <h5>Brand Name EN <span class="text-danger">*</span></h5>
                                 <div class="controls">
-                                    <input type="text" name="brand_name_en" class="form-control" required="" data-validation-required-message="这是必填栏"> <div class="help-block"></div>
+                                    <input type="text" name="brand_name_en" class="form-control" data-validation-required-message="这是必填栏"> <div class="help-block"></div>
                                 </div>
                                 @error('brand_name_en')
                                     <span class="alert text-danger">{{ $message }}</span>

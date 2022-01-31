@@ -27,8 +27,29 @@
     <li class="{{ ($route == 'admin.dashboard') ? 'active':'' }}">
         <a href="{{ route('admin.dashboard') }}">
             <i data-feather="pie-chart"></i>
-            <span>Dashboard</span>
+            <span>仪表板</span>
         </a>
+    </li>
+
+    <li class="treeview {{ ($route == 'categories.index') ? 'active' : '' }}">
+        <a href="#">
+        <i data-feather="message-circle"></i>
+        <span>类别</span>
+        <span class="pull-right-container">
+            <i class="fa fa-angle-right pull-right"></i>
+        </span>
+        </a>
+        <ul class="treeview-menu">
+            <li class=" {{ ($route == 'categories.index') ? 'active' : '' }}">
+                <a href="{{ route('categories.index') }}"><i class="ti-more"></i>所有类别</a>
+            </li>
+            <li class=" {{ ($route == 'subcategories.index') ? 'active' : '' }}">
+                <a href="{{ route('subcategories.index') }}"><i class="ti-more"></i>所有子类别</a>
+            </li>
+            <li class=" {{ ($route == 'subsubcategories.index') ? 'active' : '' }}">
+                <a href="{{ route('subsubcategories.index') }}"><i class="ti-more"></i>所有子子类别</a>
+            </li>
+        </ul>
     </li>
 
     <li class="treeview {{ ($route == 'products.index') ? 'active' : '' }}">
@@ -100,27 +121,7 @@
         </li>
         </ul>
     </li>
-    <li class="treeview {{ ($route == 'categories.index') ? 'active' : '' }}">
-        <a href="#">
-        <i data-feather="message-circle"></i>
-        <span>Category</span>
-        <span class="pull-right-container">
-            <i class="fa fa-angle-right pull-right"></i>
-        </span>
-        </a>
-        <ul class="treeview-menu">
-            <li class=" {{ ($route == 'categories.index') ? 'active' : '' }}">
-                <a href="{{ route('categories.index') }}"><i class="ti-more"></i>All Category</a>
-            </li>
-            <li class=" {{ ($route == 'subcategories.index') ? 'active' : '' }}">
-                <a href="{{ route('subcategories.index') }}"><i class="ti-more"></i>All SubCategory</a>
-            </li>
-            <li class=" {{ ($route == 'subsubcategories.index') ? 'active' : '' }}">
-                <a href="{{ route('subsubcategories.index') }}"><i class="ti-more"></i>All Sub-SubCategory</a>
-            </li>
-        </ul>
-    </li>
-
+    
     <li class="treeview {{ ($prefix == '/slider') ? 'active' : '' }}">
         <a href="#">
         <i data-feather="file"></i> <span>Slider</span>

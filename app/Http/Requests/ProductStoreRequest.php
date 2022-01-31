@@ -28,7 +28,7 @@ class ProductStoreRequest extends FormRequest
             'category_id' => 'required|numeric',
             'subcategory_id' => 'required|numeric',
             'sub_subcategory_id' => 'required|numeric',
-            'product_name_en' => 'required',
+            # 'product_name_en' => 'required',
             'product_name_bn' => 'required',
             'product_code' => 'nullable',
             'product_qty' => 'required|numeric',

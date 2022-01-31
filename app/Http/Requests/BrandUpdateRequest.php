@@ -24,7 +24,7 @@ class BrandUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'brand_name_en' => 'required',
+            # 'brand_name_en' => 'required',
             'brand_name_bn' => 'required',
             'brand_image' => 'image|mimes:png,jpg',
         ];
