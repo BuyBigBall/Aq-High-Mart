@@ -86,79 +86,79 @@
     
     <li class="treeview {{ Request::is('admin/orders*') ? 'active' : '' }}">
         <a href="#">
-        <i data-feather="file"></i> <span>Orders</span>
+        <i data-feather="file"></i> <span>订单</span>
         <span class="pull-right-container">
             <i class="fa fa-angle-right pull-right"></i>
         </span>
         </a>
         <ul class="treeview-menu">
             <li class=" {{ route('orders.index') ? 'active' : '' }}">
-                <a href="{{ route('orders.index') }}"><i class="ti-more"></i>All Orders</a>
+                <a href="{{ route('orders.index') }}"><i class="ti-more"></i>所有订单</a>
             </li>
             <li class=" {{ Request::is('admin/orders/pending') ? 'active' : '' }}">
-                <a href="{{ route('pending.orders') }}"><i class="ti-more"></i>Pending Orders</a>
+                <a href="{{ route('pending.orders') }}"><i class="ti-more"></i>挂单</a>
             </li>
             <li class=" {{ Request::is('admin/orders/confirmed') ? 'active' : '' }}">
-                <a href="{{ route('confirmed.orders') }}"><i class="ti-more"></i>Confirmed Orders</a>
+                <a href="{{ route('confirmed.orders') }}"><i class="ti-more"></i>确认订单</a>
             </li>
             <li class=" {{ Request::is('admin/orders/processing') ? 'active' : '' }}">
-                <a href="{{ route('processing.orders') }}"><i class="ti-more"></i>Processing Orders</a>
+                <a href="{{ route('processing.orders') }}"><i class="ti-more"></i>处理订单</a>
             </li>
             <li class=" {{ Request::is('admin/orders/picked') ? 'active' : '' }}">
-                <a href="{{ route('picked.orders') }}"><i class="ti-more"></i>Picked Orders</a>
+                <a href="{{ route('picked.orders') }}"><i class="ti-more"></i>精选订单</a>
             </li>
             <li class=" {{ Request::is('admin/orders/shipped') ? 'active' : '' }}">
-                <a href="{{ route('shipped.orders') }}"><i class="ti-more"></i>Shipped Orders</a>
+                <a href="{{ route('shipped.orders') }}"><i class="ti-more"></i>已发货订单</a>
             </li>
             <li class=" {{ Request::is('admin/order/delivered*') ? 'active' : '' }}">
-                <a href="{{ route('delivered.orders') }}"><i class="ti-more"></i>Delivered Orders</a>
+                <a href="{{ route('delivered.orders') }}"><i class="ti-more"></i>已交付订单</a>
             </li>
             <li class=" {{ Request::is('admin/orders/cancel') ? 'active' : '' }}">
-                <a href="{{ route('cancel.orders') }}"><i class="ti-more"></i>Cancel Orders</a>
+                <a href="{{ route('cancel.orders') }}"><i class="ti-more"></i>取消订单</a>
             </li>
             <li class=" {{ Request::is('admin/orders/return') ? 'active' : '' }}">
-                <a href="{{ route('return.orders') }}"><i class="ti-more"></i>Return Orders</a>
+                <a href="{{ route('return.orders') }}"><i class="ti-more"></i>退货单</a>
             </li>
         </ul>
     </li>
 
     <li class="treeview {{ ($prefix == '/slider') ? 'active' : '' }}">
         <a href="#">
-        <i data-feather="file"></i> <span>Slider</span>
+        <i data-feather="file"></i> <span>滑块</span>
         <span class="pull-right-container">
             <i class="fa fa-angle-right pull-right"></i>
         </span>
         </a>
         <ul class="treeview-menu">
             <li class=" {{ ($route == '/slider') ? 'active' : '' }}">
-                <a href="{{ route('slider.index') }}"><i class="ti-more"></i>Manage Slider</a>
+                <a href="{{ route('slider.index') }}"><i class="ti-more"></i>管理滑块</a>
             </li>
         </ul>
     </li>
 
     <li class="treeview {{ ($prefix == '/coupons') ? 'active' : '' }}">
         <a href="#">
-        <i data-feather="file"></i> <span>Coupons</span>
+        <i data-feather="file"></i> <span>优惠券</span>
         <span class="pull-right-container">
             <i class="fa fa-angle-right pull-right"></i>
         </span>
         </a>
         <ul class="treeview-menu">
             <li class=" {{ ($route == '/coupons') ? 'active' : '' }}">
-                <a href="{{ route('coupons.index') }}"><i class="ti-more"></i>Manage Coupon</a>
+                <a href="{{ route('coupons.index') }}"><i class="ti-more"></i>管理优惠券</a>
             </li>
         </ul>
     </li>
     <li class="treeview {{ ($prefix == '/division') ? 'active' : '' }}">
         <a href="#">
-        <i data-feather="file"></i> <span>Shipping Area</span>
+        <i data-feather="file"></i> <span>装运区</span>
         <span class="pull-right-container">
             <i class="fa fa-angle-right pull-right"></i>
         </span>
         </a>
         <ul class="treeview-menu">
             <li class=" {{ ($route == '/division') ? 'active' : '' }}">
-                <a href="{{ route('division.index') }}"><i class="ti-more"></i>Ship Division</a>
+                <a href="{{ route('division.index') }}"><i class="ti-more"></i>船舶事业部</a>
             </li>
             <li class=" {{ ($route == '/division') ? 'active' : '' }}">
                 <a href="{{ route('district.index') }}"><i class="ti-more"></i>Ship District</a>
@@ -169,12 +169,12 @@
         </ul>
     </li>
 
-    <li class="header nav-small-cap">User Interface</li>
+    <li class="header nav-small-cap">用户界面</li>
 
     <li class="treeview">
         <a href="#">
         <i data-feather="grid"></i>
-        <span>Components</span>
+        <span>组件</span>
         <span class="pull-right-container">
             <i class="fa fa-angle-right pull-right"></i>
         </span>
