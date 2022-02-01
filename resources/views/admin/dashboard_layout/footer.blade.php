@@ -9,7 +9,7 @@
         </li>
     </ul>
 </div>
-    &copy; <span id="copy-year">2020</span> <a href="#">{{ env('SHOP_NAME') }} </a>. 版权所有。
+    版权所有 copyright&copy;<span id="copy-year">2020</span> <a href="#">{{ env('SHOP_NAME') }} </a>。
     <script>
         var d = new Date();
         var year = d.getFullYear();
