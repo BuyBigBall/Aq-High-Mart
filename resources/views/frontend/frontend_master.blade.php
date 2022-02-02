@@ -52,15 +52,15 @@
                 </div>
                 <div class="col-md-4">
                     <ul class="list-group">
-                        <li class="list-group-item">Price: <strong class="text-danger">BDT
+                        <li class="list-group-item">价格: <strong class="text-danger">元
                         <span id="price"></span>
                         </strong>
                         <del id="oldprice"></del>
                     </li>
-                        <li class="list-group-item">Code: <strong id="pcode"></strong></li>
-                        <li class="list-group-item">Category: <strong id="category"></strong></li>
-                        <li class="list-group-item">Brand: <strong id="brand"></strong></li>
-                        <li class="list-group-item">Stock:
+                        <li class="list-group-item">代码: <strong id="pcode"></strong></li>
+                        <li class="list-group-item">类别: <strong id="category"></strong></li>
+                        <li class="list-group-item">品牌: <strong id="brand"></strong></li>
+                        <li class="list-group-item">库存:
                         <span id="Instock" class="bdage bdage-pill badge-success" style="background: green; color: white"></span>
                         <span id="Outofstock" class="bdage bdage-pill badge-danger" style="background: red; color: white"></span>
                     </li>
@@ -70,17 +70,17 @@
                     <div class="form-group" id="colorArea">
                         <label for="color">Choose Color</label>
                         <select class="form-control" id="color" name="color">
-                            <option>--Select Color--</option>
+                            <option>--选择颜色--</option>
                         </select>
                     </div>
                     <div class="form-group" id="sizeArea">
                         <label for="size">Choose Size</label>
                         <select class="form-control" id="size" name="size">
-                            <option>--Select Size--</option>
+                            <option>--选择大小--</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="product_qty">Qty</label>
+                        <label for="product_qty">数量</label>
                         <input type="number" name="quantity" id="product_qty" value="1" min="1">
                     </div>
                     <input type="hidden" id="product_id">
@@ -90,8 +90,8 @@
             </div>
         </div>
         {{-- <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+        <button type="button" class="btn btn-primary">保存更改</button>
         </div> --}}
     </div>
     </div>

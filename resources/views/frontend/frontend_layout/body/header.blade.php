@@ -181,7 +181,7 @@
                                 <li class="active dropdown yamm-fw"> <a href="{{ route('home') }}"
                                         data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">
                                         @if (session()->get('language') == 'english')
-                                        Home
+                                            Home
                                         @else
                                             首页
                                         @endif

@@ -1,5 +1,5 @@
 <section class="section featured-product wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
-    <h3 class="section-title">Related products</h3>
+    <h3 class="section-title">相关产品</h3>
     <div class="owl-carousel home-owl-carousel upsell-product custom-carousel owl-theme outer-top-xs"
         style="opacity: 1; display: block;">
 

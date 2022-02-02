@@ -1773,7 +1773,7 @@ header{background:#157ed2}
 .sidebar .sidebar-module-container .sidebar-widget .sidebar-widget-body .accordion .accordion-group .accordion-heading .accordion-toggle {
   clear: both;
   display: block;
-  font-family: 'Open Sans', sans-serif, sans-serif;
+  font-family: "Microsoft YaHei", tahoma, arial, "Hiragino Sans GB", "\\5b8b体", sans-serif;
   font-size: 13px;
   line-height: 28px;
 }
@@ -1878,7 +1878,7 @@ header{background:#157ed2}
 .sidebar .sidebar-module-container .sidebar-widget .sidebar-widget-body .list li {
   clear: both;
   display: block;
-  font-family: 'Open Sans', sans-serif, sans-serif;
+  font-family: "Microsoft YaHei", tahoma, arial, "Hiragino Sans GB", "\\5b8b体", sans-serif;
   font-size: 13px;
   font-weight: normal;
   line-height: 28px;
@@ -3001,7 +3001,7 @@ age-container #owl-main .owl-next {
 }
 .cnt-strip .new-label .text {
   color: #fff;
-  font-family: 'Open Sans', sans-serif, sans-serif;
+  font-family: "Microsoft YaHei", tahoma, arial, "Hiragino Sans GB", "\\5b8b体", sans-serif;
   font-size: 14px;
   font-weight: bold;
   line-height: 22px;
@@ -3511,8 +3511,8 @@ age-container #owl-main .owl-next {
 .breadcrumb ul li:after {
   color: #666666;
   content: "/";
-  font-family: 'Open Sans', sans-serif, sans-serif;
-  font-size: 12px;
+  font-family: "Microsoft YaHei", tahoma, arial, "Hiragino Sans GB", "\\5b8b体", sans-serif;
+  font-size: 13px;
   line-height: 24px;
   margin-left: 9px;
   margin-right: -4px;
@@ -3523,8 +3523,8 @@ age-container #owl-main .owl-next {
 }
 .breadcrumb ul li a {
   color: #666666;
-  font-family: 'Open Sans', sans-serif, sans-serif;
-  font-size: 12px;
+  font-family: "Microsoft YaHei", tahoma, arial, "Hiragino Sans GB", "\\5b8b体", sans-serif;
+  font-size: 13px;
   line-height: 24px;
   font-weight: 500;
 }
@@ -3630,7 +3630,7 @@ age-container #owl-main .owl-next {
   -moz-border-radius: 0;
   border-radius: 0;
   color: #666666;
-  font-family: 'Open Sans', sans-serif, sans-serif;
+  font-family: "Microsoft YaHei", tahoma, arial, "Hiragino Sans GB", "\\5b8b体", sans-serif;
   line-height: 18px;
   border: none !important;
   padding: 0px;
@@ -3641,14 +3641,14 @@ age-container #owl-main .owl-next {
 }
 .filters-container .lbl-cnt {
   color: #666666;
-  font-family: 'Open Sans', sans-serif, sans-serif;
+  font-family: "Microsoft YaHei", tahoma, arial, "Hiragino Sans GB", "\\5b8b体", sans-serif;
   font-size: 12px;
   line-height: 24px;
 }
 .filters-container .lbl-cnt .lbl {
   color: #666666;
   display: inline-block;
-  font-family: 'Open Sans', sans-serif, sans-serif;
+  font-family: "Microsoft YaHei", tahoma, arial, "Hiragino Sans GB", "\\5b8b体", sans-serif;
   font-size: 12px;
   line-height: 28px;
   margin-right: 10px;
@@ -3704,7 +3704,7 @@ age-container #owl-main .owl-next {
 .filters-container .pagination-container ul li a {
   color: #666666;
   display: inline-block;
-  font-family: 'Open Sans', sans-serif, sans-serif;
+  font-family: "Microsoft YaHei", tahoma, arial, "Hiragino Sans GB", "\\5b8b体", sans-serif;
   font-size: 13px;
   line-height: 20px;
   padding: 0 3px;
@@ -4213,7 +4213,7 @@ age-container #owl-main .owl-next {
 }
 .product-tabs .tab-content .tab-pane .product-reviews .reviews .review {
   margin-bottom: 20px;
-  font-family: 'Open Sans', sans-serif, sans-serif;
+  font-family: "Microsoft YaHei", tahoma, arial, "Hiragino Sans GB", "\\5b8b体", sans-serif;
   text-transform: none;
   background:#f8f8f8;
   padding:20px
@@ -5108,7 +5108,7 @@ age-container #owl-main .owl-next {
 }
 
 .checkout-box .checkout-steps .checkout-step-01 .already-registered-login form .form-group .info-title {
-  font-family: 'Open Sans', sans-serif, sans-serif;
+  font-family: "Microsoft YaHei", tahoma, arial, "Hiragino Sans GB", "\\5b8b体", sans-serif;
   font-weight: normal;
   margin-bottom: 5px;
   font-size: 13px;
@@ -5333,7 +5333,7 @@ age-container #owl-main .owl-next {
   text-transform: uppercase;
 }
 .shopping-cart .shopping-cart-table table tbody tr .cart-product-name-info .cart-product-info span span {
-  font-family: 'Open Sans', sans-serif, sans-serif;
+  font-family: "Microsoft YaHei", tahoma, arial, "Hiragino Sans GB", "\\5b8b体", sans-serif;
   font-size: 12px;
   text-transform: lowercase;
   margin-left: 14px;
@@ -5361,7 +5361,7 @@ age-container #owl-main .owl-next {
   display: block;
 }
 .shopping-cart .estimate-ship-tax table thead tr th p {
-  font-family: 'Open Sans', sans-serif, sans-serif;
+  font-family: "Microsoft YaHei", tahoma, arial, "Hiragino Sans GB", "\\5b8b体", sans-serif;
   font-size: 13px;
   color: #666666;
   font-weight: normal;

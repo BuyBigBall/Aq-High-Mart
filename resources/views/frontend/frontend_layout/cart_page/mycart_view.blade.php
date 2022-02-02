@@ -14,13 +14,13 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th>Image</th>
-                                        <th>Name</th>
-                                        <th>Color</th>
-                                        <th>Size</th>
-                                        <th>Qty</th>
-                                        <th>Subtotal</th>
-                                        <th>Remove</th>
+                                        <th>图片</th>
+                                         <th>产品名称</th>
+                                         <th>颜色</th>
+                                         <th>尺寸</th>
+                                         <th>数量</th>
+                                         <th>小计</th>
+                                         <th>移除</th>
                                     </tr>
                                 </thead>
                                 <tfoot>
@@ -28,11 +28,9 @@
                                         <td colspan="7">
                                             <div class="shopping-cart-btn">
                                                 <span class="">
-                                                    <a href="#" class="btn btn-upper btn-primary outer-left-xs">Continue
-                                                        Shopping</a>
+                                                    <a href="#" class="btn btn-upper btn-primary outer-left-xs">继续购物</a>
                                                     <a href="#"
-                                                        class="btn btn-upper btn-primary pull-right outer-right-xs">Update
-                                                        shopping cart</a>
+                                                        class="btn btn-upper btn-primary pull-right outer-right-xs">更新购物车</a>
                                                 </span>
                                             </div><!-- /.shopping-cart-btn -->
                                         </td>
@@ -48,8 +46,8 @@
                             <thead>
                                 <tr>
                                     <th>
-                                        <span class="estimate-title">Estimate shipping and tax</span>
-                                        <p>Enter your destination to get shipping and tax.</p>
+                                        <span class="estimate-title">估计运费和税</span>
+                                        <p>输入您的目的地以获取运费和税金。</p>
                                     </th>
                                 </tr>
                             </thead><!-- /thead -->
@@ -57,28 +55,28 @@
                                 <tr>
                                     <td>
                                         <div class="form-group">
-                                            <label class="info-title control-label">Country <span>*</span></label>
+                                            <label class="info-title control-label">国家 <span>*</span></label>
                                             <select class="form-control unicase-form-control selectpicker"
                                                 style="display: none;">
-                                                <option>--Select options--</option>
-                                                <option>India</option>
+                                                <option>--选择选项--</option>
+                                                <option>China</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label class="info-title control-label">State/Province <span>*</span></label>
+                                            <label class="info-title control-label">州/省 <span>*</span></label>
                                             <select class="form-control unicase-form-control selectpicker"
                                                 style="display: none;">
-                                                <option>--Select options--</option>
-                                                <option>TamilNadu</option>
+                                                <option>--选择选项--</option>
+                                                <option>北京</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label class="info-title control-label">Zip/Postal Code</label>
+                                            <label class="info-title control-label">邮编/邮政编码</label>
                                             <input type="text" class="form-control unicase-form-control text-input"
                                                 placeholder="">
                                         </div>
                                         <div class="pull-right">
-                                            <button type="submit" class="btn-upper btn btn-primary">GET A QOUTE</button>
+                                            <button type="submit" class="btn-upper btn btn-primary">获取报价</button>
                                         </div>
                                     </td>
                                 </tr>
@@ -93,8 +91,8 @@
                             <thead>
                                 <tr>
                                     <th>
-                                        <span class="estimate-title">Discount Code</span>
-                                        <p>Enter your coupon code if you have one..</p>
+                                        <span class="estimate-title">折扣码</span>
+                                        <p>如果您有优惠券代码，请输入您的优惠券代码。</p>
                                     </th>
                                 </tr>
                             </thead>
@@ -103,11 +101,11 @@
                                     <td>
                                         <div class="form-group">
                                             <input type="text" class="form-control unicase-form-control text-input"
-                                                placeholder="You Coupon.." id="coupon_name">
+                                                placeholder="您的优惠券" id="coupon_name">
                                         </div>
                                         <div class="clearfix pull-right">
                                             <button type="submit" class="btn-upper btn btn-primary"
-                                            onclick="applyCoupon()">APPLY COUPON</button>
+                                            onclick="applyCoupon()">申请优惠券</button>
                                         </div>
                                     </td>
                                 </tr>
@@ -124,9 +122,8 @@
                                 <tr>
                                     <td>
                                         <div class="cart-checkout-btn pull-right">
-                                            <a href="{{ route('checkout-page') }}" type="submit" class="btn btn-primary checkout-btn">PROCCED TO
-                                                CHEKOUT</a>
-                                            {{-- <span class="">Checkout with multiples address!</span> --}}
+                                            <a href="{{ route('checkout-page') }}" type="submit" class="btn btn-primary checkout-btn">进行结算</a>
+                                            {{-- <span class="">使用多个地址结帐！</span> --}}
                                         </div>
                                     </td>
                                 </tr>
@@ -150,15 +147,21 @@
                 success: function(response) {
                     var rows = ""
                     $.each(response.carts, function(key, value) {
+
+                        var option_color = "--Select Color--";
+                        var option_size = "--Select Size--";
+                        option_color = value.options.color==null ? '' : value.options.color.replace("--Select Color--", '');
+                        option_size = value.options.size==null ? '' : value.options.size.replace("--Select Size--", '');
+
                         rows += `<tr>
                                 <td class="col-md-2"><img src="/${value.options.image} " alt="imga" style="width:60px; height:60px;"></td>
                                 <td class="col-md-2">
                                     <div class="product-name"><a href="#">${value.name}</a></div>
-                                    <div class="price">$${value.price}</div>
+                                    <div class="price">${value.price} 元</div>
                                 </td>
-                                <td class="col-md-2">${value.options.color == null ? `<span>...</span>`:`<strong>${value.options.color}</strong>`}</td>
+                                <td class="col-md-2">${option_color}</td>
 
-                                <td class="col-md-2">${value.options.size == null ? `<span>...</span>`:`<strong>${value.options.size}</strong>`}</td>
+                                <td class="col-md-2">${option_size}</td>
 
                                 <td class="col-md-2">
                                 ${value.qty > 1
@@ -170,7 +173,7 @@
                                 <button type="submit" class="btn btn-success btn-sm" id="${value.rowId}" onclick="cartIncrement(this.id)">+</button>
                                 </td>
 
-                                <td class="col-md-2"><strong>$${value.subtotal}</strong></td>
+                                <td class="col-md-2"><strong>${value.subtotal} 元</strong></td>
 
                                 <td class="col-md-1 close-btn">
                                     <button type="submit" class="" id="${value.rowId}" onclick="cartRemove(this.id)"><i class="fa fa-times"></i></button>
@@ -349,10 +352,10 @@
                             `<tr>
                                     <th>
                                         <div class="cart-sub-total">
-                                            Subtotal<span class="inner-left-md">$${data.total}</span>
+                                            小计<span class="inner-left-md">${data.total}元</span>
                                         </div>
                                         <div class="cart-grand-total">
-                                            Grand Total<span class="inner-left-md">$${data.total}</span>
+                                            合计<span class="inner-left-md">${data.total}元</span>
                                         </div>
                                     </th>
                             </tr>`
@@ -361,15 +364,15 @@
                         $('#couponCalField').html(
                             `<tr>
                                     <th>
-                                        <div class="cart-sub-total">Subtotal Amount<span class="inner-left-md">$ ${data.subtotal}</span>
+                                        <div class="cart-sub-total">小计金额<span class="inner-left-md">${data.subtotal} 元</span>
                                         </div>
-                                        <div class="cart-sub-total">Coupon Name<span class="inner-left-md">${data.coupon_name}</span>
+                                        <div class="cart-sub-total">优惠券名称<span class="inner-left-md">${data.coupon_name}</span>
                                             <button type="submit" onclick="couponRemove()"><i class="fa fa-times"></i></button>
                                         </div>
-                                        <div class="cart-sub-total">Discount Amount<span class="inner-left-md">$ ${data.discount_amount}</span>
+                                        <div class="cart-sub-total">折扣金额<span class="inner-left-md">${data.discount_amount} 元</span>
                                         </div>
                                         <div class="cart-grand-total">
-                                            Grand Total Amount<span class="inner-left-md">$ ${data.total_amount}</span>
+                                            总金额<span class="inner-left-md">${data.total_amount} 元</span>
                                         </div>
                                     </th>
                             </tr>`

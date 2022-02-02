@@ -2,7 +2,7 @@
 <div class="container">
     <div class="breadcrumb-inner">
     <ul class="list-inline list-unstyled">
-        <li><a href="{{ route('home') }}">Home</a></li>
+        <li style="min-width:6rem;"><a href="{{ route('home') }}"> 首页</a></li>
         @if (request()->routeIs('category'))
         <li class="request()->routeIs('category')? 'active': ''">类别</li>
         @elseif (request()->routeIs('login'))

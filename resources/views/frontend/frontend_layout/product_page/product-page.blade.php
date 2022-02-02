@@ -124,7 +124,8 @@
                                     <div class="rating-reviews m-t-20">
                                         <div class="row">
                                             <div class="col-sm-3">
-                                                <div class="rating rateit-small rateit"><button id="rateit-reset-5"
+                                                <div class="rating rateit-small rateit">
+                                                    <!-- <button id="rateit-reset-5"
                                                         data-role="none" class="rateit-reset" aria-label="reset rating"
                                                         aria-controls="rateit-range-5" style="display: none;"></button>
                                                     <div id="rateit-range-5" class="rateit-range" tabindex="0" role="slider"
@@ -134,12 +135,14 @@
                                                         <div class="rateit-selected" style="height: 14px; width: 56px;">
                                                         </div>
                                                         <div class="rateit-hover" style="height:14px"></div>
-                                                    </div>
+                                                    </div> -->
                                                 </div>
                                             </div>
                                             <div class="col-sm-8">
                                                 <div class="reviews">
-                                                    <a href="#" class="lnk">(13 Reviews)</a>
+                                                    @if ( ! empty($review_count) )
+                                                    <a href="#" class="lnk">({{ $review_count }} Reviews)</a>
+                                                    @endif
                                                 </div>
                                             </div>
                                         </div><!-- /.row -->
@@ -149,15 +152,15 @@
                                         <div class="row">
                                             <div class="col-sm-2">
                                                 <div class="stock-box">
-                                                    <span class="label">Availability :</span>
+                                                    <span class="label">可用性 :</span>
                                                 </div>
                                             </div>
                                             <div class="col-sm-9">
                                                 <div class="stock-box">
                                                     @if ($product->product_qty<1)
-                                                    <span class="value">Out of Stock</span>
+                                                    <span class="value">缺货</span>
                                                     @else
-                                                    <span class="value">In Stock</span>
+                                                    <span class="value">有现货</span>
                                                     @endif
                                                 </div>
                                             </div>
@@ -210,10 +213,10 @@
                                             <div class="form-group">
                                                 @if ($product->product_color_en == NULL)
                                                 @else
-                                                <label class="info-title control-label">Choose Color <span>*</span></label>
+                                                <label class="info-title control-label">选择颜色 <span>*</span></label>
                                                 <select class="form-control unicase-form-control selectpicker" style="display: none;"
                                                 id="color">
-                                                    <option selected="" disabled="">--Select color--</option>
+                                                    <option selected="" disabled="">--选择颜色--</option>
                                                     @if (session()->get('langiage') == 'chinese')
                                                     @foreach ($colors_bn as $item)
                                                         <option value="{{ $item }}">{{ ucwords($item) }}</option>
@@ -231,10 +234,10 @@
                                             <div class="form-group">
                                                 @if ($product->product_size_en == NULL)
                                                 @else
-                                                <label class="info-title control-label">Choose Size <span>*</span></label>
+                                                <label class="info-title control-label">选择尺寸 <span>*</span></label>
                                                 <select class="form-control unicase-form-control selectpicker" style="display: none;"
                                                 id="size">
-                                                    <option selected="" disabled="">--Select size--</option>
+                                                    <option selected="" disabled="">--选择大小--</option>
                                                     @if (session()->get('langiage') == 'chinese')
                                                     @foreach ($size_bn as $item)
                                                         <option value="{{ $item }}">{{ ucwords($item) }}</option>
@@ -254,7 +257,7 @@
                                     <div class="quantity-container info-container">
                                         <div class="row">
                                             <div class="col-sm-2">
-                                                <span class="label">Qty :</span>
+                                                <span class="label">数量 :</span>
                                             </div>
 
                                             <div class="col-sm-2">
@@ -274,7 +277,7 @@
                                             <div class="col-sm-7">
                                                 <input type="hidden" name="" id="product_id" value="{{ $product->id }}" min="1">
                                                 <button type="submit" class="btn btn-primary" onclick="addToCart()">
-                                                    <i class="fa fa-shopping-cart inner-right-vs"></i> ADD TO CART</button>
+                                                    <i class="fa fa-shopping-cart inner-right-vs"></i> 添加到购物车</button>
                                             </div>
 
 
@@ -289,9 +292,9 @@
                         <div class="row">
                             <div class="col-sm-3">
                                 <ul id="product-tabs" class="nav nav-tabs nav-tab-cell">
-                                    <li class="active"><a data-toggle="tab" href="#description">DESCRIPTION</a></li>
-                                    <li><a data-toggle="tab" href="#review">REVIEW</a></li>
-                                    <li><a data-toggle="tab" href="#tags">TAGS</a></li>
+                                    <li class="active"><a data-toggle="tab" href="#description">描述</a></li>
+                                    <li><a data-toggle="tab" href="#review">评论</a></li>
+                                    <li><a data-toggle="tab" href="#tags">标签</a></li>
                                 </ul><!-- /.nav-tabs #product-tabs -->
                             </div>
                             <div class="col-sm-9">
@@ -314,7 +317,7 @@
                                         <div class="product-tab">
 
                                             <div class="product-reviews">
-                                                <h4 class="title">Customer Reviews</h4>
+                                                <h4 class="title">顾客评论</h4>
 
                                                 <div class="reviews">
                                                     <div class="review">
@@ -332,7 +335,7 @@
 
 
                                             <div class="product-add-review">
-                                                <h4 class="title">Write your own review</h4>
+                                                <h4 class="title">写你自己的评论</h4>
                                                 <div class="review-table">
                                                     <div class="table-responsive">
                                                         <table class="table">
@@ -398,13 +401,13 @@
                                                             <div class="row">
                                                                 <div class="col-sm-6">
                                                                     <div class="form-group">
-                                                                        <label for="exampleInputName">Your Name <span
+                                                                        <label for="exampleInputName">你的名字 <span
                                                                                 class="astk">*</span></label>
                                                                         <input type="text" class="form-control txt"
                                                                             id="exampleInputName" placeholder="">
                                                                     </div><!-- /.form-group -->
                                                                     <div class="form-group">
-                                                                        <label for="exampleInputSummary">Summary <span
+                                                                        <label for="exampleInputSummary">概要 <span
                                                                                 class="astk">*</span></label>
                                                                         <input type="text" class="form-control txt"
                                                                             id="exampleInputSummary" placeholder="">
@@ -413,7 +416,7 @@
 
                                                                 <div class="col-md-6">
                                                                     <div class="form-group">
-                                                                        <label for="exampleInputReview">Review <span
+                                                                        <label for="exampleInputReview">评论 <span
                                                                                 class="astk">*</span></label>
                                                                         <textarea class="form-control txt txt-review"
                                                                             id="exampleInputReview" rows="4"
@@ -423,8 +426,7 @@
                                                             </div><!-- /.row -->
 
                                                             <div class="action text-right">
-                                                                <button class="btn btn-primary btn-upper">SUBMIT
-                                                                    REVIEW</button>
+                                                                <button class="btn btn-primary btn-upper">提交评论</button>
                                                             </div><!-- /.action -->
 
                                                         </form><!-- /.cnt-form -->
@@ -439,27 +441,25 @@
                                     <div id="tags" class="tab-pane">
                                         <div class="product-tag">
 
-                                            <h4 class="title">Product Tags</h4>
+                                            <h4 class="title">产品标签</h4>
                                             <form role="form" class="form-inline form-cnt">
                                                 <div class="form-container">
 
                                                     <div class="form-group">
-                                                        <label for="exampleInputTag">Add Your Tags: </label>
+                                                        <label for="exampleInputTag">添加您的标签: </label>
                                                         <input type="email" id="exampleInputTag" class="form-control txt">
 
 
                                                     </div>
 
-                                                    <button class="btn btn-upper btn-primary" type="submit">ADD
-                                                        TAGS</button>
+                                                    <button class="btn btn-upper btn-primary" type="submit">添加标签</button>
                                                 </div><!-- /.form-container -->
                                             </form><!-- /.form-cnt -->
 
                                             <form role="form" class="form-inline form-cnt">
                                                 <div class="form-group">
                                                     <label>&nbsp;</label>
-                                                    <span class="text col-md-offset-3">Use spaces to separate tags. Use
-                                                        single quotes (') for phrases.</span>
+                                                    <span class="text col-md-offset-3">用空格分开标签。 对短语使用单引号 (')。</span>
                                                 </div>
                                             </form><!-- /.form-cnt -->
 
