@@ -26,7 +26,7 @@
                                 <div class="form-check form-switch">
                                     <input class="form-check-input" type="checkbox"
                                     id="status" name="slider_status" value="1" {{ $slider->slider_status == 1 ? 'checked': '' }}>
-                                    <label class="form-check-label" for="status">Active Status</label>
+                                    <label class="form-check-label" for="status">活动状态</label>
                                 </div>
                             </div>
                             <h4 class="text-warning">Slider Image Information</h4>

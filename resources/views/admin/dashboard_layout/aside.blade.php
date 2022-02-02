@@ -161,10 +161,10 @@
                 <a href="{{ route('division.index') }}"><i class="ti-more"></i>船舶事业部</a>
             </li>
             <li class=" {{ ($route == '/division') ? 'active' : '' }}">
-                <a href="{{ route('district.index') }}"><i class="ti-more"></i>Ship District</a>
+                <a href="{{ route('district.index') }}"><i class="ti-more"></i>船舶区</a>
             </li>
             <li class=" {{ ($route == '/state') ? 'active' : '' }}">
-                <a href="{{ route('state.index') }}"><i class="ti-more"></i>Ship State</a>
+                <a href="{{ route('state.index') }}"><i class="ti-more"></i>船舶状态</a>
             </li>
         </ul>
     </li>
@@ -180,14 +180,14 @@
         </span>
         </a>
         <ul class="treeview-menu">
-        <li><a href="components_alerts.html"><i class="ti-more"></i>Alerts</a></li>
-        <li><a href="components_badges.html"><i class="ti-more"></i>Badge</a></li>
-        <li><a href="components_buttons.html"><i class="ti-more"></i>Buttons</a></li>
-        <li><a href="components_sliders.html"><i class="ti-more"></i>Sliders</a></li>
-        <li><a href="components_dropdown.html"><i class="ti-more"></i>Dropdown</a></li>
-        <li><a href="components_modals.html"><i class="ti-more"></i>Modal</a></li>
-        <li><a href="components_nestable.html"><i class="ti-more"></i>Nestable</a></li>
-        <li><a href="components_progress_bars.html"><i class="ti-more"></i>Progress Bars</a></li>
+        <li><a href="components_alerts.html"><i class="ti-more"></i>警报</a></li>
+        <li><a href="components_badges.html"><i class="ti-more"></i>徽章</a></li>
+        <li><a href="components_buttons.html"><i class="ti-more"></i>纽扣</a></li>
+        <li><a href="components_sliders.html"><i class="ti-more"></i>滑块</a></li>
+        <li><a href="components_dropdown.html"><i class="ti-more"></i>落下</a></li>
+        <li><a href="components_modals.html"><i class="ti-more"></i>模态</a></li>
+        <li><a href="components_nestable.html"><i class="ti-more"></i>可嵌套</a></li>
+        <li><a href="components_progress_bars.html"><i class="ti-more"></i>进度条</a></li>
         </ul>
     </li>
     </ul>

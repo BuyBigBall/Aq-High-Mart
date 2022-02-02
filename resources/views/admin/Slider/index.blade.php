@@ -41,7 +41,7 @@
                                                     </td>
                                                     <td class="sorting_1">{{ $item->slider_name }}</td>
                                                     <td>{{ $item->slider_title }}</td>
-                                                    <td>                                                        <input data-id="{{$item->id}}" class="toggle-class" type="checkbox" data-onstyle="success" data-offstyle="danger" data-toggle="toggle" data-on="Active" data-off="InActive" {{ $item->slider_status ? 'checked' : '' }}>
+                                                    <td>                                                        <input data-id="{{$item->id}}" class="toggle-class" type="checkbox" data-onstyle="success" data-offstyle="danger" data-toggle="toggle" data-on="活动" data-off="不活动" {{ $item->slider_status ? 'checked' : '' }}>
                                                     </td>
                                                     <td>
                                                         <div class="input-group">

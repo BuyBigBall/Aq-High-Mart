@@ -51,7 +51,7 @@
                                 <div class="form-check form-switch">
                                     <input class="form-check-input" type="checkbox"
                                     id="coupon_status" name="coupon_status" checked value="1">
-                                    <label class="form-check-label" for="coupon_status">Active Status</label>
+                                    <label class="form-check-label" for="coupon_status">活动状态</label>
                                 </div>
                             </div>
                             <div class="text-xs-right">

@@ -47,11 +47,11 @@
                                                     <td>{{ $item->selling_price }}</td>
                                                     <td>
                                                         {{-- @if ($item->status == 1)
-                                                            <span class="badge rounded-pill badge bg-success">Active</span>
+                                                            <span class="badge rounded-pill badge bg-success">活动</span>
                                                         @else
-                                                            <span class="badge rounded-pill bg-danger">InActive</span>
+                                                            <span class="badge rounded-pill bg-danger">不活动</span>
                                                         @endif --}}
-                                                        <input data-id="{{$item->id}}" class="toggle-class" type="checkbox" data-onstyle="success" data-offstyle="danger" data-toggle="toggle" data-on="Active" data-off="InActive" {{ $item->status ? 'checked' : '' }}>
+                                                        <input data-id="{{$item->id}}" class="toggle-class" type="checkbox" data-onstyle="success" data-offstyle="danger" data-toggle="toggle" data-on="活动" data-off="不活动" {{ $item->status ? 'checked' : '' }}>
                                                     </td>
                                                     <td>
                                                         <div class="input-group">
