@@ -186,7 +186,7 @@
                                                                         data-toggle="dropdown" type="button"> <i
                                                                             class="fa fa-shopping-cart"></i> </button>
                                                                     <button class="btn btn-primary cart-btn"
-                                                                        type="button">Add to cart</button>
+                                                                        type="button">添加到购物车</button>
                                                                 </li>
                                                                 <li class="lnk wishlist"> <a class="add-to-cart"
                                                                         href="detail.html" title="Wishlist"> <i
@@ -283,7 +283,7 @@
                                                                                     class="fa fa-shopping-cart"></i>
                                                                             </button>
                                                                             <button class="btn btn-primary cart-btn"
-                                                                                type="button">Add to cart</button>
+                                                                                type="button">添加到购物车</button>
                                                                         </li>
                                                                         <li class="lnk wishlist"> <a class="add-to-cart"
                                                                                 href="detail.html" title="Wishlist"> <i

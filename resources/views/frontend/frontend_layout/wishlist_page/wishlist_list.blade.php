@@ -41,7 +41,7 @@
                                 <td class="col-md-2">
                                     <button class="btn-upper btn btn-primary" type="button" data-toggle="modal"
                                     data-target="#productViewModal" onclick="productView(this.id)"
-                                    id="{{ $product->id }}">Add to cart</button>
+                                    id="{{ $product->id }}">添加到购物车</button>
                                 </td>
                                 <td class="col-md-1 close-btn">
                                     <button type="button" class="" onclick="removeWishlist(this.id)" id={{ $wish->id }}><i class="fa fa-times"></i></button>

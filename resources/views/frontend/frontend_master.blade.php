@@ -84,7 +84,7 @@
                         <input type="number" name="quantity" id="product_qty" value="1" min="1">
                     </div>
                     <input type="hidden" id="product_id">
-                    <button class="btn btn-primary mb-2" type="submit" onclick="addToCart()">Add to Cart</button>
+                    <button class="btn btn-primary mb-2" type="submit" onclick="addToCart()">添加到购物车</button>
 
                 </div>
             </div>

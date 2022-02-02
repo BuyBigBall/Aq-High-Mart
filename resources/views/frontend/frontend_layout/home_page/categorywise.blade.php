@@ -47,7 +47,7 @@
                                 <li class="add-cart-button btn-group">
                                     <button class="btn btn-primary icon" data-toggle="dropdown" type="button"> <i
                                             class="fa fa-shopping-cart"></i> </button>
-                                    <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
+                                    <button class="btn btn-primary cart-btn" type="button">添加到购物车</button>
                                 </li>
                                 <li class="lnk wishlist"> <a class="add-to-cart" href="{{ route('frontend-product-details',['id' => $product->id, 'slug' => $product->product_slug_bn]) }}" title="Wishlist"> <i
                                             class="icon fa fa-heart"></i> </a> </li>

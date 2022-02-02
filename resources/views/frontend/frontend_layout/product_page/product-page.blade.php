@@ -117,11 +117,9 @@
                             <div class="col-sm-6 col-md-7 product-info-block">
                                 <div class="product-info">
                                     <h1 class="name" id="pname">
-                                        @if (session()->get('language') =='chinese')
+                                        
                                         {{ $product->product_name_bn }}
-                                        @else
-                                        {{ $product->product_name_en }}
-                                        @endif
+                                        
                                     </h1>
                                     <div class="rating-reviews m-t-20">
                                         <div class="row">

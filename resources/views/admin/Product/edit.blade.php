@@ -30,7 +30,7 @@
                                         <select class="custom-select" aria-label="Default select example" name="brand_id">
                                             <option selected>选择品牌名称</option>
                                             @foreach ($brands as $brand)
-                                            <option value="{{ $brand->id }}" {{ $brand->id == $product->brand_id ? 'selected': '' }} >{{ $brand->brand_name_en }}</option>
+                                            <option value="{{ $brand->id }}" {{ $brand->id == $product->brand_id ? 'selected': '' }} >{{ $brand->brand_name_bn }}</option>
                                             @endforeach
                                         </select>
                                         @error('brand_id')
@@ -58,7 +58,7 @@
                                         <select class="custom-select" name="subcategory_id" aria-label="Default select example">
                                             <option value="" selected="" disabled="">选择子类别名称</option>
                                             @foreach($subcategories as $sub)
-                                                <option value="{{ $sub->id }}" {{ $sub->id == $product->subcategory_id ? 'selected': '' }} >{{ $sub->subcategory_name_en }}</option>
+                                                <option value="{{ $sub->id }}" {{ $sub->id == $product->subcategory_id ? 'selected': '' }} >{{ $sub->subcategory_name_bn }}</option>
 			                                @endforeach
                                         </select>
                                         @error('subcategory_id')
@@ -72,7 +72,7 @@
                                         <select class="custom-select" name="sub_subcategory_id" aria-label="Default select example">
                                             <option value="" selected="" disabled="">选择 子子类别名称</option>
                                             @foreach($subsubcategories as $subsub)
-                                            <option value="{{ $subsub->id }}" {{ $subsub->id == $product->sub_subcategory_id ? 'selected': '' }} >{{ $subsub->subsubcategory_name_en }}</option>
+                                            <option value="{{ $subsub->id }}" {{ $subsub->id == $product->sub_subcategory_id ? 'selected': '' }} >{{ $subsub->subsubcategory_name_bn }}</option>
                                             @endforeach
                                         </select>
                                         @error('sub_subcategory_id')
@@ -478,7 +478,7 @@
                     $('select[name="sub_subcategory_id"]').html('');
                      var d =$('select[name="subcategory_id"]').empty();
                         $.each(data, function(key, value){
-                            $('select[name="subcategory_id"]').append('<option value="'+ value.id +'">' + value.subcategory_name_en + '</option>');
+                            $('select[name="subcategory_id"]').append('<option value="'+ value.id +'">' + value.subcategory_name_bn + '</option>');
                         });
                   },
               });
@@ -496,7 +496,7 @@
                   success:function(data) {
                      var d =$('select[name="sub_subcategory_id"]').empty();
                         $.each(data, function(key, value){
-                            $('select[name="sub_subcategory_id"]').append('<option value="'+ value.id +'">' + value.subsubcategory_name_en + '</option>');
+                            $('select[name="sub_subcategory_id"]').append('<option value="'+ value.id +'">' + value.subsubcategory_name_bn + '</option>');
                         });
                   },
               });

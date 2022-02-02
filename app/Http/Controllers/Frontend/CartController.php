@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\ShipDivision;
 use Illuminate\Http\Request;
-use Cart;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
@@ -20,33 +20,57 @@ class CartController extends Controller
         }
 
         if($product->discount_price == NULL){
-            Cart::add([
-                'id' => $id,
-                'name' => $request->product_name,
-                'qty' => $request->qty,
-                'price' => $product->selling_price,
-                'weight' => 1,
-                'options' => [
+            // Cart::add([
+            //     'id' => $id,
+            //     'name' => $request->product_name,
+            //     'qty' => $request->qty,
+            //     'price' => $product->selling_price,
+            //     'weight' => 1,
+            //     'options' => [
+            //         'image' => $product->product_thumbnail,
+            //         'size' => $request->size,
+            //         'color' => $request->color,
+            //         ]
+            // ]);
+            Cart::add(
+                $id,
+                $request->product_name,
+                $request->qty,
+                $product->selling_price,
+                1,
+                [
                     'image' => $product->product_thumbnail,
                     'size' => $request->size,
                     'color' => $request->color,
                     ]
-            ]);
+            );
 
             return response()->json(['success' => 'Successfully added on your cart'],200);
         }else{
-            Cart::add([
-                'id' => $id,
-                'name' => $request->product_name,
-                'qty' => $request->qty,
-                'price' => $product->discount_price,
-                'weight' => 1,
-                'options' => [
+            // Cart::add([
+            //     'id' => $id,
+            //     'name' => $request->product_name,
+            //     'qty' => $request->qty,
+            //     'price' => $product->discount_price,
+            //     'weight' => 1,
+            //     'options' => [
+            //         'image' => $product->product_thumbnail,
+            //         'size' => $request->size,
+            //         'color' => $request->color,
+            //         ]
+            // ]);
+            Cart::add(
+                $id,
+                $request->product_name,
+                $request->qty,
+                $product->discount_price,
+                1,
+                [
                     'image' => $product->product_thumbnail,
                     'size' => $request->size,
                     'color' => $request->color,
                     ]
-            ]);
+            );
             return response()->json(['success' => 'Successfully added on your cart'],200);
         }
     }

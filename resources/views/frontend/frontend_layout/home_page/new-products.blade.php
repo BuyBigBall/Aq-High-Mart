@@ -78,7 +78,7 @@
                             <ul class="list-unstyled">
                             <li class="add-cart-button btn-group">
                                 <button data-toggle="tooltip" class="btn btn-primary icon" type="button" title="Add Cart"> <i class="fa fa-shopping-cart"></i> </button>
-                                <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
+                                <button class="btn btn-primary cart-btn" type="button">添加到购物车</button>
                             </li>
                             <li class="lnk wishlist">
                                 <a data-toggle="tooltip" class="add-to-cart" href="{{ route('frontend-product-details',['id' => $product->id, 'slug' => $product->product_slug_bn]) }}" title="Wishlist"> <i class="icon fa fa-heart"></i> </a>
@@ -156,7 +156,7 @@
                             <ul class="list-unstyled">
                             <li class="add-cart-button btn-group">
                                 <button data-toggle="tooltip" class="btn btn-primary icon" type="button" title="Add Cart"> <i class="fa fa-shopping-cart"></i> </button>
-                                <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
+                                <button class="btn btn-primary cart-btn" type="button">添加到购物车</button>
                             </li>
                             <li class="lnk wishlist"> <a data-toggle="tooltip" class="add-to-cart" href="{{ route('frontend-product-details',['id' => $product->id, 'slug' => $product->product_slug_bn]) }}" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> </li>
                             <li class="lnk"> <a data-toggle="tooltip" class="add-to-cart" href="{{ route('frontend-product-details',['id' => $product->id, 'slug' => $product->product_slug_bn]) }}" title="Compare"> <i class="fa fa-signal" aria-hidden="true"></i> </a> </li>

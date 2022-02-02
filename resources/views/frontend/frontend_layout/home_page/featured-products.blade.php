@@ -67,7 +67,7 @@
                                         @endif
 
                                         <!-- Button trigger modal -->
-                                        <button class="btn btn-primary cart-btn" type="button">Add to cart</button>
+                                        <button class="btn btn-primary cart-btn" type="button">添加到购物车</button>
                                     </li>
                                     <li class="lnk wishlist">
                                         <button class="add-to-cart" type="button" title="Wishlist"
