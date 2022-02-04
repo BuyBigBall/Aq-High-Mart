@@ -1,0 +1,1 @@
+ALTER TABLE `ecom`.`coupons` CHANGE `created_at` `created_at` DATETIME DEFAULT NOW() NULL, CHANGE `updated_at` `updated_at` TIMESTAMP DEFAULT NOW() ON UPDATE CURRENT_TIMESTAMP NULL; 

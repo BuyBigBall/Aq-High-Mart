@@ -11,12 +11,12 @@
             <thead>
                 <tr>
                     <th>#</th>
-                    <th>Date</th>
-                    <th>Invoice No</th>
-                    <th>Total</th>
-                    <th>Payment</th>
-                    <th>Status</th>
-                    <th>Action</th>
+                    <th>日期</th>
+                    <th>发票号码</th>
+                    <th>全部的</th>
+                    <th>支付</th>
+                    <th>状态</th>
+                    <th>动作</th>
                 </tr>
             </thead>
             <tbody>
@@ -53,7 +53,7 @@
                 </tr>
                 @empty
                 <tr>
-                    <td>No order placed yet!</td>
+                    <td>还没有下单！</td>
                 </tr>
                 @endforelse
             </tbody>

@@ -92,37 +92,37 @@
         </span>
         </a>
         <ul class="treeview-menu">
-            <li class=" {{ route('orders.index') ? 'active' : '' }}">
+            <li class=" {{ Request::is('admin/orders') ? 'active' : '' }}">
                 <a href="{{ route('orders.index') }}"><i class="ti-more"></i>所有订单</a>
             </li>
-            <li class=" {{ Request::is('admin/orders/pending') ? 'active' : '' }}">
+            <li class=" {{ Request::is('admin/orders/pending*') ? 'active' : '' }}">
                 <a href="{{ route('pending.orders') }}"><i class="ti-more"></i>挂单</a>
             </li>
-            <li class=" {{ Request::is('admin/orders/confirmed') ? 'active' : '' }}">
+            <li class=" {{ Request::is('admin/orders/confirmed*') ? 'active' : '' }}">
                 <a href="{{ route('confirmed.orders') }}"><i class="ti-more"></i>确认订单</a>
             </li>
-            <li class=" {{ Request::is('admin/orders/processing') ? 'active' : '' }}">
+            <li class=" {{ Request::is('admin/orders/processing*') ? 'active' : '' }}">
                 <a href="{{ route('processing.orders') }}"><i class="ti-more"></i>处理订单</a>
             </li>
-            <li class=" {{ Request::is('admin/orders/picked') ? 'active' : '' }}">
+            <li class=" {{ Request::is('admin/orders/picked/*') ? 'active' : '' }}">
                 <a href="{{ route('picked.orders') }}"><i class="ti-more"></i>精选订单</a>
             </li>
-            <li class=" {{ Request::is('admin/orders/shipped') ? 'active' : '' }}">
+            <li class=" {{ Request::is('admin/orders/shipped/*') ? 'active' : '' }}">
                 <a href="{{ route('shipped.orders') }}"><i class="ti-more"></i>已发货订单</a>
             </li>
             <li class=" {{ Request::is('admin/order/delivered*') ? 'active' : '' }}">
                 <a href="{{ route('delivered.orders') }}"><i class="ti-more"></i>已交付订单</a>
             </li>
-            <li class=" {{ Request::is('admin/orders/cancel') ? 'active' : '' }}">
+            <li class=" {{ Request::is('admin/orders/cancel*') ? 'active' : '' }}">
                 <a href="{{ route('cancel.orders') }}"><i class="ti-more"></i>取消订单</a>
             </li>
-            <li class=" {{ Request::is('admin/orders/return') ? 'active' : '' }}">
+            <li class=" {{ Request::is('admin/orders/return*') ? 'active' : '' }}">
                 <a href="{{ route('return.orders') }}"><i class="ti-more"></i>退货单</a>
             </li>
         </ul>
     </li>
 
-    <li class="treeview {{ ($prefix == '/slider') ? 'active' : '' }}">
+    <li class="treeview {{ ($prefix == '/slider') ? 'active' : '' }} hidden">
         <a href="#">
         <i data-feather="file"></i> <span>滑块</span>
         <span class="pull-right-container">
@@ -136,7 +136,7 @@
         </ul>
     </li>
 
-    <li class="treeview {{ ($prefix == '/coupons') ? 'active' : '' }}">
+    <li class="treeview {{  (($prefix == '/coupons') ? 'active' : '') }}">
         <a href="#">
         <i data-feather="file"></i> <span>优惠券</span>
         <span class="pull-right-container">
@@ -144,27 +144,27 @@
         </span>
         </a>
         <ul class="treeview-menu">
-            <li class=" {{ ($route == '/coupons') ? 'active' : '' }}">
+            <li class=" {{ (Request::is('admin/coupons*')) ? 'active' : '' }}">
                 <a href="{{ route('coupons.index') }}"><i class="ti-more"></i>管理优惠券</a>
             </li>
         </ul>
     </li>
     <li class="treeview {{ ($prefix == '/division') ? 'active' : '' }}">
         <a href="#">
-        <i data-feather="file"></i> <span>装运区</span>
+        <i data-feather="file"></i> <span>送货地区管理</span>
         <span class="pull-right-container">
             <i class="fa fa-angle-right pull-right"></i>
         </span>
         </a>
         <ul class="treeview-menu">
-            <li class=" {{ ($route == '/division') ? 'active' : '' }}">
-                <a href="{{ route('division.index') }}"><i class="ti-more"></i>船舶事业部</a>
+            <li class=" {{ (Request::is('admin/division*')) ? 'active' : '' }}">
+                <a href="{{ route('division.index') }}"><i class="ti-more"></i>省级</a>
             </li>
-            <li class=" {{ ($route == '/division') ? 'active' : '' }}">
-                <a href="{{ route('district.index') }}"><i class="ti-more"></i>船舶区</a>
+            <li class=" {{ (Request::is('admin/district*')) ? 'active' : '' }}">
+                <a href="{{ route('district.index') }}"><i class="ti-more"></i>市级</a>
             </li>
-            <li class=" {{ ($route == '/state') ? 'active' : '' }}">
-                <a href="{{ route('state.index') }}"><i class="ti-more"></i>船舶状态</a>
+            <li class=" {{ (Request::is('admin/state*')) ? 'active' : '' }}">
+                <a href="{{ route('state.index') }}"><i class="ti-more"></i>区级</a>
             </li>
         </ul>
     </li>

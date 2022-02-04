@@ -47,7 +47,7 @@
                                 @enderror
                             </div>
                             <div class="col-md-12 widget-user-image">
-                                <img  id="show-image" class="rounded-circle" src="{{ !empty($brand->brand_image) ? url(''.$brand->brand_image) : url('upload/brands/blank_profile_photo.jpg') }}" alt="User Avatar" style="float: right" width="200px" height="100px">
+                                <img  id="show-image" class="rounded-circle" src="{{ !empty($brand->brand_image) ? url(''.$brand->brand_image) : url('upload/brands/blank_profile_photo.jpg') }}" alt="用户头像" style="float: right" width="200px" height="100px">
                             </div>
                             <div class="text-xs-right">
                                 <button type="submit" class="btn btn-rounded btn-info">提交</button>

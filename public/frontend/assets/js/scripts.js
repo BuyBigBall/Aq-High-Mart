@@ -253,7 +253,7 @@ jQuery(function(){
 /*===================================================================================*/
 
 jQuery(function(){
-    jQuery('.rating').rateit({max: 5, step: 1, value : 4, resetable : false , readonly : true});
+    // jQuery('.rating').rateit({max: 5, step: 1, value : 4, resetable : false , readonly : true});
 });
 
 /*===================================================================================*/

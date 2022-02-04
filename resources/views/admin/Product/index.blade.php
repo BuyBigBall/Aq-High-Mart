@@ -60,7 +60,8 @@
                                                                 @method('DELETE')
                                                                 @csrf
                                                                 <a href="" class="btn btn-danger" title="Delete Data" id="delete" onclick="event.preventDefault();
-                                                                this.closest('form').submit();"><i class="fa fa-trash"></i></a>
+                                                                "><i class="fa fa-trash"></i></a>
+                                                                <!-- this.closest('form').submit(); -->
                                                             </form>
                                                         </div>
                                                     </td>

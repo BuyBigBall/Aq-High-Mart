@@ -64,7 +64,7 @@
                 <li><a title="Information" href="#">客户服务</a></li>
                 <li><a title="Addresses" href="#">公司</a></li>
                 <li><a title="Addresses" href="#">投资者关系</a></li>
-                <li class="last"><a title="Orders History" href="#">高级搜索</a></li>
+                <li class="last"><a title="订单历史" href="#">高级搜索</a></li>
                 </ul>
             </div>
             <!-- /.module-body --> 

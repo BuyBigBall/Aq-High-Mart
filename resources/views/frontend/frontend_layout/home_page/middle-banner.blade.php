@@ -6,12 +6,12 @@
                 </div>
             <div class="strip strip-text">
                 <div class="strip-inner">
-                    <h2 class="text-right">New Mens Fashion<br>
-                    <span class="shopping-needs">Save up to 40% off</span></h2>
+                    <h2 class="text-right">新男士时尚<br>
+                    <span class="shopping-needs">最多可节省 40% 的折扣</span></h2>
                 </div>
             </div>
             <div class="new-label">
-                <div class="text">NEW</div>
+                <div class="text">新的</div>
             </div>
         <!-- /.new-label -->
             </div>

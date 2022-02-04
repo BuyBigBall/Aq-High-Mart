@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\Order;
+use App\Models\User;
 use App\Models\OrderItem;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -64,7 +65,8 @@ class OrderDetailsController extends Controller
         ->where('return_reason','!=',NULL)
         ->where('status','=', 'return')
         ->orderBy('id','DESC')->get();
-        return view('frontend.order.order-history',compact('orders'));
+        $user = User::find(Auth::id());
+        return view('frontend.order.order-history',compact('orders', 'user'));
     }
     public function cancelOrderList()
     {
@@ -72,6 +74,7 @@ class OrderDetailsController extends Controller
         ->where('return_reason','!=',NULL)
         ->where('status','cancel')
         ->orderBy('id','DESC')->get();
-        return view('frontend.order.order-history',compact('orders'));
+        $user = User::find(Auth::id());
+        return view('frontend.order.order-history',compact('orders', 'user'));
     }
 }

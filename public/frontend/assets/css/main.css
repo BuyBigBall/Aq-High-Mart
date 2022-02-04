@@ -3885,7 +3885,7 @@ age-container #owl-main .owl-next {
   font-size: 15px;
   height: 35px;
   left: 0;
-  padding: 0 20px 0 18px;
+  padding: 0 8px 0 5px;
   position: absolute;
   top: 0;
   width: 70px;
@@ -5870,4 +5870,8 @@ z-index:10000
   .social-sign-in
   {
     display: none;
+  }
+  .color-red
+  {
+    color: red;
   }

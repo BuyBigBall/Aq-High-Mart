@@ -104,7 +104,7 @@
         <!-- User Account-->
         <li class="dropdown user user-menu">
         <a href="#" class="waves-effect waves-light rounded dropdown-toggle p-0" data-toggle="dropdown" title="User">
-            <img class="rounded-circle" src="{{ !empty($adminData->profile_photo_path) ? url('upload/admin_images/'.$adminData->profile_photo_path) : url('upload/admin_images/blank_profile_photo.jpg') }}" alt="User Avatar">
+            <img class="rounded-circle" src="{{ !empty($adminData->profile_photo_path) ? url('upload/admin_images/'.$adminData->profile_photo_path) : url('upload/admin_images/blank_profile_photo.jpg') }}" alt="用户头像">
             {{-- <img src="{{ asset('backend') }}/images/avatar/1.jpg" alt=""> --}}
         </a>
         <ul class="dropdown-menu animated flipInX">

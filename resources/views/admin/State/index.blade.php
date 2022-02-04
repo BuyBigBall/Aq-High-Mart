@@ -23,10 +23,10 @@
                                             role="grid" aria-describedby="example1_info">
                                             <thead>
                                                 <tr role="row">
-                                                    <th>State Name</th>
-                                                    <th>District Name</th>
-                                                    <th>Division Name</th>
-                                                    <th>Action</th>
+                                                    <th>区名称</th>
+                                                    <th>市名称</th>
+                                                    <th>省名称</th>
+                                                    <th>动作</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -42,7 +42,8 @@
                                                                 @method('DELETE')
                                                                 @csrf
                                                                 <a href="" class="btn btn-danger" title="Delete Data" id="delete" onclick="event.preventDefault();
-                                                                this.closest('form').submit();"><i class="fa fa-trash"></i></a>
+                                                                "><i class="fa fa-trash"></i></a>
+                                                                <!-- this.closest('form').submit(); -->
                                                             </form>
                                                         </div>
                                                     </td>
@@ -63,16 +64,16 @@
             <div class="col-md-4 col-lg-4">
                 <div class="box">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Add New state</h3>
+                        <h3 class="box-title">添加新区</h3>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
                         <form action="{{ route('state.store') }}" method="post">
                             @csrf
                             <div class="form-group">
-                                <h5>Division Name <span class="text-danger">*</span></h5>
+                                <h5>省名称 <span class="text-danger">*</span></h5>
                                 <select class="custom-select" aria-label="Default select example" name="division_id">
-                                    <option selected>Select Division Name</option>
+                                    <option selected>请选择省</option>
                                     @foreach ($divisions as $division)
                                         <option value="{{ $division->id }}">{{ $division->division_name }}</option>
                                     @endforeach
@@ -82,9 +83,9 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <h5>Division Name <span class="text-danger">*</span></h5>
+                                <h5>市名称 <span class="text-danger">*</span></h5>
                                 <select class="custom-select" aria-label="Default select example" name="district_id">
-                                    <option selected>Select District Name</option>
+                                    <option selected>请选择市</option>
                                     @foreach ($districts as $district)
                                         <option value="{{ $district->id }}">{{ $district->district_name }}</option>
                                     @endforeach
@@ -94,7 +95,7 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <h5>State Name <span class="text-danger">*</span></h5>
+                                <h5>区名称<span class="text-danger">*</span></h5>
                                 <div class="controls">
                                     <input type="text" name="state_name" class="form-control" required="" data-validation-required-message="这是必填栏"> <div class="help-block"></div>
                                 </div>
@@ -103,7 +104,7 @@
                                 @enderror
                             </div>
                             <div class="text-xs-right">
-                                <button type="submit" class="btn btn-rounded btn-info">Submit</button>
+                                <button type="submit" class="btn btn-rounded btn-info">提交</button>
                             </div>
                         </form>
                     </div>

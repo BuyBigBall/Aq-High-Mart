@@ -2,16 +2,16 @@
 
 @section('dashboard_content')
     @include('admin.dashboard_layout.breadcrumb', [
-    'name' => 'Division',
+    'name' => '送货事业部',
     'url' => "division.index",
-    'section_name' => 'All Division'
+    'section_name' => '所有部门'
     ])
     <section class="content">
         <div class="row">
             <div class="col-md-8 col-lg-8">
                 <div class="box">
                     <div class="box-header with-border">
-                        <h3 class="box-title">All Division Data Table</h3>
+                        <h3 class="box-title">所有部门数据表</h3>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -23,8 +23,8 @@
                                             role="grid" aria-describedby="example1_info">
                                             <thead>
                                                 <tr role="row">
-                                                    <th>Division Name</th>
-                                                    <th>Action</th>
+                                                    <th>部门名称</th>
+                                                    <th>动作</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -38,7 +38,8 @@
                                                                 @method('DELETE')
                                                                 @csrf
                                                                 <a href="" class="btn btn-danger" title="Delete Data" id="delete" onclick="event.preventDefault();
-                                                                this.closest('form').submit();"><i class="fa fa-trash"></i></a>
+                                                                "><i class="fa fa-trash"></i></a>
+                                                                <!-- this.closest('form').submit(); -->
                                                             </form>
                                                         </div>
                                                     </td>
@@ -48,47 +49,12 @@
                                             {{-- <tfoot>
                                                 <tr>
                                                     <th rowspan="1" colspan="1">Name</th>
-                                                    <th rowspan="1" colspan="1">Position</th>
-                                                    <th rowspan="1" colspan="1">Office</th>
-                                                    <th rowspan="1" colspan="1">Age</th>
-                                                    <th rowspan="1" colspan="1">Start date</th>
-                                                    <th rowspan="1" colspan="1">Salary</th>
+                                                    <th rowspan="1" colspan="1">Action</th>
                                                 </tr>
                                             </tfoot> --}}
                                         </table>
                                     </div>
                                 </div>
-                                {{-- <div class="row">
-                                    <div class="col-sm-12 col-md-5">
-                                        <div class="dataTables_info" id="example1_info" role="status" aria-live="polite">
-                                            Showing 1 to 10 of 57 entries</div>
-                                    </div>
-                                    <div class="col-sm-12 col-md-7">
-                                        <div class="dataTables_paginate paging_simple_numbers" id="example1_paginate">
-                                            <ul class="pagination">
-                                                <li class="paginate_button page-item previous disabled"
-                                                    id="example1_previous"><a href="#" aria-controls="example1"
-                                                        data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li>
-                                                <li class="paginate_button page-item active"><a href="#"
-                                                        aria-controls="example1" data-dt-idx="1" tabindex="0"
-                                                        class="page-link">1</a></li>
-                                                <li class="paginate_button page-item "><a href="#" aria-controls="example1"
-                                                        data-dt-idx="2" tabindex="0" class="page-link">2</a></li>
-                                                <li class="paginate_button page-item "><a href="#" aria-controls="example1"
-                                                        data-dt-idx="3" tabindex="0" class="page-link">3</a></li>
-                                                <li class="paginate_button page-item "><a href="#" aria-controls="example1"
-                                                        data-dt-idx="4" tabindex="0" class="page-link">4</a></li>
-                                                <li class="paginate_button page-item "><a href="#" aria-controls="example1"
-                                                        data-dt-idx="5" tabindex="0" class="page-link">5</a></li>
-                                                <li class="paginate_button page-item "><a href="#" aria-controls="example1"
-                                                        data-dt-idx="6" tabindex="0" class="page-link">6</a></li>
-                                                <li class="paginate_button page-item next" id="example1_next"><a href="#"
-                                                        aria-controls="example1" data-dt-idx="7" tabindex="0"
-                                                        class="page-link">Next</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div> --}}
                             </div>
                         </div>
                     </div>
@@ -100,14 +66,14 @@
             <div class="col-md-4 col-lg-4">
                 <div class="box">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Add New Division</h3>
+                        <h3 class="box-title">添加新部门</h3>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
                         <form action="{{ route('division.store') }}" method="post">
                             @csrf
                             <div class="form-group">
-                                <h5>Division Name <span class="text-danger">*</span></h5>
+                                <h5>部门名称 <span class="text-danger">*</span></h5>
                                 <div class="controls">
                                     <input type="text" name="division_name" class="form-control" required="" data-validation-required-message="这是必填栏"> <div class="help-block"></div>
                                 </div>
@@ -116,7 +82,7 @@
                                 @enderror
                             </div>
                             <div class="text-xs-right">
-                                <button type="submit" class="btn btn-rounded btn-info">Submit</button>
+                                <button type="submit" class="btn btn-rounded btn-info">提交</button>
                             </div>
                         </form>
                     </div>

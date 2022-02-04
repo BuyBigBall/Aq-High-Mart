@@ -23,7 +23,7 @@
                                         src="{{ asset($product->product_thumbnail) }}" alt=""></a> </div>
                             <!-- /.image -->
 
-                            <div class="tag hot"><span>hot</span></div>
+                            <div class="tag hot"><span>热卖</span></div>
                         </div>
                         <!-- /.product-image -->
 

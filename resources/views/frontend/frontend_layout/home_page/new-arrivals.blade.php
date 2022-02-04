@@ -3,7 +3,7 @@
         @if (session()->get('language') == 'english')
             New Arrivals
         @else
-            新品上市
+            新到货
         @endif
     </h3>
     <div class="owl-carousel home-owl-carousel custom-carousel owl-theme outer-top-xs">
@@ -25,7 +25,7 @@
                         $discount_amount = (($product->selling_price-$product->discount_price)/($product->selling_price))*100
                         @endphp
                         @if ($product->discount_price == NULL)
-                            <div class="tag new"><span>New</span></div>
+                            <div class="tag new"><span>新的</span></div>
                         @else
                             <div class="tag new"><span>{{ round($discount_amount) }}%</span></div>
                         @endif

@@ -19,7 +19,7 @@
 
                         <li>
                             @auth
-                                <a href="{{ route('user.logout') }}"><i class="icon fa fa-user"></i>用户注销</a>
+                                <a href="{{ route('user.logout') }}"><i class="icon fa fa-user"></i>登出</a>
                             @else
                                 <a href="{{ route('login') }}"><i class="icon fa fa-lock"></i> 登录/免费注册</a>
                             @endauth
@@ -136,11 +136,11 @@
                                 {{-- mini cart start with AJAX END --}}
 
                                 <div class="clearfix cart-total">
-                                    <div class="pull-right"> <span class="text">Sub Total :</span class="sign">$<span
+                                    <div class="pull-right"> <span class="text">小计 :</span class="sign">元<span
                                             class='price' id="cartSubTotal"></span> </div>
                                     <div class="clearfix"></div>
 
-                                    <a href="{{ route('checkout-page') }}" class="btn btn-upper btn-primary btn-block m-t-20">Checkout</a>
+                                    <a href="{{ route('checkout-page') }}" class="btn btn-upper btn-primary btn-block m-t-20">结帐</a>
 
                                 </div>
                                 <!-- /.cart-total-->
@@ -171,7 +171,7 @@
                 <div class="navbar-header">
                     <button data-target="#mc-horizontal-menu-collapse" data-toggle="collapse"
                         class="navbar-toggle collapsed" type="button">
-                        <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span
+                        <span class="sr-only">切换导航</span> <span class="icon-bar"></span> <span
                             class="icon-bar"></span> <span class="icon-bar"></span> </button>
                 </div>
                 <div class="nav-bg-class">

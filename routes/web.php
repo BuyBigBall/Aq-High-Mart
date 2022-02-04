@@ -130,9 +130,6 @@ Route::post('/checkout-store',[CheckoutController::class, 'checkoutStore'])->nam
 
 
 
-
-
-
 // Admin Login routes
 Route::group(['prefix'=> 'admin', 'middleware'=>['admin:admin']], function(){
 	Route::get('/login',[AdminController::class, 'loginForm']);
@@ -148,6 +145,10 @@ Route::middleware(['auth:admin'])->group(function(){
         Route::get('/edit/profile',[AdminProfileController::class, 'AdminProfileEdit'])->name('admin.profile.edit');
         Route::get('/change/password',[AdminProfileController::class, 'AdminPasswordChange'])->name('admin.change.password');
         Route::post('/change/password',[AdminProfileController::class, 'AdminPasswordUpdate'])->name('admin.password.update');
+
+        Route::get('/', function () {
+            return view('admin.index');
+                })->name('admin.dashboard');
     });
 
     // Admin Dashboard routes

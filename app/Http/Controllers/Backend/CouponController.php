@@ -47,10 +47,11 @@ class CouponController extends Controller
      */
     public function store(CouponStoreRequest $request)
     {
+        //dd($request->input('coupon_name'));
         Coupon::create([
-            'coupon_name' => strtoupper($request->input('coupon_name')),
+            'coupon_name' => $request->input('coupon_name'),
             'coupon_discount' => $request->input('coupon_discount'),
-            'coupon_validity' => $request->input('coupon_validity'),
+            'coupon_validity' => date('Y-n-d', strtotime( $request->input('coupon_validity'))),
             'coupon_status' => $request->input('coupon_status'),
         ]);
 

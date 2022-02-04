@@ -2,9 +2,9 @@
 
 @section('dashboard_content')
     @include('admin.dashboard_layout.breadcrumb', [
-    'name' => 'Orders',
+    'name' => '订单',
     'url' => "orders.index",
-    'section_name' => 'All Orders'
+    'section_name' => '所有订单'
     ])
     <section class="content">
         <div class="row">
@@ -13,9 +13,9 @@
                     <div class="box-header with-border">
                         <h3 class="box-title">
                             @if (Request::is('admin/orders'))
-                                All Orders List
+                                所有订单列表
                             @else
-                                Statuswise Order List
+                                状态订单列表
                             @endif
                         </h3>
                     </div>
@@ -30,12 +30,12 @@
                                             <thead>
                                                 <tr role="row">
                                                     <th>#</th>
-                                                    <th>Date</th>
-                                                    <th>Invoice</th>
-                                                    <th>Amount</th>
-                                                    <th>Method</th>
-                                                    <th>Status</th>
-                                                    <th>Action</th>
+                                                    <th>日期</th>
+                                                    <th>发票</th>
+                                                    <th>数量</th>
+                                                    <th>方法</th>
+                                                    <th>状态</th>
+                                                    <th>动作</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -81,7 +81,8 @@
                                                                 @method('DELETE')
                                                                 @csrf
                                                                 <a href="" class="btn btn-danger" title="Delete Data" id="delete" onclick="event.preventDefault();
-                                                                this.closest('form').submit();"><i class="fa fa-trash"></i></a>
+                                                                "><i class="fa fa-trash"></i></a>
+                                                                <!-- this.closest('form').submit(); -->
                                                             </form> --}}
                                                         </div>
                                                     </td>

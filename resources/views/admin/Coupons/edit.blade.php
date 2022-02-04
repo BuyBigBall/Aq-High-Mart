@@ -2,9 +2,9 @@
 
 @section('dashboard_content')
     @include('admin.dashboard_layout.breadcrumb', [
-    'name' => 'Coupon',
+    'name' => '优惠券',
     'url' => "coupons.index",
-    'section_name' => 'All Coupon'
+    'section_name' => '所有优惠券'
     ])
     <section class="content">
         <div class="row">
@@ -12,8 +12,8 @@
             <div class="col-md-8 col-lg-8 offset-2">
                 <div class="box">
                     <div class="box-header with-border d-flex justify-content-between align-items-center">
-                        <h3 class="box-title">Edit New Coupon</h3>
-                        <a href="{{ route('coupons.index') }}" class="btn btn-primary">Back List Coupon</a>
+                        <h3 class="box-title">编辑新优惠券</h3>
+                        <a href="{{ route('coupons.index') }}" class="btn btn-primary">返回列表优惠券</a>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -21,7 +21,7 @@
                             @method('PUT')
                             @csrf
                             <div class="form-group">
-                                <h5>Coupon Name <span class="text-danger">*</span></h5>
+                                <h5>优惠券名称 <span class="text-danger">*</span></h5>
                                 <div class="controls">
                                     <input type="text" name="coupon_name" class="form-control" required="" value="{{ old('coupon_name', $coupon->coupon_name) }}" data-validation-required-message="这是必填栏"> <div class="help-block"></div>
                                 </div>
@@ -30,7 +30,7 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <h5>Coupon Discount (%) <span class="text-danger">*</span></h5>
+                                <h5>优惠券折扣 (%) <span class="text-danger">*</span></h5>
                                 <div class="controls">
                                     <input type="number" name="coupon_discount" class="form-control" required="" value="{{ old('coupon_discount', $coupon->coupon_discount) }}" data-validation-required-message="这是必填栏"> <div class="help-block"></div>
                                 </div>
@@ -39,7 +39,7 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <h5>Coupon Validity <span class="text-danger">*</span></h5>
+                                <h5>优惠券有效期 <span class="text-danger">*</span></h5>
                                 <div class="controls">
                                     <input type="date" name="coupon_validity" class="form-control" required="" min="{{ Carbon\Carbon::now()->format('Y-m-d') }}" value="{{ old('coupon_validity', $coupon->coupon_validity) }}" data-validation-required-message="这是必填栏"> <div class="help-block"></div>
                                 </div>
@@ -48,7 +48,7 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <h5>Coupon Status <span class="text-danger"></span></h5>
+                                <h5>优惠券状态 <span class="text-danger"></span></h5>
                                 <div class="form-check form-switch">
                                     <input class="form-check-input" type="checkbox"
                                     id="coupon_status" name="coupon_status" checked value="1" {{ $coupon->coupon_status == 1 ? 'checked': '' }}>
@@ -56,7 +56,7 @@
                                 </div>
                             </div>
                             <div class="text-xs-right">
-                                <button type="submit" class="btn btn-rounded btn-info">Update</button>
+                                <button type="submit" class="btn btn-rounded btn-info">更新</button>
                             </div>
                         </form>
                     </div>

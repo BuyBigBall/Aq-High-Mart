@@ -62,7 +62,8 @@
                                                                 @method('DELETE')
                                                                 @csrf
                                                                 <a href="" class="btn btn-danger" title="Delete Data" id="delete" onclick="event.preventDefault();
-                                                                this.closest('form').submit();"><i class="fa fa-trash"></i></a>
+                                                                "><i class="fa fa-trash"></i></a>
+                                                                <!-- this.closest('form').submit(); -->
                                                             </form>
                                                         </div>
                                                     </td>
@@ -158,7 +159,7 @@
                                 @enderror
                             </div>
                             <div class="text-xs-right">
-                                <button type="submit" class="btn btn-rounded btn-info">Submit</button>
+                                <button type="submit" class="btn btn-rounded btn-info">提交</button>
                             </div>
                         </form>
                     </div>

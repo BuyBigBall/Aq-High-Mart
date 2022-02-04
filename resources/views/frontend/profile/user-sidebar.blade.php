@@ -1,5 +1,9 @@
 <div class="col-md-2">
-    <img class="rounded-circle" src="{{ !empty($user->profile_photo_path) ? url('storage/profile-photos/'.$user->profile_photo_path) : url('storage/profile-photos/blank_profile_photo.jpg') }}" alt="User Avatar" height="100%" width="100%">
+    <img class="rounded-circle" 
+        src="{{ !empty($user->profile_photo_path) ? url('storage/profile-photos/'.$user->profile_photo_path) : url('storage/profile-photos/blank_profile_photo.jpg') }}" 
+        alt="用户头像" height="95%" width="95%"
+        style="margin: 0.6rem;"
+        >
     <ul class="list-group list-group-flush">
         <a href="{{ route('dashboard') }}" class="btn btn-primary btn-sm btn-block">首页</a>
         <a href="{{ route('user.profile') }}" class="btn btn-primary btn-sm btn-block">资料更新</a>

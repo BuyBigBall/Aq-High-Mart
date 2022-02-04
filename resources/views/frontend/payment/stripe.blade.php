@@ -51,10 +51,10 @@
                                         @if (Session::has('coupon'))
                                             <strong>SubTotal: </strong> ${{ $cart_total }}
                                             <hr>
-                                            <strong>Coupon Name: </strong> {{ session()->get('coupon')['coupon_name'] }}
+                                            <strong>优惠券名称: </strong> {{ session()->get('coupon')['coupon_name'] }}
                                             ( {{ session()->get('coupon')['coupon_discount'] }} %)
                                             <hr>
-                                            <strong>Coupon Discount:
+                                            <strong>优惠券折扣:
                                             </strong>(-)${{ session()->get('coupon')['discount_amount'] }}
                                             <hr>
                                             <strong>Grand Total: </strong>${{ session()->get('coupon')['total_amount'] }}

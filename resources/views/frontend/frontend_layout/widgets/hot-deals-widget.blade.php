@@ -24,16 +24,16 @@
                             off</span></div>
                     <div class="timing-wrapper">
                         <div class="box-wrapper">
-                            <div class="date box"> <span class="key">120</span> <span class="value">DAYS</span> </div>
+                            <div class="date box"> <span class="key">120</span> <span class="value">天</span> </div>
                         </div>
                         <div class="box-wrapper">
-                            <div class="hour box"> <span class="key">20</span> <span class="value">HRS</span> </div>
+                            <div class="hour box"> <span class="key">20</span> <span class="value">时</span> </div>
                         </div>
                         <div class="box-wrapper">
-                            <div class="minutes box"> <span class="key">36</span> <span class="value">MINS</span> </div>
+                            <div class="minutes box"> <span class="key">36</span> <span class="value">分</span> </div>
                         </div>
                         <div class="box-wrapper hidden-md">
-                            <div class="seconds box"> <span class="key">60</span> <span class="value">SEC</span> </div>
+                            <div class="seconds box"> <span class="key">60</span> <span class="value">秒</span> </div>
                         </div>
                     </div>
                 </div>

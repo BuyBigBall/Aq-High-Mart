@@ -20,10 +20,14 @@
                 <!--  INFO BOXES  -->
                 @include('frontend.frontend_layout.home_page.info-boxes')
                 <!--  INFO BOXES : END  -->
+
+
                 <!--  SCROLL TABS  -->
                 @include('frontend.frontend_layout.home_page.new-products')
                 <!-- /.scroll-tabs -->
                 <!--  SCROLL TABS : END  -->
+                
+                
                 <!--  WIDE PRODUCTS  -->
                 @include('frontend.frontend_layout.home_page.two-column-banner')
                 <!--  WIDE PRODUCTS : END  -->
