@@ -23,7 +23,7 @@
                 @forelse ($orders as $order)
                 <tr>
                     <td scope="row">{{ $loop->index+1 }}</td>
-                    <td>{{ $order->created_at->diffForHumans() }}</td>
+                    <td>{{ agotime($order->created_at) }}</td>
                     <td>{{ $order->invoice_number }}</td>
                     <td>{{ $order->amount }}</td>
                     <td>{{ $order->payment_method }}</td>

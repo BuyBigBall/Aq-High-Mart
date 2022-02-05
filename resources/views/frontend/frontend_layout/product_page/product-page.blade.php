@@ -180,10 +180,10 @@
                                             <div class="col-sm-6">
                                                 <div class="price-box">
                                                     @if ($product->discount_price == NULL)
-                                                        <span class="price">${{ $product->selling_price }}</span>
+                                                        <span class="price">{{ $product->selling_price }}元</span>
                                                     @else
-                                                    <span class="price">${{ $product->discount_price }}</span>
-                                                    <span class="price-strike">${{ $product->selling_price }}</span>
+                                                    <span class="price">{{ $product->discount_price }}元</span>
+                                                    <span class="price-strike">{{ $product->selling_price }}元</span>
                                                     @endif
                                                 </div>
                                             </div>

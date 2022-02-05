@@ -29,15 +29,15 @@
                                 <th> {{ $order->email }} </th>
                             </tr>
                             <tr>
-                                <th> 部门 : </th>
+                                <th> 省 : </th>
                                 <th> {{ $order->division->division_name }} </th>
                             </tr>
                             <tr>
-                                <th> 区 : </th>
+                                <th> 市 : </th>
                                 <th> {{ $order->district->district_name }} </th>
                             </tr>
                             <tr>
-                                <th> 状态 : </th>
+                                <th> 区 : </th>
                                 <th>{{ $order->state->state_name }} </th>
                             </tr>
                             <tr>
@@ -86,12 +86,12 @@
                             </tr>
                             <tr>
                                 <th> 订单合计 : </th>
-                                <th>$ {{ $order->amount }} </th>
+                                <th>{{ $order->amount }}元</th>
                             </tr>
                             <tr>
                                 <th> 状态 : </th>
                                 <th>
-                                    <span class="badge badge-success">{{ $order->status }}
+                                    <span class="badge badge-success">{{ shipping_status_name($order->status) }}
                                     </span>
                                 </th>
                             </tr>
@@ -100,34 +100,34 @@
                                 <th>
                                     @if ($order->status == 'pending')
                                     <a href="{{ route('order-status.update', [
-                                        'order_id' => $order->id,
-                                        'status' => 'confirmed'
-                                    ]) }}" class="btn btn-block btn-success">Confirm Order</a>
+                                            'order_id' => $order->id,
+                                            'status' => 'confirmed'
+                                        ]) }}" class="btn btn-block btn-success">确认订单</a>
                                     @elseif ($order->status == 'confirmed')
                                     <a href="{{ route('order-status.update', [
-                                        'order_id' => $order->id,
-                                        'status' => 'processing'
-                                    ]) }}" class="btn btn-block btn-success">Process Order</a>
+                                            'order_id' => $order->id,
+                                            'status' => 'processing'
+                                        ]) }}" class="btn btn-block btn-success">处理订单</a>
                                     @elseif ($order->status == 'processing')
                                     <a href="{{ route('order-status.update', [
-                                        'order_id' => $order->id,
-                                        'status' => 'picked'
-                                    ]) }}" class="btn btn-block btn-success">Pick Order</a>
+                                            'order_id' => $order->id,
+                                            'status' => 'picked'
+                                        ]) }}" class="btn btn-block btn-success">拣货</a>
                                     @elseif ($order->status == 'picked')
                                     <a href="{{ route('order-status.update', [
-                                        'order_id' => $order->id,
-                                        'status' => 'shipped'
-                                    ]) }}" class="btn btn-block btn-success">Ship Order</a>
+                                            'order_id' => $order->id,
+                                            'status' => 'shipped'
+                                        ]) }}" class="btn btn-block btn-success">发货</a>
                                     @elseif ($order->status == 'shipped')
                                     <a href="{{ route('order-status.update', [
-                                        'order_id' => $order->id,
-                                        'status' => 'delivered'
-                                    ]) }}" class="btn btn-block btn-success">Deliverd Order</a>
+                                            'order_id' => $order->id,
+                                            'status' => 'delivered'
+                                        ]) }}" class="btn btn-block btn-success">运输完成</a>
                                     @elseif ($order->status == 'cancel')
                                     <a href="{{ route('order-status.update', [
-                                        'order_id' => $order->id,
-                                        'status' => 'return'
-                                    ]) }}" class="btn btn-block btn-danger">Return Order</a>
+                                            'order_id' => $order->id,
+                                            'status' => 'return'
+                                        ]) }}" class="btn btn-block btn-danger">返回</a>
                                     @endif
                                 </th>
                             </tr>
@@ -141,7 +141,7 @@
             <div class="col-md-12 col-lg-12">
                 <div class="box box-bordered border-primary">
                     <div class="box-header with-border">
-                        <h3 class="box-title">订单视图</h3>
+                        <h3 class="box-title">订单查看</h3>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -180,34 +180,34 @@
                                                 <label for=""><img src="{{ asset( $item->product->product_thumbnail ) }}"
                                                         height="50px;" width="50px;"> </label>
                                             </td>
-                                            <td class="col-md-3">
-                                                <label for=""> {{ $item->product->product_name_en }}</label>
+                                            <td class="col-md-2">
+                                                <label for=""> {{ $item->product->product_name_bn }}</label>
                                             </td>
-                                            <td class="col-md-3">
+                                            <td class="col-md-2">
                                                 <label for=""> {{ $item->product->product_code }}</label>
                                             </td>
-                                            <td class="col-md-2">
+                                            <td class="col-md-22">
                                                 <label for=""> {{ $item->color }}</label>
                                             </td>
-                                            <td class="col-md-2">
+                                            <td class="col-md-22">
                                                 <label for=""> {{ $item->size }}</label>
                                             </td>
-                                            <td class="col-md-2">
-                                                <label for=""> {{ $item->qty }}</label>
+                                            <td class="col-md-1">
+                                                <label for="">{{ $item->qty }}</label>
                                             </td>
 
-                                            <td class="col-md-3">
-                                                <label for=""> ${{ $item->unit_price }} ( $ {{ $item->unit_price * $item->qty }} ) </label>
+                                            <td class="col-md-2">
+                                                <label for="">{{ $item->unit_price }}元 ( {{ $item->unit_price * $item->qty }}元 )</label>
                                             </td>
                                             @php
                                                 $file = App\Models\Product::where('id', $item->product_id)->first();
                                             @endphp
 
-                                            <td class="col-md-1">
+                                            <td class="col-md-22">
                                                 @if ($order->status == 'pending')
                                                     <strong>
-                                                        <span class="badge badge-pill badge-success" style="background: #418DB9;"> No
-                                                            File</span> </strong>
+                                                        <span class="badge badge-pill badge-success" style="background: #418DB9;"> 
+                                                        没有文件</span> </strong>
 
                                                 @elseif($order->status == 'confirm')
 

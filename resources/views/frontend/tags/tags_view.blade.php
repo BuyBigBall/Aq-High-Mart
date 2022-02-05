@@ -168,10 +168,10 @@
                                                         <div class="description"></div>
                                                         <div class="product-price">
                                                             @if ($tag_product->discount_price == NULL)
-                                                            <span class="price">${{ $tag_product->selling_price }}</span>
+                                                            <span class="price">{{ $tag_product->selling_price }}元</span>
                                                             @else
-                                                            <span class="price">${{ $tag_product->discount_price }}</span>
-                                                            <span class="price-before-discount">${{ $tag_product->selling_price }}</span>
+                                                            <span class="price">{{ $tag_product->discount_price }}元</span>
+                                                            <span class="price-before-discount">{{ $tag_product->selling_price }}元</span>
                                                             @endif
                                                         </div>
                                                         <!-- /.product-price -->
@@ -260,10 +260,10 @@
                                                             </div>
                                                             <div class="product-price">
                                                                 @if ($tag_product->discount_price == NULL)
-                                                                    <span class="price">${{ $tag_product->selling_price }}</span>
+                                                                    <span class="price">{{ $tag_product->selling_price }}元</span>
                                                                 @else
-                                                                    <span class="price">${{ $tag_product->discount_price }}</span>
-                                                                    <span class="price-before-discount">${{ $tag_product->selling_price }}</span>
+                                                                    <span class="price">{{ $tag_product->discount_price }}元</span>
+                                                                    <span class="price-before-discount">{{ $tag_product->selling_price }}元</span>
                                                                 @endif
                                                             </div>
                                                             <!-- /.product-price -->

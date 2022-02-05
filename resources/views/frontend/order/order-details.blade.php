@@ -165,7 +165,7 @@
                                             height="50px;" width="50px;"> </label>
                                 </td>
                                 <td class="col-md-3">
-                                    <label for=""> {{ $item->product->product_name_en }}</label>
+                                    <label for=""> {{ $item->product->product_name_bn }}</label>
                                 </td>
                                 <td class="col-md-3">
                                     <label for=""> {{ $item->product->product_code }}</label>
@@ -181,7 +181,7 @@
                                 </td>
 
                                 <td class="col-md-3">
-                                    <label for=""> ${{ $item->unit_price }} ( $ {{ $item->unit_price * $item->qty }} ) </label>
+                                    <label for="">{{ $item->unit_price }}元 ( {{ $item->unit_price * $item->qty }}元 )</label>
                                 </td>
                                 @php
                                     $file = App\Models\Product::where('id', $item->product_id)->first();
@@ -208,7 +208,7 @@
         </div> <!-- / end col md 8 -->
     </div> <!-- // END ORDER ITEM ROW -->
     @if ($order->status == 'delivered')
-    Delivered
+        运输完成
     @else
         @php
             $order = App\Models\Order::where('id', $order->id)

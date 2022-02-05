@@ -14,6 +14,22 @@
                         <h3 class="box-title">
                             @if (Request::is('admin/orders'))
                                 所有订单列表
+                            @elseif (Request::is('admin/orders/pending*'))
+                                待定中订单
+                            @elseif (Request::is('admin/orders/confirmed*'))
+                                已确认的订单
+                            @elseif (Request::is('admin/orders/processing*'))
+                                处理中订单
+                            @elseif (Request::is('admin/orders/picked*'))
+                                已拣货的订单
+                            @elseif (Request::is('admin/orders/shipped*'))
+                                运输中订单
+                            @elseif (Request::is('admin/orders/delivered*'))
+                                已运输完成的订单
+                            @elseif (Request::is('admin/orders/return*'))
+                                退回的订单
+                            @elseif (Request::is('admin/orders/cancel*'))
+                                取消的订单
                             @else
                                 状态订单列表
                             @endif
@@ -44,25 +60,25 @@
                                                     <td class="sorting_1">
                                                         {{ $loop->index+1 }}
                                                     </td>
-                                                    <td class="sorting_1">{{ $order->created_at->diffForHumans() }}</td>
+                                                    <td class="sorting_1">{{ agotime($order->created_at) }}</td>
                                                     <td class="soring_1">{{ $order->invoice_number }}</td>
                                                     <td class="sorting_1">{{ $order->amount }}</td>
                                                     <td class="sorting_1">{{ $order->payment_method }}</td>
                                                     <td class="sorting_1">
                                                         @if ($order->status == 'pending')
-                                                        <span class="badge badge-primary">{{ $order->status }}</span>
+                                                        <span class="badge badge-primary">{{ shipping_status_name($order->status) }}</span>
                                                         @elseif ($order->status == 'confirmed')
-                                                        <span class="badge badge-secondary">{{ $order->status }}</span>
+                                                        <span class="badge badge-secondary">{{ shipping_status_name($order->status) }}</span>
                                                         @elseif ($order->status == 'processing')
-                                                        <span class="badge badge-info">{{ $order->status }}</span>
+                                                        <span class="badge badge-info">{{ shipping_status_name($order->status) }}</span>
                                                         @elseif ($order->status == 'picked')
-                                                        <span class="badge badge-warning">{{ $order->status }}</span>
+                                                        <span class="badge badge-warning">{{ shipping_status_name($order->status) }}</span>
                                                         @elseif ($order->status == 'shipped')
-                                                        <span class="badge badge-light">{{ $order->status }}</span>
+                                                        <span class="badge badge-light">{{ shipping_status_name($order->status) }}</span>
                                                         @elseif ($order->status == 'delivered')
-                                                        <span class="badge badge-success">{{ $order->status }}</span>
+                                                        <span class="badge badge-success">{{ shipping_status_name($order->status) }}</span>
                                                         @else
-                                                        <span class="badge badge-danger">{{ $order->status }}</span>
+                                                        <span class="badge badge-danger">{{ shipping_status_name($order->status) }}</span>
                                                         @endif
                                                     </td>
                                                     <td>

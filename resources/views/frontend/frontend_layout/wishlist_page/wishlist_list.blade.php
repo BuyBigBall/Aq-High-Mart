@@ -31,10 +31,10 @@
                                         @endif
                                     </a></div>
                                         @if ($product->discount_price == NULL)
-                                        <div class="price">${{ $product->selling_price }}</div>
+                                        <div class="price">{{ $product->selling_price }}元</div>
                                         @else
-                                        <div class="price">${{ $product->discount_price }}
-                                        <span class="price-before-discount">${{ $product->selling_price }}</span>
+                                        <div class="price">{{ $product->discount_price }}元
+                                        <span class="price-before-discount">{{ $product->selling_price }}元</span>
                                         </div>
                                         @endif
                                 </td>

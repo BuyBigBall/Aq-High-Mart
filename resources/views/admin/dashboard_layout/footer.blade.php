@@ -5,7 +5,7 @@
         <a class="nav-link" href="javascript:void(0)">常问问题</a>
         </li>
         <li class="nav-item">
-        <a class="nav-link" href="#">Purchase Now</a>
+        <a class="nav-link" href="#">立即购买</a>
         </li>
     </ul>
 </div>

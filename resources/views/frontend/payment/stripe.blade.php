@@ -55,7 +55,7 @@
                                             ( {{ session()->get('coupon')['coupon_discount'] }} %)
                                             <hr>
                                             <strong>优惠券折扣:
-                                            </strong>(-)${{ session()->get('coupon')['discount_amount'] }}
+                                            </strong>(-){{ session()->get('coupon')['discount_amount'] }}元
                                             <hr>
                                             <strong>总计： </strong>{{ session()->get('coupon')['total_amount'] }}元
                                             <hr>

@@ -70,45 +70,44 @@
     <tr>
         <td>
           <p class="font" style="margin-left: 20px;">
-           <strong>Name:</strong> {{ $order->name }} <br>
-           <strong>Email:</strong> {{ $order->email }} <br>
-           <strong>Phone:</strong> {{ $order->phone }} <br>
-
-           <strong>Address:</strong> {{ $order->address }} <br>
-           <strong>Location:</strong>
-           {{ $order->state->state_name }},
-           {{ $order->district->district_name }},
-           {{ $order->division->division_name }} <br>
-           <strong>Post Code:</strong> {{ $order->post_code }}
+           <strong>名称:</strong> {{ $order->name }} <br>
+           <strong>电邮:</strong> {{ $order->email }} <br>
+           <strong>电话:</strong> {{ $order->phone }} <br>
+           <strong>地址:</strong> {{ $order->address }} <br>
+           <strong>位置:</strong>
+                                  {{ $order->state->state_name }},
+                                  {{ $order->district->district_name }},
+                                  {{ $order->division->division_name }} <br>
+           <strong>邮政编码:</strong> {{ $order->post_code }}
          </p>
         </td>
         <td>
           <p class="font">
-            <h3><span style="color: green;">Invoice:</span> #{{ $order->invoice_number }}</h3>
-            Order Date: {{ $order->created_at }} <br>
-            Delivery Date: {{ $order->delivered_date }} <br>
-            Payment Type : {{ $order->payment_type }} <br>
-            Payment Method: {{ $order->payment_method }}
+            <h3><span style="color: green;">订单表:</span> #{{ $order->invoice_number }}</h3>
+                                          订购日期: {{ $order->created_at }} <br>
+                                          交货日期: {{ $order->delivered_date }} <br>
+                                          支付类型: {{ $order->payment_type }} <br>
+                                          支付方式: {{ $order->payment_method }}
         </span>
          </p>
         </td>
     </tr>
   </table>
   <br/>
-<h3>Products</h3>
+<h3>产品</h3>
 
 
   <table width="100%">
     <thead style="background-color: green; color:#FFFFFF;">
         <tr class="font">
-        {{-- <th>Image</th> --}}
+        {{-- <th>图片</th> --}}
         <th>产品名称</th>
-        <th>Size</th>
-        <th>Color</th>
-        <th>Code</th>
-        <th>Quantity</th>
-        <th>Unit Price </th>
-        <th>Total </th>
+        <th>尺寸</th>
+        <th>颜色</th>
+        <th>代码</th>
+        <th>数量</th>
+        <th>单价 </th>
+        <th>总额 </th>
       </tr>
     </thead>
     <tbody>
@@ -118,7 +117,7 @@
         {{-- <td align="center">
             <img src="{{ asset($item->product->product_thambnail)  }}" height="60px;" width="60px;" alt="">
         </td> --}}
-        <td align="center">{{ $item->product->product_name_en }}</td>
+        <td align="center">{{ $item->product->product_name_bn }}</td>
         <td align="center">{{ $item->size }}</td>
         <td align="center">{{ $item->color }}</td>
         <td align="center">{{ $item->product->product_code }}</td>
@@ -134,17 +133,17 @@
     <tr>
         <td align="right" >
             <h2><span style="color: green;">小计：</span>$ {{ $order->amount }}</h2>
-            <h2><span style="color: green;">Total:</span> $ {{ $order->amount }}</h2>
+            <h2><span style="color: green;">总额：</span> $ {{ $order->amount }}</h2>
             {{-- <h2><span style="color: green;">Full Payment PAID</h2> --}}
         </td>
     </tr>
   </table>
   <div class="thanks mt-3">
-    <p>Thanks For Buying Products..!!</p>
+    <p>感谢购买产品。</p>
   </div>
   <div class="authority float-right mt-5">
       <p>-----------------------------------</p>
-      <h5>Authority Signature:</h5>
+      <h5>授权签字：</h5>
     </div>
 </body>
 </html>

@@ -179,9 +179,9 @@
                                             <strong>总计: </strong>{{ session()->get('coupon')['total_amount'] }}元
                                             <hr>
                                         @else
-                                            <strong>小计: </strong> ${{ $cart_total }}
+                                            <strong>小计: </strong> {{ $cart_total }}元
                                             <hr>
-                                            <strong>总计: </strong> ${{ $cart_total }}
+                                            <strong>总计: </strong> {{ $cart_total }}元
                                             <hr>
                                         @endif
 

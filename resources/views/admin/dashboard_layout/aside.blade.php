@@ -96,28 +96,28 @@
                 <a href="{{ route('orders.index') }}"><i class="ti-more"></i>所有订单</a>
             </li>
             <li class=" {{ Request::is('admin/orders/pending*') ? 'active' : '' }}">
-                <a href="{{ route('pending.orders') }}"><i class="ti-more"></i>挂单</a>
+                <a href="{{ route('pending.orders') }}"><i class="ti-more"></i>待定中</a>
             </li>
             <li class=" {{ Request::is('admin/orders/confirmed*') ? 'active' : '' }}">
-                <a href="{{ route('confirmed.orders') }}"><i class="ti-more"></i>确认订单</a>
+                <a href="{{ route('confirmed.orders') }}"><i class="ti-more"></i>已确认</a>
             </li>
             <li class=" {{ Request::is('admin/orders/processing*') ? 'active' : '' }}">
-                <a href="{{ route('processing.orders') }}"><i class="ti-more"></i>处理订单</a>
+                <a href="{{ route('processing.orders') }}"><i class="ti-more"></i>处理中</a>
             </li>
             <li class=" {{ Request::is('admin/orders/picked/*') ? 'active' : '' }}">
-                <a href="{{ route('picked.orders') }}"><i class="ti-more"></i>精选订单</a>
+                <a href="{{ route('picked.orders') }}"><i class="ti-more"></i>已拣货</a>
             </li>
             <li class=" {{ Request::is('admin/orders/shipped/*') ? 'active' : '' }}">
-                <a href="{{ route('shipped.orders') }}"><i class="ti-more"></i>已发货订单</a>
+                <a href="{{ route('shipped.orders') }}"><i class="ti-more"></i>运输中</a>
             </li>
-            <li class=" {{ Request::is('admin/order/delivered*') ? 'active' : '' }}">
-                <a href="{{ route('delivered.orders') }}"><i class="ti-more"></i>已交付订单</a>
+            <li class=" {{ Request::is('admin/orders/delivered*') ? 'active' : '' }}">
+                <a href="{{ route('delivered.orders') }}"><i class="ti-more"></i>已完成</a>
             </li>
             <li class=" {{ Request::is('admin/orders/cancel*') ? 'active' : '' }}">
-                <a href="{{ route('cancel.orders') }}"><i class="ti-more"></i>取消订单</a>
+                <a href="{{ route('cancel.orders') }}"><i class="ti-more"></i>已取消</a>
             </li>
             <li class=" {{ Request::is('admin/orders/return*') ? 'active' : '' }}">
-                <a href="{{ route('return.orders') }}"><i class="ti-more"></i>退货单</a>
+                <a href="{{ route('return.orders') }}"><i class="ti-more"></i>已退回</a>
             </li>
         </ul>
     </li>

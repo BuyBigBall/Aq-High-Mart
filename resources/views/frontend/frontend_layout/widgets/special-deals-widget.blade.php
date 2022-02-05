@@ -38,10 +38,10 @@
                                         <div class="rating rateit-small"></div>
                                         <div class="product-price">
                                             @if ($product->discount_price == NULL)
-                                            <span class="price"> ${{ $product->selling_price }} </span>
+                                            <span class="price"> {{ $product->selling_price }}元 </span>
                                             @else
-                                            <span class="price"> ${{ $product->discount_price }} </span>
-                                            <span class="price"> ${{ $product->selling_price }} </span>
+                                            <span class="price"> {{ $product->discount_price }}元 </span>
+                                            <span class="price"> {{ $product->selling_price }}元 </span>
                                             @endif
                                         </div>
                                         <!-- /.product-price -->
