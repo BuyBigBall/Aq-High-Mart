@@ -112,7 +112,7 @@ class CheckoutController extends Controller
                 'data',
                 'cart_total',
             ));
-        }elseif($request->payment_method == 'card'){
+        }elseif($request->payment_method == 'paypal'){
             return "card";
         }else{
             return view('frontend.payment.cod', compact(

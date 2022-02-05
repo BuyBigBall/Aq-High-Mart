@@ -2,16 +2,16 @@
 
 @section('dashboard_content')
     @include('admin.dashboard_layout.breadcrumb', [
-    'name' => 'Order Details',
+    'name' => '订单详细信息',
     'url' => "orders.index",
-    'section_name' => 'View Order'
+    'section_name' => '查看订单'
     ])
     <section class="content">
         <div class="row">
             <div class="col-md-6 col-lg-6">
                 <div class="box box-bordered border-primary">
                     <div class="box-header with-border">
-                        <h3 class="box-title">Shipping Details</h3>
+                        <h3 class="box-title">运输详情</h3>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">

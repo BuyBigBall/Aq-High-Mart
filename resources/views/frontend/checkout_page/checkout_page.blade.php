@@ -27,6 +27,7 @@
                                                 <label class="info-title" for="shippingName">收货人姓名<span>*</span></label>
                                                 <input type="text" class="form-control unicase-form-control text-input"
                                                     id="shippingName" placeholder="输入你的名字"
+                                                    required=""
                                                     name="shipping_name" value="{{ Auth::user()->name }}">
                                                     @error('shipping_name')
                                                         <span class="alert text-danger">{{ $message }}</span>
@@ -37,6 +38,7 @@
                                                     <span>*</span></label>
                                                 <input type="email" class="form-control unicase-form-control text-input"
                                                     id="shippingEmail" placeholder="输入你的电子邮箱"
+                                                    required=""
                                                     name="shipping_email" value="{{ Auth::user()->email }}">
                                                     @error('shipping_email')
                                                         <span class="alert text-danger">{{ $message }}</span>
@@ -56,6 +58,7 @@
                                                 <label class="info-title" for="shippingPostCode">航运邮政编码<span>*</span></label>
                                                 <input type="text" class="form-control unicase-form-control text-input"
                                                     id="shippingPostCode" placeholder="输入您的帖子编号"
+                                                    required=""
                                                     name="shipping_postCode">
                                                     @error('shipping_postCode')
                                                         <span class="alert text-danger">{{ $message }}</span>
@@ -69,10 +72,12 @@
                                         <h4 class="checkout-subtitle"><b>地址栏</b></h4>
 
                                         <div class="form-group">
-                                            <h5>分区选择 <span class="text-danger">*</span></h5>
+                                            <h5>省名称 <span class="text-danger">*</span></h5>
                                             <div class="controls">
-                                                <select class="custom-select form-control unicase-form-control" aria-label="选择部门" name="division_id">
-                                                    <option selected>选择部门名称</option>
+                                                <select class="custom-select form-control unicase-form-control" 
+                                                    required=""
+                                                    aria-label="请选择省" name="division_id">
+                                                    <option selected>请选择省</option>
                                                     @foreach ($divisions as $division)
                                                         <option value="{{ $division->id }}">
                                                             {{ $division->division_name }}</option>
@@ -85,10 +90,12 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <h5>选区 <span class="text-danger">*</span></h5>
+                                            <h5>市名称 <span class="text-danger">*</span></h5>
                                             <div class="controls">
-                                                <select class="custom-select form-control unicase-form-control" aria-label="District Select" name="district_id">
-                                                    <option selected="" disabled="">选择地区名称</option>
+                                                <select class="custom-select form-control unicase-form-control" 
+                                                    required=""
+                                                    aria-label="市选择" name="district_id">
+                                                    <option selected="" disabled="">请选择市</option>
                                                 </select>
                                             </div>
                                             @error('district_id')
@@ -96,10 +103,12 @@
                                             @enderror
                                         </div>
                                         <div class="form-group">
-                                            <h5>选择州 <span class="text-danger">*</span></h5>
+                                            <h5>区名称<span class="text-danger">*</span></h5>
                                             <div class="controls">
-                                                <select class="custom-select form-control unicase-form-control" aria-label="State Select" name="state_id">
-                                                    <option selected="" disabled="">选择州名</option>
+                                                <select class="custom-select form-control unicase-form-control" 
+                                                    required=""
+                                                    aria-label="区选择" name="state_id">
+                                                    <option selected="" disabled="">请选择区</option>
                                                 </select>
                                             </div>
                                             @error('state_id')
@@ -108,7 +117,7 @@
                                         </div>
 
                                         <label class="info-title" for="shippingAddrees">收件地址<span class="text-danger">*</span></label>
-                                        <textarea name="shipping_address" id="" cols="30" rows="10"
+                                        <textarea name="shipping_address" id="" cols="30" rows="10" required=""
                                             class="form-control unicase-form-control text-input" id="shippingAddrees"
                                             placeholder="示例：北京市朝阳区力鸿花园 1号楼 18A"></textarea>
                                             @error('shipping_address')
@@ -159,15 +168,15 @@
                                     <hr>
                                     <li>
                                         @if (Session::has('coupon'))
-                                            <strong>小计: </strong> ${{ $cart_total }}
+                                            <strong>小计: </strong> {{ $cart_total }}元
                                             <hr>
                                             <strong>优惠券名称: </strong> {{ session()->get('coupon')['coupon_name'] }}
                                             ( {{ session()->get('coupon')['coupon_discount'] }} %)
                                             <hr>
                                             <strong>优惠券折扣:
-                                            </strong>(-)${{ session()->get('coupon')['discount_amount'] }}
+                                            </strong>(-){{ session()->get('coupon')['discount_amount'] }}元
                                             <hr>
-                                            <strong>总计: </strong>${{ session()->get('coupon')['total_amount'] }}
+                                            <strong>总计: </strong>{{ session()->get('coupon')['total_amount'] }}元
                                             <hr>
                                         @else
                                             <strong>小计: </strong> ${{ $cart_total }}
@@ -199,7 +208,7 @@
                                 </div>
                                 <div class="col-md-4">
                                     <label for="">Paypal</label>
-                                    <input type="radio" name="payment_method" id="" value="card">
+                                    <input type="radio" name="payment_method" disabled id="" value="paypal">
                                     <img src="{{ asset('frontend/assets/images/payments/1.png') }}" alt="">
                                 </div>
                                 <div class="col-md-4 hidden">
@@ -241,7 +250,24 @@
                                 var d =$('select[name="district_id"]').empty();
                                     $.each(data, function(key, value){
                                         $('select[name="district_id"]').append('<option value="'+ value.id +'">' + value.district_name + '</option>');
+                                        if(data.length==1)
+                                        {
+                                            district_id = value.id
+                                            $.ajax({
+                                                url: "{{  url('/district/state/ajax') }}/"+district_id,
+                                                type:"GET",
+                                                dataType:"json",
+                                                success:function(data) {
+                                                    var d =$('select[name="state_id"]').empty();
+                                                        $.each(data, function(key, value){
+                                                            $('select[name="state_id"]').append('<option value="'+ value.id +'">' + value.state_name + '</option>');
+                                                        });
+                                                },
+                                            });
+                                        }
                                     });
+
+                                
                             },
                         });
                     } else {

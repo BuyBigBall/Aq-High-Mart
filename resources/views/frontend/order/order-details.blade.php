@@ -9,7 +9,7 @@
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header">
-                    <h4>Shipping Details</h4>
+                    <h4>运输详情</h4>
                 </div>
                 <hr>
                 <div class="card-body" style="background: #E9EBEC;">

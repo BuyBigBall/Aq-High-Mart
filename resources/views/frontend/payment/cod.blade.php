@@ -17,14 +17,14 @@
                     <div class="panel-group">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h4 class="unicase-checkout-title">Your Shopping Amount</h4>
+                                <h4 class="unicase-checkout-title">您的购物金额</h4>
                             </div>
                             <div class="">
                                 <ul class="nav nav-checkout-progress list-unstyled">
                                     <hr>
                                     <li>
                                         @if (Session::has('coupon'))
-                                            <strong>SubTotal: </strong> ${{ $cart_total }}
+                                            <strong>小计： </strong> {{ $cart_total }}元
                                             <hr>
                                             <strong>优惠券名称: </strong> {{ session()->get('coupon')['coupon_name'] }}
                                             ( {{ session()->get('coupon')['coupon_discount'] }} %)
@@ -32,12 +32,12 @@
                                             <strong>优惠券折扣:
                                             </strong>(-)${{ session()->get('coupon')['discount_amount'] }}
                                             <hr>
-                                            <strong>Grand Total: </strong>${{ session()->get('coupon')['total_amount'] }}
+                                            <strong>总计： </strong>{{ session()->get('coupon')['total_amount'] }}元
                                             <hr>
                                         @else
-                                            <strong>SubTotal: </strong> ${{ $cart_total }}
+                                            <strong>小计： </strong> {{ $cart_total }}元
                                             <hr>
-                                            <strong>Grand Total: </strong> ${{ $cart_total }}
+                                            <strong>总计： </strong> {{ $cart_total }}元
                                             <hr>
                                         @endif
 

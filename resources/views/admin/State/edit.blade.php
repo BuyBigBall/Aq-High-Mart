@@ -20,7 +20,7 @@
                             @method('PUT')
                             @csrf
                             <div class="form-group">
-                                <h5>部门名称 <span class="text-danger">*</span></h5>
+                                <h5>省名称 <span class="text-danger">*</span></h5>
                                 <select class="custom-select" aria-label="Default select example" name="division_id">
                                     @foreach ($divisions as $division)
                                     <option value="{{ $division->id }}" {{ $division->id == $state->division_id ? 'selected': ''}} >{{ $division->division_name}}</option>
@@ -31,7 +31,7 @@
                                 @enderror
                             </div>
                             <div class="form-group">
-                                <h5>District Name <span class="text-danger">*</span></h5>
+                                <h5>市名称 <span class="text-danger">*</span></h5>
                                 <select class="custom-select" aria-label="Default select example" name="district_id">
                                     @foreach ($districts as $district)
                                     <option value="{{ $district->id }}" {{ $district->id == $state->district_id ? 'selected': ''}} >{{ $district->district_name}}</option>

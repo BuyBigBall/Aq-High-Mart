@@ -133,7 +133,7 @@
   <table width="100%" style=" padding:0 10px 0 10px;">
     <tr>
         <td align="right" >
-            <h2><span style="color: green;">Subtotal:</span>$ {{ $order->amount }}</h2>
+            <h2><span style="color: green;">小计：</span>$ {{ $order->amount }}</h2>
             <h2><span style="color: green;">Total:</span> $ {{ $order->amount }}</h2>
             {{-- <h2><span style="color: green;">Full Payment PAID</h2> --}}
         </td>

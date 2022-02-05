@@ -1,7 +1,7 @@
 @extends('frontend.frontend_master')
 
 @section('title')
-    {{ env('SHOP_NAME') }}  Fashion - Stripe Page
+    {{ env('SHOP_NAME') }} - Stripe Page
 @endsection
 
 @section('frontend_style')
@@ -42,14 +42,14 @@
                     <div class="panel-group">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h4 class="unicase-checkout-title">Your Shopping Amount</h4>
+                                <h4 class="unicase-checkout-title">您的购物金额</h4>
                             </div>
                             <div class="">
                                 <ul class="nav nav-checkout-progress list-unstyled">
                                     <hr>
                                     <li>
                                         @if (Session::has('coupon'))
-                                            <strong>SubTotal: </strong> ${{ $cart_total }}
+                                            <strong>小计： </strong> {{ $cart_total }}元
                                             <hr>
                                             <strong>优惠券名称: </strong> {{ session()->get('coupon')['coupon_name'] }}
                                             ( {{ session()->get('coupon')['coupon_discount'] }} %)
@@ -57,12 +57,12 @@
                                             <strong>优惠券折扣:
                                             </strong>(-)${{ session()->get('coupon')['discount_amount'] }}
                                             <hr>
-                                            <strong>Grand Total: </strong>${{ session()->get('coupon')['total_amount'] }}
+                                            <strong>总计： </strong>{{ session()->get('coupon')['total_amount'] }}元
                                             <hr>
                                         @else
-                                            <strong>SubTotal: </strong> ${{ $cart_total }}
+                                            <strong>小计： </strong> {{ $cart_total }}元
                                             <hr>
-                                            <strong>Grand Total: </strong> ${{ $cart_total }}
+                                            <strong>总计： </strong> {{ $cart_total }}元
                                             <hr>
                                         @endif
 
@@ -93,7 +93,7 @@
                             <input type="hidden" name="shipping_address" value="{{ $data['shipping_address'] }}">
                             <input type="hidden" name="shipping_notes" value="{{ $data['shipping_notes'] }}">
 
-                                Credit or debit card
+                                信用卡或借记卡
                               </label>
                               <div id="card-element">
                                 <!-- A Stripe Element will be inserted here. -->
@@ -103,7 +103,7 @@
                               <div id="card-errors" role="alert"></div>
                             </div>
                             <br>
-                            <button class="btn btn-primary">Submit Payment</button>
+                            <button class="btn btn-primary">提交支付</button>
                           </form>
                     </div>
                 </div>
@@ -117,7 +117,9 @@
 <script src="https://js.stripe.com/v3/"></script>
 <script type="text/javascript">
     // Create a Stripe client.
-var stripe = Stripe('pk_test_51H8TlFIWhXor2KLbagYIph0uQXZ0LIyCTFJLjNgQeoq8IrIPW3KZjRkd1eMz6SPIAB9VaUdb2CKV3B3agInaiFVp004WznlHuO');
+// var stripe = Stripe('pk_test_51H8TlFIWhXor2KLbagYIph0uQXZ0LIyCTFJLjNgQeoq8IrIPW3KZjRkd1eMz6SPIAB9VaUdb2CKV3B3agInaiFVp004WznlHuO');
+var stripe = Stripe('<?php echo env('STRIPE_KEY') ?>');
+
 // Create an instance of Elements.
 var elements = stripe.elements();
 // Custom styling can be passed to options when creating an Element.
@@ -162,6 +164,7 @@ form.addEventListener('submit', function(event) {
     } else {
       // Send the token to your server.
       stripeTokenHandler(result.token);
+      console.log("result.token = " + result.token);
     }
   });
 });

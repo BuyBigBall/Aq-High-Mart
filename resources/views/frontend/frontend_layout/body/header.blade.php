@@ -136,8 +136,8 @@
                                 {{-- mini cart start with AJAX END --}}
 
                                 <div class="clearfix cart-total">
-                                    <div class="pull-right"> <span class="text">小计 :</span class="sign">元<span
-                                            class='price' id="cartSubTotal"></span> </div>
+                                    <div class="pull-right"> <span class="text">小计 :</span class="sign"><span
+                                            class='price' id="cartSubTotal"></span>元 </div>
                                     <div class="clearfix"></div>
 
                                     <a href="{{ route('checkout-page') }}" class="btn btn-upper btn-primary btn-block m-t-20">结帐</a>
