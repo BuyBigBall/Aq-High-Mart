@@ -85,17 +85,17 @@
                             <div class="control-group">
                                 <ul class="categories-filter animate-dropdown">
                                     <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown"
-                                            href="category.html">分类 <b class="caret"></b></a>
+                                            href="/">分类 <b class="caret"></b></a>
                                         <ul class="dropdown-menu" role="menu">
-                                            <li class="menu-header">Computer</li>
-                                            <li role="presentation"><a role="menuitem" tabindex="-1"
-                                                    href="category.html">- Clothing</a></li>
-                                            <li role="presentation"><a role="menuitem" tabindex="-1"
-                                                    href="category.html">- Electronics</a></li>
-                                            <li role="presentation"><a role="menuitem" tabindex="-1"
-                                                    href="category.html">- Shoes</a></li>
-                                            <li role="presentation"><a role="menuitem" tabindex="-1"
-                                                    href="category.html">- Watches</a></li>
+                                            <!-- <li class="menu-header">Computer</li> -->
+                                            <!-- <li role="presentation"><a role="menuitem" tabindex="-1"
+                                                    href="category.html">- Clothing</a></li> -->
+                                            <li class="menu-header"><a role="menuitem" tabindex="-1"
+                                                    href="/">分类</a></li>
+                                            @foreach ($categories as $category)
+                                                <li role="presentation" style="padding-left:10px;"><a role="menuitem" tabindex="0"
+                                                    href="{{ route('category', $category->id) }}"> {{ $category->category_name_bn }}</a></li>
+                                            @endforeach
                                         </ul>
                                     </li>
                                 </ul>
@@ -117,7 +117,7 @@
                             <div class="items-cart-inner">
                                 <div class="basket"> <i class="glyphicon glyphicon-shopping-cart"></i> </div>
                                 <div class="basket-item-count"><span class="count" id="cartQty"></span></div>
-                                <div class="total-price-basket"> <span class="lbl">大車 -</span>
+                                <div class="total-price-basket"> <span class="lbl">购物车 -</span>
                                     <span class="total-price">
                                         <span class="value" id="cartSubTotal"></span>
                                         <span class="sign">元</span>

@@ -29,7 +29,7 @@
                                             <div class="shopping-cart-btn">
                                                 <span class="">
                                                     <a href="#" class="btn btn-upper btn-primary outer-left-xs">继续购物</a>
-                                                    <a href="#"
+                                                    <a  onclick="window.location.reload()"
                                                         class="btn btn-upper btn-primary pull-right outer-right-xs">更新购物车</a>
                                                 </span>
                                             </div><!-- /.shopping-cart-btn -->
@@ -55,7 +55,7 @@
                                 <tr>
                                     <td>
                                         <div class="form-group">
-                                            <label class="info-title control-label">国家 <span>*</span></label>
+                                            <label class="info-title control-label">省 <span class="text-danger">*</span></label>
                                             <select class="form-control unicase-form-control selectpicker"
                                                 style="display: none;">
                                                 <option>--选择选项--</option>
@@ -63,7 +63,7 @@
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label class="info-title control-label">州/省 <span>*</span></label>
+                                            <label class="info-title control-label">市 <span class="text-danger">*</span></label>
                                             <select class="form-control unicase-form-control selectpicker"
                                                 style="display: none;">
                                                 <option>--选择选项--</option>

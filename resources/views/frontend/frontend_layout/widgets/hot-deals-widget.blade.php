@@ -21,7 +21,7 @@
                         $discount_amount = (($product->selling_price-$product->discount_price)/($product->selling_price))*100
                     @endphp
                     <div class="sale-offer-tag"><span>{{ round($discount_amount) }}%<br>
-                            off</span></div>
+                        折</span></div>
                     <div class="timing-wrapper">
                         <div class="box-wrapper">
                             <div class="date box"> <span class="key">120</span> <span class="value">天</span> </div>

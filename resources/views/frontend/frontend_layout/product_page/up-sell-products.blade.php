@@ -16,7 +16,7 @@
                                         </a>
                                     </div><!-- /.image -->
 
-                                    <div class="tag sale"><span>sale</span></div>
+                                    <div class="tag sale"><span>销售</span></div>
                                 </div><!-- /.product-image -->
                                 <div class="product-info text-left">
                                     <h3 class="name"><a href="{{ route('frontend-product-details',['id' => $product->id, 'slug' => $product->product_slug_bn]) }}">
@@ -65,11 +65,11 @@
                                                     <i class="icon fa fa-heart"></i>
                                                 </a>
                                             </li>
-                                            <li class="lnk">
+                                            <!-- <li class="lnk">
                                                 <a class="add-to-cart" href="detail.html" title="Compare">
                                                     <i class="fa fa-signal"></i>
                                                 </a>
-                                            </li>
+                                            </li> -->
                                         </ul>
                                     </div><!-- /.action -->
                                 </div><!-- /.cart -->

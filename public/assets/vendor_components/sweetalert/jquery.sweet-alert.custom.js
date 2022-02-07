@@ -14,12 +14,12 @@
 
     //A title with a text under
     $('#sa-title').click(function(){
-        swal("Here's a message!", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lorem erat eleifend ex semper, lobortis purus sed.")
+        swal("Here's a message!", "痛苦本身就是爱，主要客户. Sed lorem erat eleifend ex semper, lobortis purus sed.")
     });
 
     //Success Message
     $('#sa-success').click(function(){
-        swal("Good job!", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lorem erat eleifend ex semper, lobortis purus sed.", "success")
+        swal("Good job!", "痛苦本身就是爱，主要客户. Sed lorem erat eleifend ex semper, lobortis purus sed.", "success")
     });
 
     //Warning Message

@@ -1278,7 +1278,7 @@ header{background:#157ed2}
   margin: 0px;
   padding: 12px 19px 12px;
   text-align: center;
-    background-color: #fdd922;
+    background-color: #d0d944;
     border: 1px solid #e0bc27;
 }
 .main-header .top-search-holder .search-area .search-button:after {
@@ -1660,7 +1660,7 @@ header{background:#157ed2}
   font-family: "Microsoft YaHei", tahoma, arial, "Hiragino Sans GB", "\\5b8b体", sans-serif;
   padding: 12px 17px;
   text-transform: uppercase;
-  background-color: #fdd922;
+  background-color: #d0d944;
     border: 1px solid #e9c532;
 	font-weight:700;
 	letter-spacing: 0.5px;
@@ -2748,7 +2748,7 @@ age-container #owl-main .owl-next {
   left: 50%;
   position:absolute;
    top:0;
-    margin-left:-55px
+  margin-left:-28px
  
 }
 .product .cart .action ul li {
@@ -2946,7 +2946,7 @@ age-container #owl-main .owl-next {
 }
 .cnt-strip .strip h2 {
   font-size: 36px;
-  color: #fdd922;
+  color: #d0d944;
   margin: 0;
   text-transform: uppercase;
   font-family:'Montserrat', sans-serif;
@@ -3550,7 +3550,7 @@ age-container #owl-main .owl-next {
   line-height: 145px;
   text-transform: uppercase;
   font-family: "Microsoft YaHei", tahoma, arial, "Hiragino Sans GB", "\\5b8b体", sans-serif;
-  color: #fdd922;
+  color: #d0d944;
 }
 .category-carousel .item .caption .excerpt {
   font-size:36px;

@@ -1,4 +1,4 @@
-<div class="best-deal wow fadeInUp outer-bottom-xs">
+<div class="best-deal wow fadeInUp outer-bottom-xs hidden">
 <h3 class="section-title">畅销书</h3>
 <div class="sidebar-widget-body outer-top-xs">
     <div class="owl-carousel best-seller custom-carousel owl-theme outer-top-xs">

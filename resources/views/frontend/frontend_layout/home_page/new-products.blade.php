@@ -30,7 +30,7 @@
 <div class="tab-content outer-top-xs">
     <div class="tab-pane in active" id="all">
         <div class="product-slider">
-        <div class="owl-carousel home-owl-carousel custom-carousel owl-theme" data-item="6">
+        <div class="owl-carousel home-owl-carousel custom-carousel owl-theme" data-item="4">
             @forelse ($new_products as $product)
             <div class="item item-carousel">
                 <div class="products">
@@ -46,7 +46,7 @@
                             $discount_amount = (($product->selling_price-$product->discount_price)/($product->selling_price))*100
                         @endphp
                         @if ($product->discount_price == NULL)
-                            <div class="tag new"><span>New</span></div>
+                            <div class="tag new"><span>新的</span></div>
                         @else
                             <div class="tag new"><span>{{ round($discount_amount) }}%</span></div>
                         @endif
@@ -83,7 +83,7 @@
                             <li class="lnk wishlist">
                                 <a data-toggle="tooltip" class="add-to-cart" href="{{ route('frontend-product-details',['id' => $product->id, 'slug' => $product->product_slug_bn]) }}" title="Wishlist"> <i class="icon fa fa-heart"></i> </a>
                             </li>
-                            <li class="lnk"> <a data-toggle="tooltip" class="add-to-cart" href="{{ route('frontend-product-details',['id' => $product->id, 'slug' => $product->product_slug_bn]) }}" title="Compare"> <i class="fa fa-signal" aria-hidden="true"></i> </a> </li>
+                            <!-- <li class="lnk"> <a data-toggle="tooltip" class="add-to-cart" href="{{ route('frontend-product-details',['id' => $product->id, 'slug' => $product->product_slug_bn]) }}" title="Compare"> <i class="fa fa-signal" aria-hidden="true"></i> </a> </li> -->
                             </ul>
                         </div>
                         <!-- /.action -->
@@ -123,7 +123,7 @@
                                 $discount_amount = (($product->selling_price-$product->discount_price)/($product->selling_price))*100
                             @endphp
                             @if ($product->discount_price == NULL)
-                                <div class="tag new"><span>New</span></div>
+                                <div class="tag new"><span>新的</span></div>
                             @else
                                 <div class="tag new"><span>{{ round($discount_amount) }}%</span></div>
                             @endif
@@ -159,7 +159,7 @@
                                 <button class="btn btn-primary cart-btn" type="button">添加到购物车</button>
                             </li>
                             <li class="lnk wishlist"> <a data-toggle="tooltip" class="add-to-cart" href="{{ route('frontend-product-details',['id' => $product->id, 'slug' => $product->product_slug_bn]) }}" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> </li>
-                            <li class="lnk"> <a data-toggle="tooltip" class="add-to-cart" href="{{ route('frontend-product-details',['id' => $product->id, 'slug' => $product->product_slug_bn]) }}" title="Compare"> <i class="fa fa-signal" aria-hidden="true"></i> </a> </li>
+                            <!-- <li class="lnk"> <a data-toggle="tooltip" class="add-to-cart" href="{{ route('frontend-product-details',['id' => $product->id, 'slug' => $product->product_slug_bn]) }}" title="Compare"> <i class="fa fa-signal" aria-hidden="true"></i> </a> </li> -->
                             </ul>
                         </div>
                         <!-- /.action -->

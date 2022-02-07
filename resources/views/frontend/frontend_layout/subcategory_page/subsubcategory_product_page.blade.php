@@ -26,8 +26,8 @@
                                     alt="" class="img-responsive"> </div>
                             <div class="container-fluid">
                                 <div class="caption vertical-top text-left">
-                                    <div class="big-text"> Big Sale </div>
-                                    <div class="excerpt hidden-sm hidden-md"> Save up to 49% off </div>
+                                    <div class="big-text"> 大热卖 </div>
+                                    <div class="excerpt hidden-sm hidden-md"> 节省高达 49% 的折扣 </div>
                                     <div class="excerpt-normal hidden-sm hidden-md"> Lorem ipsum dolor sit amet, consectetur
                                         adipiscing elit </div>
                                 </div>
@@ -44,9 +44,9 @@
                                 <div class="filter-tabs">
                                     <ul id="filter-tabs" class="nav nav-tabs nav-tab-box nav-tab-fa-icon">
                                         <li class="active"> <a data-toggle="tab" href="#grid-container"><i
-                                                    class="icon fa fa-th-large"></i>Grid</a> </li>
+                                                    class="icon fa fa-th-large"></i>网格</a> </li>
                                         <li><a data-toggle="tab" href="#list-container"><i
-                                                    class="icon fa fa-th-list"></i>List</a></li>
+                                                    class="icon fa fa-th-list"></i>列表</a></li>
                                     </ul>
                                 </div>
                                 <!-- /.filter-tabs -->
@@ -54,16 +54,16 @@
                             <!-- /.col -->
                             <div class="col col-sm-12 col-md-6">
                                 <div class="col col-sm-3 col-md-6 no-padding">
-                                    <div class="lbl-cnt"> <span class="lbl">Sort by</span>
+                                    <div class="lbl-cnt"> <span class="lbl">排序</span>
                                         <div class="fld inline">
                                             <div class="dropdown dropdown-small dropdown-med dropdown-white inline">
                                                 <button data-toggle="dropdown" type="button" class="btn dropdown-toggle">
-                                                    Position <span class="caret"></span> </button>
+                                                    位置顺序 <span class="caret"></span> </button>
                                                 <ul role="menu" class="dropdown-menu">
-                                                    <li role="presentation"><a href="#">position</a></li>
-                                                    <li role="presentation"><a href="#">Price:Lowest first</a></li>
-                                                    <li role="presentation"><a href="#">Price:HIghest first</a></li>
-                                                    <li role="presentation"><a href="#">产品名称:A to Z</a></li>
+                                                    <li role="presentation"><a href="#">位置顺序</a></li>
+                                                    <li role="presentation"><a href="#">价格顺：最低优先</a></li>
+                                                    <li role="presentation"><a href="#">价格顺：最高优先</a></li>
+                                                    <li role="presentation"><a href="#">名称顺序</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -73,7 +73,7 @@
                                 </div>
                                 <!-- /.col -->
                                 <div class="col col-sm-3 col-md-6 no-padding">
-                                    <div class="lbl-cnt"> <span class="lbl">Show</span>
+                                    <div class="lbl-cnt"> <span class="lbl">显示</span>
                                         <div class="fld inline">
                                             <div class="dropdown dropdown-small dropdown-med dropdown-white inline">
                                                 <button data-toggle="dropdown" type="button" class="btn dropdown-toggle"> 1
@@ -137,7 +137,7 @@
                                                         $discount_amount = (($product->selling_price-$product->discount_price)/($product->selling_price))*100
                                                     @endphp
                                                     @if ($product->discount_price == NULL)
-                                                        <div class="tag new"><span>New</span></div>
+                                                        <div class="tag new"><span>新的</span></div>
                                                     @else
                                                         <div class="tag new"><span>{{ round($discount_amount) }}%</span></div>
                                                     @endif
@@ -191,9 +191,9 @@
                                                                 <li class="lnk wishlist"> <a class="add-to-cart"
                                                                         href="detail.html" title="Wishlist"> <i
                                                                             class="icon fa fa-heart"></i> </a> </li>
-                                                                <li class="lnk"> <a class="add-to-cart" href="detail.html"
+                                                                <!-- <li class="lnk"> <a class="add-to-cart" href="detail.html"
                                                                         title="Compare"> <i class="fa fa-signal"></i> </a>
-                                                                </li>
+                                                                </li> -->
                                                             </ul>
                                                         </div>
                                                         <!-- /.action -->
@@ -307,7 +307,7 @@
                                                 $discount_amount = (($product->selling_price-$product->discount_price)/($product->selling_price))*100
                                                 @endphp
                                                 @if ($product->discount_price == NULL)
-                                                    <div class="tag new"><span>New</span></div>
+                                                    <div class="tag new"><span>新的</span></div>
                                                 @else
                                                     <div class="tag new"><span>{{ round($discount_amount) }}%</span></div>
                                                 @endif

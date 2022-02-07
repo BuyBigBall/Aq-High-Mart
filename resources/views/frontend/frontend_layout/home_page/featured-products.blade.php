@@ -75,8 +75,8 @@
                                             <i class="icon fa fa-heart"></i> </button>
                                         {{-- <a class="add-to-cart" href="" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> --}}
                                     </li>
-                                    <li class="lnk"> <a class="add-to-cart"
-                                            href="#" title="Compare"> <i class="fa fa-signal" aria-hidden="true"></i> </a> </li>
+                                    <!-- <li class="lnk"> <a class="add-to-cart"
+                                            href="#" title="Compare"> <i class="fa fa-signal" aria-hidden="true"></i> </a> </li> -->
                                 </ul>
                             </div>
                             <!-- /.action -->

@@ -57,7 +57,7 @@ Route::middleware(['auth:web'])->group(function(){
 
 // Frontend Pages routes
 Route::get('/', [FrontendPageController::class,'home'])->name('home');
-Route::get('/category', [FrontendPageController::class,'category'])->name('category');
+Route::get('/category/{cate_id}', [FrontendPageController::class,'category'])->name('category');
 
 Route::get('/product/detail/{id}/{slug}', [FrontendPageController::class,'productDeatil'])->name('frontend-product-details');
 Route::get('/english/language', [LanguageController::class, 'englishLoad'])->name('english.language');

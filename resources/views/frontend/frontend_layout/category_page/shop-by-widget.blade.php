@@ -1,7 +1,7 @@
 <div class="sidebar-module-container">
     <div class="sidebar-filter">
         <!--  SIDEBAR CATEGORY  -->
-        <div class="sidebar-widget wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
+        <div class="sidebar-widget wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp; display:none;">
             <h3 class="section-title">购物</h3>
             <div class="widget-header">
                 <h4 class="widget-title">类别</h4>
@@ -51,7 +51,7 @@
         <!--  SIDEBAR CATEGORY : END  -->
 
         <!--  PRICE SILDER -->
-        <div class="sidebar-widget wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
+        <div class="sidebar-widget wow fadeInUp animated hidden" style="visibility: visible; animation-name: fadeInUp;">
             <div class="widget-header">
                 <h4 class="widget-title">Price Slider</h4>
             </div>
@@ -88,7 +88,8 @@
         <!-- /.sidebar-widget -->
         <!--  PRICE SILDER : END  -->
         <!--  MANUFACTURES -->
-        <div class="sidebar-widget wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
+        <div class="sidebar-widget wow fadeInUp animated" 
+            style="visibility: visible; animation-name: fadeInUp; display:none;">
             <div class="widget-header">
                 <h4 class="widget-title">Manufactures</h4>
             </div>
@@ -110,16 +111,16 @@
         <!--  COLOR -->
         <div class="sidebar-widget wow fadeInUp animated" style="visibility: visible; animation-name: fadeInUp;">
             <div class="widget-header">
-                <h4 class="widget-title">Colors</h4>
+                <h4 class="widget-title">颜色</h4>
             </div>
             <div class="sidebar-widget-body">
                 <ul class="list">
-                    <li><a href="#">Red</a></li>
-                    <li><a href="#">Blue</a></li>
-                    <li><a href="#">Yellow</a></li>
-                    <li><a href="#">Pink</a></li>
-                    <li><a href="#">Brown</a></li>
-                    <li><a href="#">Teal</a></li>
+                    <li><a href="#">红色</a></li>
+                    <li><a href="#">蓝色</a></li>
+                    <li><a href="#">黄色</a></li>
+                    <li><a href="#">粉色</a></li>
+                    <li><a href="#">棕色</a></li>
+                    <li><a href="#">蓝绿色</a></li>
                 </ul>
             </div>
             <!-- /.sidebar-widget-body -->
@@ -127,7 +128,7 @@
         <!-- /.sidebar-widget -->
         <!--  COLOR: END  -->
         <!--  COMPARE -->
-        <div class="sidebar-widget wow fadeInUp outer-top-vs animated"
+        <div class="sidebar-widget wow fadeInUp outer-top-vs animated hidden"
             style="visibility: visible; animation-name: fadeInUp;">
             <h3 class="section-title">Compare products</h3>
             <div class="sidebar-widget-body">
