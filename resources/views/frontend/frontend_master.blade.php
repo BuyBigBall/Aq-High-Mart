@@ -230,7 +230,7 @@
                         <div class="row">
                             <div class="col-xs-4">
                                 <div class="image">
-                                    <a href="#"><img src="/${value.options.image}" alt=""></a>
+                                    <a href="#"><div style="max-height:50px; overflow-y:hidden;"><img src="${value.options.image}" alt="" ></div></a>
                                 </div>
                             </div>
                             <div class="col-xs-7">

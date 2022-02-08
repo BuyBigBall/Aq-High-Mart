@@ -47,7 +47,7 @@
                             <div class="">
                                 <ul class="nav nav-checkout-progress list-unstyled">
                                     <hr>
-                                    <li>
+                                    <li class="product-start">
                                         @if (Session::has('coupon'))
                                             <strong>小计： </strong> {{ $cart_total }}元
                                             <hr>

@@ -123,7 +123,7 @@
                                             @error('shipping_address')
                                                 <span class="alert text-danger">{{ $message }}</span>
                                             @enderror
-                                            <div class="form-group mt-2">
+                                            <div class="form-group" style="margin-top:1.6rem;">
                                                 <label class="info-title" for="shippingNotes">运输说明<span></span></label>
                                                 <textarea name="shipping_notes" id="" cols="30" rows="10" class="form-control unicase-form-control text-input" id="shippingNotes" placeholder="装运单"></textarea>
                                             </div>
@@ -151,7 +151,7 @@
                             <div class="___class_+?71___">
                                 <ul class="nav nav-checkout-progress list-unstyled">
                                     @foreach ($carts as $item)
-                                        <li>
+                                        <li class="product-start">
                                             <strong>图片: </strong>
                                             <img src="{{ asset($item->options->image) }}"
                                                 style="height: 50px; width: 50px;" alt="">
@@ -159,9 +159,9 @@
                                         <li>
                                             <strong>数量:</strong>
                                             {{ $item->qty }}
-                                            <strong>颜色:</strong>
+                                            <strong style="margin-left:1.2rem">颜色:</strong>
                                             {{ $item->options->color }}
-                                            <strong>尺寸:</strong>
+                                            <strong style="margin-left:1.2rem">尺寸:</strong>
                                             {{ $item->options->size }}
                                         </li>
                                     @endforeach
@@ -202,13 +202,13 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-4">
-                                    <label for="strip_lbl" style="cursor:pointer;">Stripe</label>
-                                    <input type="radio" name="payment_method" id="strip_lbl" value="stripe" style="cursor:pointer;" />
+                                    <label for="stripe_lbl" style="cursor:pointer;width:55px;">Stripe</label>
+                                    <input type="radio" name="payment_method" id="stripe_lbl" value="stripe" style="cursor:pointer;" />
                                     <img src="{{ asset('frontend/assets/images/payments/4.png') }}" alt="">
                                 </div>
                                 <div class="col-md-4">
-                                    <label for="">Paypal</label>
-                                    <input type="radio" name="payment_method" disabled id="" value="paypal">
+                                    <label for="paypal_lbl"  style="cursor:pointer;width:55px;">Paypal</label>
+                                    <input type="radio" id="paypal_lbl" name="payment_method" disabled id="" value="paypal">
                                     <img src="{{ asset('frontend/assets/images/payments/1.png') }}" alt="">
                                 </div>
                                 <div class="col-md-4 hidden">
@@ -223,9 +223,12 @@
                         </div>
                     </div>
                 </div>
+                <hr>
+                <button type="submit" 
+                    class="btn btn-primary checkout-page-button d-flex justify-content-center"
+                    style="margin-left: 2rem !important; margin-bottom: 4rem;"
+                    >确认订单</button>
             </div>
-            <hr>
-            <button type="submit" class="btn btn-primary checkout-page-button">确认订单</button>
             </form>
         </div><!-- /.row -->
     </div>

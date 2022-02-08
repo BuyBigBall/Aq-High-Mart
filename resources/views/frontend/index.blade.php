@@ -51,6 +51,7 @@
                 @include('frontend.frontend_layout.home_page.brandwise')
                 <!-- /.section -->
                 <!--  Category wise PRODUCTS : END  -->
+                
                 <!--  畅销书  -->
                 @include('frontend.frontend_layout.home_page.best-seller')
                 <!-- /.sidebar-widget -->
