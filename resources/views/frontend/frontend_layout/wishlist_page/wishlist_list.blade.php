@@ -1,7 +1,7 @@
 @extends('frontend.frontend_master')
 
 @section('title')
-    {{ env('SHOP_NAME') }}  Fashion - Wishlist Page
+    {{ env('SHOP_NAME') }}  我的收藏
 @endsection
 
 @section('frontend_content')
@@ -14,7 +14,7 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th colspan="4" class="heading-title">My Wishlist</th>
+                                <th colspan="4" class="heading-title">我的收藏</th>
                             </tr>
                         </thead>
                         <tbody>

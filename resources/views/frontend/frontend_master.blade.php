@@ -163,12 +163,7 @@
     }
 
     // Add to Cart Product
-    function addToCart(){
-        var product_name = $('#pname').text();
-        var id = $('#product_id').val();
-        var color = $('#color option:selected').text();
-        var size = $('#size option:selected').text();
-        var qty = $('#product_qty').val();
+    function AddToCartProduct(product_name, id, color, size, qty){
 
         $.ajax({
             type: 'POST',
@@ -205,6 +200,17 @@
                 }
             }
         })
+    }
+
+    // Add to Cart Product
+    function addToCart(){
+        var product_name = $('#pname').text();
+        var id = $('#product_id').val();
+        var color = $('#color option:selected').text();
+        var size = $('#size option:selected').text();
+        var qty = $('#product_qty').val();
+
+        AddToCartProduct(product_name, id, color, size, qty);
     }
     // End to Cart Product
 </script>
@@ -281,34 +287,69 @@
 <script type="text/javascript">
     // Start Add to Wishlist
     function addToWishlist(id){
-        $.ajax({
-            type:'POST',
-            dataType: 'json',
-            url:'/user/add/product/to-wishlist/'+id,
-            success: function(data){
-                //start message
-                const Toast = Swal.mixin({
-                        toast: true,
-                        position: 'top-end',
-                        showConfirmButton: false,
-                        timer: 3000
-                })
-                if($.isEmptyObject(data.error)){
-                    Toast.fire({
-                        type:'success',
-                        icon: 'success',
-                        title: data.success,
+        try{
+            $.ajax({
+                type:'POST',
+                dataType: 'json',
+                data:{
+                    _token: $("input[name='_token']").val()
+                },
+                url:'/user/add/product/to-wishlist/'+id,
+                success: function(data){
+                    //start message
+                    const Toast = Swal.mixin({
+                            toast: true,
+                            position: 'top-end',
+                            showConfirmButton: false,
+                            timer: 3000
                     })
-                }else{
-                    Toast.fire({
-                        type: 'error',
-                        icon: 'error',
-                        title:data.error,
-                    })
-                }
-                //end message
-            }
-        });
+                    if($.isEmptyObject(data.error)){
+                        Toast.fire({
+                            type:'success',
+                            icon: 'success',
+                            title: data.success,
+                        })
+                    }else{
+                        Toast.fire({
+                            type: 'error',
+                            icon: 'error',
+                            title:data.error,
+                        })
+                    }
+                    //end message
+                },
+                error: function (jqXHR, exception) {
+                    var msg = '';
+                    if (jqXHR.status === 0) {
+                        msg = 'Not connect.\n Verify Network.';
+                    } else if (jqXHR.status == 401) {
+                        msg = '你没有登录。';
+                    } else if (jqXHR.status == 404) {
+                        msg = 'Requested page not found. [404]';
+                    } else if (jqXHR.status == 500) {
+                        msg = 'Internal Server Error [500].';
+                    } else if (exception === 'parsererror') {
+                        msg = 'Requested JSON parse failed.';
+                    } else if (exception === 'timeout') {
+                        msg = 'Time out error.';
+                    } else if (exception === 'abort') {
+                        msg = 'Ajax request aborted.';
+                    } else {
+                        msg = 'Uncaught Error.\n' + jqXHR.responseText;
+                    }
+                    // Toast.fire({
+                    //         type: 'error',
+                    //         icon: 'error',
+                    //         msg,
+                    //     });
+                    alert(msg);
+                },
+            });
+        }
+        catch(ee)
+        {
+
+        }
     }
     // End Add to Wishlist
     // Start remove from wishlist

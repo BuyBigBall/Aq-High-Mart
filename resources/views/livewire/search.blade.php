@@ -139,7 +139,9 @@
                         <div class="products">
                         <div class="product">
                             <div class="product-image">
-                            <div class="image"> <a href="detail.html"><img src="{{ $product->product_thumbnail }}" alt=""></a> </div>
+                            <div class="image"> <a 
+                                href="{{ route('frontend-product-details',['id' => $product->id, 'slug' => $product->product_slug_bn]) }}"
+                            ><img src="{{ $product->product_thumbnail }}" alt=""></a> </div>
                             <!-- /.image -->
                             @if( !empty($mark) )
                             <div class="tag new"><span>{{ $mark }}</span></div>
@@ -148,7 +150,9 @@
                             <!-- /.product-image -->
                             
                             <div class="product-info text-left">
-                            <h3 class="name"><a href="detail.html">{{ $product->product_name_bn }}</a></h3>
+                            <h3 class="name"><a 
+                                href="{{ route('frontend-product-details',['id' => $product->id, 'slug' => $product->product_slug_bn]) }}"
+                                >{{ $product->product_name_bn }}</a></h3>
                             <div class="rating rateit-small rateit"></div>
                             <div class="description"></div>
                             <div class="product-price"> <span class="price"> {{ $product->selling_price }}元 </span> <span class="price-before-discount">{{ $product->selling_price }}元</span> </div>
@@ -159,10 +163,14 @@
                             <div class="action">
                                 <ul class="list-unstyled">
                                 <li class="add-cart-button btn-group">
-                                    <button class="btn btn-primary icon" data-toggle="dropdown" type="button"> <i class="fa fa-shopping-cart"></i> </button>
-                                    <button class="btn btn-primary cart-btn" type="button">添加到购物车</button>
+                                    <button class="btn btn-primary icon" data-toggle="dropdown" type="button"
+                                        onclick="AddToCartProduct('{{ $product->product_name_bn }}', '{{ $product->id }}', '{{ $product->product_color_bn }}', '{{ $product->product_size_bn }}', 1)"
+                                        > <i class="fa fa-shopping-cart"></i> </button>
+                                    <button class="btn btn-primary cart-btn" type="button"
+                                        onclick="AddToCartProduct('{{ $product->product_name_bn }}', '{{ $product->id }}', '{{ $product->product_color_bn }}', '{{ $product->product_size_bn }}', 1)"
+                                        >添加到购物车</button>
                                 </li>
-                                <li class="lnk wishlist"> <a class="add-to-cart" href="detail.html" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> </li>
+                                <li class="lnk wishlist"> <a class="add-to-cart" onclick="addToWishlist(this.id)" id="{{ $product->id }}" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> </li>
                                 <!-- <li class="lnk"> <a class="add-to-cart" href="detail.html" title="Compare"> <i class="fa fa-signal"></i> </a> </li> -->
                                 </ul>
                             </div>
@@ -204,7 +212,9 @@
                             <!-- /.col -->
                             <div class="col col-sm-8 col-lg-8">
                                 <div class="product-info">
-                                <h3 class="name"><a href="detail.html">{{ $product->product_name_bn }}</a></h3>
+                                <h3 class="name"><a 
+                                    href="{{ route('frontend-product-details',['id' => $product->id, 'slug' => $product->product_slug_bn]) }}"
+                                    >{{ $product->product_name_bn }}</a></h3>
                                 <div class="rating rateit-small rateit"></div>
                                 <div class="product-price"> <span class="price"> {{ $product->selling_price }}元 </span> <span class="price-before-discount">{{ $product->discount_price }}元</span> </div>
                                 <!-- /.product-price -->
@@ -216,7 +226,7 @@
                                         <button class="btn btn-primary icon" data-toggle="dropdown" type="button"> <i class="fa fa-shopping-cart"></i> </button>
                                         <button class="btn btn-primary cart-btn" type="button">添加到购物车</button>
                                         </li>
-                                        <li class="lnk wishlist"> <a class="add-to-cart" href="detail.html" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> </li>
+                                        <li class="lnk wishlist"> <a class="add-to-cart" onclick="addToWishlist(this.id)" id="{{ $product->id }}" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> </li>
                                         <!-- <li class="lnk"> <a class="add-to-cart" href="detail.html" title="Compare"> <i class="fa fa-signal"></i> </a> </li> -->
                                     </ul>
                                     </div>
@@ -301,5 +311,6 @@
         {
             $("button[dusk='nextPage.before']").trigger('click');
         }
+
     </script>
 </div>

@@ -100,6 +100,7 @@
                                                     style="cursor:pointer;"
                                                     onclick="category_click(this)"
                                                     >分类</a></li>
+                                            <?php if(!!empty($categories)) $categories=[]; ?>
                                             @foreach ($categories as $category)
                                                 <li role="presentation" 
                                                     style="padding-left:10px;"><a class="menuitem" role="menuitem" tabindex="0"
