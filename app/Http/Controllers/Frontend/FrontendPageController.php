@@ -10,9 +10,14 @@ use App\Models\Product;
 use App\Models\Slider;
 use App\Models\SubCategory;
 use App\Models\SubSubCategory;
+use Illuminate\Support\Facades\Cookie;
 
 class FrontendPageController extends Controller
 {
+    public $listeners = [
+        'setviewmode' => 'setviewmode',
+    ];
+
     public function home()
     {
         $categories = Category::with(['subcategory', 'subsubcategory', 'products'])->orderBy('category_name_en', 'ASC')->get();
@@ -129,4 +134,54 @@ class FrontendPageController extends Controller
             'size_en' => $size_en,
         ],200);
     }
+    
+    // public function search(Request $request)
+    // {
+    //     if (Cookie::has('view_mode'))  
+    //         $view_mode =  Cookie::get('view_mode');
+    //     else
+    //         $view_mode = 'gridview';
+            
+    //     $query = Product::where('status', 1);
+    //     if( !empty($request->cateid))
+    //     {
+    //         $query->where('category_id', $request->cateid);
+    //     }
+    //     if( !empty($request->word))
+    //     {
+    //         $query->where('product_name_bn', 'like', '%'.$request->word.'%');
+    //     }
+    //     $new_products = $query->orderBy('id','DESC')->paginate(12);
+        
+        
+
+    //     $categories = Category::with(['subcategory', 'subsubcategory', 'products'])->orderBy('category_name_en', 'ASC')->get();
+    //     $sliders = Slider::where('slider_name', '=', 'Main-Slider')->where('slider_status', '=', 1)->limit(3)->get();
+    //     // $new_products = Product::with(['images'])
+    //     //                 ->where('new_arrival' ,'=', 1)
+    //     //                 ->where('status', 1)->limit(20)->get();
+
+    //     $skip_category_0 = Category::skip(0)->first();
+    //     $skip_category_products_0 = Product::where('category_id', $skip_category_0->id)
+    //                     ->where('status', 1)
+    //                     ->latest()->limit(20)->get();
+
+    //     $skip_brand_0 = Brand::skip(0)->first();
+    //     $skip_brand_products_0 = Product::where('brand_id', $skip_brand_0->id)
+    //                     ->where('status', 1)
+    //                     ->latest()->limit(20)->get();
+    //     return view('frontend.frontend_layout.product_page.search-page'   //category-page'
+    //             , compact(
+    //                 'categories',
+    //                 'sliders',
+    //                 'new_products',
+    //                 'skip_category_0',
+    //                 'skip_category_products_0',
+    //                 'skip_brand_0',
+    //                 'skip_brand_products_0',
+    //                 'view_mode'
+    //             )
+    //         );
+    // }
+    
 }

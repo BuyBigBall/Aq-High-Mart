@@ -25,6 +25,7 @@ use App\Http\Controllers\Frontend\LanguageController;
 use App\Http\Controllers\User\OrderDetailsController;
 use App\Http\Controllers\User\OrderHistoryController;
 use App\Http\Controllers\User\WishlistController;
+use App\Http\Livewire\Search;
 
 /*
 |--------------------------------------------------------------------------
@@ -114,6 +115,11 @@ Route::get('/my-cart/list',[CartPageController::class,'showmyCartList'])->name('
 Route::get('/remove/from-cart/{rowId}',[CartPageController::class,'removeFromCart'])->name('removeFromCart');
 Route::get('/add/in-cart/{rowId}',[CartPageController::class,'addQtyToCart'])->name('addQtyToCart');
 Route::get('/reduce/from-cart/{rowId}',[CartPageController::class,'reduceQtyFromCart'])->name('reduceQtyFromCart');
+
+//Route::post('/search',[FrontendPageController::class, 'search'])->name('search');
+Route::post('/search',Search::class)->name('search');
+Route::get('/search',Search::class)->name('search');
+
 
 //Frontend apply Coupon routes
 Route::post('/coupon/apply/',[CartPageController::class,'applyCoupon'])->name('applyCoupon');

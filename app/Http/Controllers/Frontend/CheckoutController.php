@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\CheckoutStoreRequest;
 use App\Models\ShipDistrict;
 use App\Models\ShipDivision;
-use App\Models\Shipping;
+use App\Models\Category;
 use App\Models\ShipState;
 use Illuminate\Http\Request;
 use Cart;
@@ -136,7 +136,7 @@ class CheckoutController extends Controller
     public function checkoutPage()
     {
         if(Auth::check()){
-
+            $categories = Category::with(['subcategory', 'subsubcategory', 'products'])->orderBy('category_name_en', 'ASC')->get();
             if (Cart::total() > 0) {
                 $carts = Cart::content();
                 $cart_qty = Cart::count();
@@ -148,7 +148,8 @@ class CheckoutController extends Controller
                     'carts',
                     'cart_qty',
                     'cart_total',
-                    'divisions'
+                    'divisions',
+                    'categories'
                 ));
             }else{
                 $notification = [

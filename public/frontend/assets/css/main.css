@@ -1546,7 +1546,7 @@ header{background:#157ed2}
 
 }
 
-.yamm .dropdown-menu .yamm-content .col-menu {min-width:150px}
+.yamm .dropdown-menu .yamm-content .col-menu {min-width:150px; padding-bottom:2rem;}
 
 .yamm .dropdown-menu .yamm-content .links li a {
   padding: 4px 0px;
@@ -4548,7 +4548,7 @@ age-container #owl-main .owl-next {
 	.header-style-1 .header-nav .navbar-default .navbar-collapse {padding-right: 15px; padding-left: 15px;}
 	.header-style-1 .header-nav .navbar-default .navbar-collapse .navbar-nav > li > a {border:none}
 	.mega-menu img {width:100%}
-	.yamm .dropdown-menu .yamm-content .col-menu {margin-bottom:15px}
+	.yamm .dropdown-menu .yamm-content .col-menu {margin-bottom:15px; padding-bottom:2rem;}
 	
 	
   .top-bar .header-top-inner {
@@ -5874,4 +5874,9 @@ z-index:10000
   .color-red
   {
     color: red;
+  }
+
+  a.menuitem
+  {
+    cursor:pointer;
   }

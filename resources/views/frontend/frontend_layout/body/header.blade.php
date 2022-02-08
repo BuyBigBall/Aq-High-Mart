@@ -12,7 +12,7 @@
                                 </li>
                         @endif
                         <li><a href="{{ route('listWishlist') }}"><i class="icon fa fa-heart"></i>收藏夹</a></li>
-                        <li><a href="{{ route('myCartView') }}"><i class="icon fa fa-shopping-cart"></i>大车</a></li>
+                        <li><a href="{{ route('myCartView') }}"><i class="icon fa fa-shopping-cart"></i>购物车</a></li>
                         @auth
                             <li><a href="{{ route('checkout-page') }}"><i class="icon fa fa-check"></i>买单</a></li>
                         @endauth
@@ -81,26 +81,39 @@
                     <!-- /.contact-row -->
                     <!--  SEARCH AREA  -->
                     <div class="search-area">
-                        <form>
+                        <form method="post" id="searchForm" action="{{ route('search') }}">
+                            @csrf
                             <div class="control-group">
                                 <ul class="categories-filter animate-dropdown">
-                                    <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown"
-                                            href="/">分类 <b class="caret"></b></a>
+                                    <li class="dropdown"> <a class="dropdown-toggle" 
+                                        id="selected_category"
+                                        sel_cate_id = '{{ $selcateid ?? 0 }}'
+                                        style="cursor:pointer;"
+                                        data-toggle="dropdown"
+                                            >{{ $selcatename ?? '分类' }} <b class="caret"></b></a>
                                         <ul class="dropdown-menu" role="menu">
                                             <!-- <li class="menu-header">Computer</li> -->
                                             <!-- <li role="presentation"><a role="menuitem" tabindex="-1"
                                                     href="category.html">- Clothing</a></li> -->
                                             <li class="menu-header"><a role="menuitem" tabindex="-1"
-                                                    href="/">分类</a></li>
+                                                    cateid="0"
+                                                    style="cursor:pointer;"
+                                                    onclick="category_click(this)"
+                                                    >分类</a></li>
                                             @foreach ($categories as $category)
-                                                <li role="presentation" style="padding-left:10px;"><a role="menuitem" tabindex="0"
-                                                    href="{{ route('category', $category->id) }}"> {{ $category->category_name_bn }}</a></li>
+                                                <li role="presentation" 
+                                                    style="padding-left:10px;"><a class="menuitem" role="menuitem" tabindex="0"
+                                                    cateid="{{ $category->id }}"
+                                                    onclick="category_click(this)" > {{ $category->category_name_bn }}</a></li>
+                                                    {{-- href=" route('category', $category->id)  " --}}
                                             @endforeach
                                         </ul>
                                     </li>
                                 </ul>
-                                <input class="search-field" placeholder="你要买什么..." />
-                                <a class="search-button" href="#"></a>
+                                <input class="search-field" required="" name="word" placeholder="你要买什么..." value="{{ $searchword ?? '' }}" />
+                                <input type="hidden" name="cateid" id="hSelCateid" value="{{ $selcateid ?? 0 }}" />
+                                <!-- <div class="invalid-feedback">请输入搜索词</div> -->
+                                <a class="search-button" href="javascript:search( this );"></a>
                             </div>
                         </form>
                     </div>
@@ -247,7 +260,7 @@
                                         </ul>
                                     </li>
                                 @endforeach
-                                <li class="dropdown  navbar-right special-menu"> <a href="#">今日优惠</a> </li>
+                                <!-- <li class="dropdown  navbar-right special-menu"> <a href="#">今日优惠</a> </li> -->
                             </ul>
                             <!-- /.navbar-nav -->
                             <div class="clearfix"></div>
@@ -266,5 +279,25 @@
     </div>
     <!-- /.header-nav -->
     <!--  NAVBAR : END  -->
-
+    <script>
+        function category_click(obj)
+        {
+            $('#selected_category').attr('sel_cate_id', $(obj).attr("cateid") );
+            $(obj).parent().parent().parent().children("a.dropdown-toggle")[0].innerHTML = $(obj).html();
+            var sel_cate_id = $('#selected_category').attr('sel_cate_id');
+        }
+        function search( obj )
+        {
+            //console.log($(obj).closest("form"));
+            //$(obj).closest("form").submit();
+            var sel_cate_id = $('#selected_category').attr('sel_cate_id');
+            if( !$('.search-field').val() && !sel_cate_id )
+            {
+                alert("请输入搜索词或选择类别。");
+                return;
+            }
+            $('#hSelCateid').val(sel_cate_id);
+            $("#searchForm").submit();
+        }
+        </script>
 </header>

@@ -60,7 +60,8 @@
                                                 <div class="owl-page"><span class=""></span></div>
                                             </div>
                                         </div>
-                                    </div><!-- /.single-product-slider --> --}}
+                                    </div><!-- /.single-product-slider --> 
+--}}
 
                                     <div id="owl-single-product">
                                         @foreach($product->images as $img)

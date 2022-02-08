@@ -202,8 +202,8 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-4">
-                                    <label for="">Stripe</label>
-                                    <input type="radio" name="payment_method" id="" value="stripe">
+                                    <label for="strip_lbl" style="cursor:pointer;">Stripe</label>
+                                    <input type="radio" name="payment_method" id="strip_lbl" value="stripe" style="cursor:pointer;" />
                                     <img src="{{ asset('frontend/assets/images/payments/4.png') }}" alt="">
                                 </div>
                                 <div class="col-md-4">

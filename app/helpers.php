@@ -1,4 +1,21 @@
 <?php
+function order_text($order_num)
+{
+    if($order_num==1)   return "登记顺序";
+    if($order_num==2)   return "价格顺：最低优先";
+    if($order_num==3)   return "价格顺：最高优先";
+    if($order_num==4)   return "名称顺序";
+    return "选择排序";
+}
+function product_tag_name($product)
+{
+    if($product->hot_deals)     return '热卖';
+    if($product->new_arrival)   return '新的';
+    if($product->featured)      return '精选';
+    if($product->special_offer) return '特色';
+    if($product->special_deals) return '优惠';
+    return '';
+}
 
 function shipping_status_name($status)
 {

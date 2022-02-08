@@ -49,9 +49,9 @@
                 <div class="lbl-cnt"> <span class="lbl">排序</span>
                   <div class="fld inline">
                     <div class="dropdown dropdown-small dropdown-med dropdown-white inline">
-                      <button data-toggle="dropdown" type="button" class="btn dropdown-toggle"> 位置顺序 <span class="caret"></span> </button>
+                      <button data-toggle="dropdown" type="button" class="btn dropdown-toggle"> 登记顺序 <span class="caret"></span> </button>
                       <ul role="menu" class="dropdown-menu">
-                        <li role="presentation"><a href="#">位置顺序</a></li>
+                        <li role="presentation"><a href="#">登记顺序</a></li>
                         <li role="presentation"><a href="#">价格顺：最低优先</a></li>
                         <li role="presentation"><a href="#">价格顺：最高优先</a></li>
                         <li role="presentation"><a href="#">名称顺序</a></li>
@@ -117,7 +117,6 @@
                         <div class="product-image">
                           <div class="image"> <a href="detail.html"><img src="{{ asset('frontend') }}/assets/images/products/p5.jpg" alt=""></a> </div>
                           <!-- /.image -->
-                          
                           <div class="tag new"><span>新的</span></div>
                         </div>
                         <!-- /.product-image -->
@@ -128,7 +127,6 @@
                           <div class="description"></div>
                           <div class="product-price"> <span class="price"> $450.99 </span> <span class="price-before-discount">$ 800</span> </div>
                           <!-- /.product-price --> 
-                          
                         </div>
                         <!-- /.product-info -->
                         <div class="cart clearfix animate-effect">

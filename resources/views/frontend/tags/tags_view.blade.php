@@ -58,9 +58,9 @@
                                         <div class="fld inline">
                                             <div class="dropdown dropdown-small dropdown-med dropdown-white inline">
                                                 <button data-toggle="dropdown" type="button" class="btn dropdown-toggle">
-                                                    位置顺序 <span class="caret"></span> </button>
+                                                    登记顺序 <span class="caret"></span> </button>
                                                 <ul role="menu" class="dropdown-menu">
-                                                    <li role="presentation"><a href="#">位置顺序</a></li>
+                                                    <li role="presentation"><a href="#">登记顺序</a></li>
                                                     <li role="presentation"><a href="#">价格顺：最低优先</a></li>
                                                     <li role="presentation"><a href="#">价格顺：最高优先</a></li>
                                                     <li role="presentation"><a href="#">名称顺序</a></li>

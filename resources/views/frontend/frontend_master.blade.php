@@ -344,5 +344,6 @@
     }
     // End remove from wishlist
 </script>
+@livewireScripts
 </body>
 </html>
