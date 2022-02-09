@@ -12,7 +12,7 @@
             </div>
         @endif
 
- <form method="POST" action="{{ isset($guard) ? url($guard.'/login') : route('login') }}">
+ 	<form method="POST" action="{{ isset($guard) ? url($guard.'/login') : route('login') }}">
             @csrf
 
             <div>
@@ -68,16 +68,20 @@
 		    <label class="info-title" for="exampleInputEmail1">电子邮件地址 <span>*</span></label>
 		    <input type="email" name="email" class="form-control unicase-form-control text-input" id="exampleInputEmail1">
 		</div>
-        {{-- @error('email')
+		@if( ! \Illuminate\Support\Facades\Session::has('register_flag')  )	
+        @error('email')
             <span class="alert text-danger">{{ $message }}</span>
-        @enderror --}}
+        @enderror
+		@endif
 	  	<div class="form-group">
 		    <label class="info-title" for="exampleInputPassword1">密码 <span>*</span></label>
 		    <input type="password" name="password" class="form-control unicase-form-control text-input" id="exampleInputPassword1">
 		</div>
-        {{-- @error('password')
+		@if( ! \Illuminate\Support\Facades\Session::has('register_flag')  )	
+        @error('password')
             <span class="alert text-danger">{{ $message }}</span>
-        @enderror --}}
+        @enderror
+		@endif
 		<div class="radio outer-xs">
 		  	<label>
 		    	<input type="radio" name="remember" id="optionsRadios2" value="option2">记得我！
@@ -98,36 +102,41 @@
 	<form class="register-form outer-top-xs" role="form" method="POST" action="{{ route('register') }}">
         @csrf
 		<div class="form-group">
-	    	<label class="info-title" for="exampleInputEmail2">电子邮件地址 <span>*</span></label>
-	    	<input type="email" name="email" class="form-control unicase-form-control text-input" id="exampleInputEmail2">
+	    	<label class="info-title" for="exampleInputEmail2-email">电子邮件地址 <span>*</span></label>
+	    	<input type="email" name="email" class="form-control unicase-form-control text-input" id="exampleInputEmail2-email">
 	  	</div>
+		  @if(\Illuminate\Support\Facades\Session::has('register_flag'))
           @error('email')
             <span class="alert text-danger">{{ $message }}</span>
           @enderror
+		  @endif
         <div class="form-group">
-		    <label class="info-title" for="exampleInputEmail1">名称 <span>*</span></label>
-		    <input type="text" name="name" class="form-control unicase-form-control text-input" id="exampleInputEmail1">
+		    <label class="info-title" for="exampleInputEmail1-name">名称 <span>*</span></label>
+		    <input type="text" name="name" class="form-control unicase-form-control text-input" id="exampleInputEmail1-name">
 		</div>
         @error('name')
             <span class="alert text-danger">{{ $message }}</span>
         @enderror
         <div class="form-group">
-		    <label class="info-title" for="exampleInputEmail1">电话号码 <span>*</span></label>
-		    <input type="text" name="phone_number" class="form-control unicase-form-control text-input" id="exampleInputEmail1">
+		    <label class="info-title" for="exampleInputEmail1-phone">电话号码 <span>*</span></label>
+		    <input type="text" name="phone_number" class="form-control unicase-form-control text-input" id="exampleInputEmail1-phone">
 		</div>
         @error('phone_number')
             <span class="alert text-danger">{{ $message }}</span>
         @enderror
         <div class="form-group">
-		    <label class="info-title" for="exampleInputEmail1">密码 <span>*</span></label>
-		    <input type="password" name="password" class="form-control unicase-form-control text-input" id="exampleInputEmail1">
+		    <label class="info-title" for="exampleInputEmail1-pwd">密码 <span>*</span></label>
+		    <input type="password" name="password" class="form-control unicase-form-control text-input" id="exampleInputEmail1-pwd">
 		</div>
+		@if(\Illuminate\Support\Facades\Session::has('register_flag')  )	
         @error('password')
             <span class="alert text-danger">{{ $message }}</span>
         @enderror
+		@endif
+		
          <div class="form-group">
-		    <label class="info-title" for="exampleInputEmail1">确认密码 <span>*</span></label>
-		    <input type="password" name="password_confirmation" class="form-control unicase-form-control text-input" id="exampleInputEmail1">
+		    <label class="info-title" for="exampleInputEmail1-confirm">确认密码 <span>*</span></label>
+		    <input type="password" name="password_confirmation" class="form-control unicase-form-control text-input" id="exampleInputEmail1-confirm">
 		</div>
         @error('password_confirmation')
             <span class="alert text-danger">{{ $message }}</span>
@@ -135,7 +144,7 @@
 	  	<button type="submit" class="btn-upper btn btn-primary checkout-page-button">注册</button>
 	</form>
 
-
+	<?php \Illuminate\Support\Facades\Session::forget('register_flag'); ?>
 </div>
 <!-- create a new account -->			</div><!-- /.row -->
 		</div><!-- /.sigin-in-->

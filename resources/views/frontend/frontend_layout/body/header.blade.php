@@ -133,7 +133,7 @@
                                 <div class="basket-item-count"><span class="count" id="cartQty"></span></div>
                                 <div class="total-price-basket"> <span class="lbl">购物车 -</span>
                                     <span class="total-price">
-                                        <span class="value" id="cartSubTotal"></span>
+                                        <span class="value" id="cartSubTotal"  style="min-width:3rem;">0</span>
                                         <span class="sign">元</span>
                                     </span>
                                 </div>

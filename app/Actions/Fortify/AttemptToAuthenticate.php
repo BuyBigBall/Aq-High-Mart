@@ -46,6 +46,7 @@ class AttemptToAuthenticate
      */
     public function handle($request, $next)
     {
+        //dd(Fortify::$authenticateUsingCallback);
         if (Fortify::$authenticateUsingCallback) {
             return $this->handleUsingCustomCallback($request, $next);
         }
@@ -69,6 +70,7 @@ class AttemptToAuthenticate
      */
     protected function handleUsingCustomCallback($request, $next)
     {
+        //dd(Fortify::$authenticateUsingCallback);
         $user = call_user_func(Fortify::$authenticateUsingCallback, $request);
 
         if (! $user) {
@@ -76,9 +78,12 @@ class AttemptToAuthenticate
 
             return $this->throwFailedAuthenticationException($request);
         }
-
+        
         $this->guard->login($user, $request->filled('remember'));
 
+        // print_r($request->filled('remember'));
+        // print("<br>");
+        // dd($next);
         return $next($request);
     }
 
