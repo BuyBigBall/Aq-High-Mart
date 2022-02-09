@@ -15,32 +15,32 @@
                 <div class="card-body" style="background: #E9EBEC;">
                     <table class="table">
                         <tr>
-                            <th> Shipping Name : </th>
+                            <th> 送货名称： </th>
                             <th> {{ $order->name }} </th>
                         </tr>
 
                         <tr>
-                            <th> Shipping Phone : </th>
+                            <th> 送货电话： </th>
                             <th> {{ $order->phone }} </th>
                         </tr>
 
                         <tr>
-                            <th> Shipping Email : </th>
+                            <th> 送货电子邮件: </th>
                             <th> {{ $order->email }} </th>
                         </tr>
 
                         <tr>
-                            <th> 部门 : </th>
+                            <th> 省 : </th>
                             <th> {{ $order->division->division_name }} </th>
                         </tr>
 
                         <tr>
-                            <th> 区 : </th>
+                            <th> 市 : </th>
                             <th> {{ $order->district->district_name }} </th>
                         </tr>
 
                         <tr>
-                            <th> 状态 : </th>
+                            <th> 区 : </th>
                             <th>{{ $order->state->state_name }} </th>
                         </tr>
 
@@ -70,13 +70,13 @@
 
                     @else
                     <ul>
-                        <li> Confirmed Date: {{ $order->confirmed_date }}</li>
-                        <li> Processing Date: {{ $order->processing_date }}</li>
-                        <li> Picked Date: {{ $order->picked_date }}</li>
-                        <li> Shipped Date: {{ $order->shipped_date }}</li>
-                        <li> Delivered Date: {{ $order->delivered_date }}</li>
-                        <li> Cancel Date: {{ $order->cancel_date }}</li>
-                        <li> Return Date: {{ $order->return_date }}</li>
+                        <li> 确认日期: {{ chdate( $order->confirmed_date ) }}</li>
+                        <li> 处理日期: {{ chdate( $order->processing_date ) }}</li>
+                        <li> 拣货日期: {{ chdate( $order->picked_date ) }}</li>
+                        <li> 运输日期: {{ chdate( $order->shipped_date ) }}</li>
+                        <li> 完成日期: {{ chdate( $order->delivered_date ) }}</li>
+                        <li> 取消日期: {{ chdate( $order->cancel_date ) }}</li>
+                        <li> 退货日期: {{ chdate( $order->return_date ) }}</li>
                     </ul>
                     @endif
                 </div>
@@ -109,15 +109,15 @@
                         </tr>
 
                         <tr>
-                            <th> 订单合计 : 元 </th>
-                            <th>{{ $order->amount }} </th>
+                            <th> 订单总金额 :  </th>
+                            <th>{{ $order->amount }}元 </th>
                         </tr>
 
                         <tr>
-                            <th> 订购 : </th>
+                            <th> 状态 : </th>
                             <th>
                                 <span class="badge badge-pill badge-warning"
-                                    style="background: #418DB9;">{{ $order->status }} </span>
+                                    style="background: #418DB9;">{{ shipping_status_name( $order->status ) }} </span>
                             </th>
                         </tr>
 
@@ -133,50 +133,50 @@
                 <table class="table">
                     <tbody>
                         <tr style="background: #e2e2e2;">
-                            <td class="col-md-1">
+                            <td >
                                 <label for=""> 图片</label>
                             </td>
-                            <td class="col-md-3">
+                            <td class="col-md-2">
                                 <label for=""> 产品名称 </label>
                             </td>
-                            <td class="col-md-3">
+                            <td class="col-md-2">
                                 <label for=""> 产品代码</label>
                             </td>
-                            <td class="col-md-2">
-                                <label for=""> 颜色 </label>
-                            </td>
-                            <td class="col-md-2">
+                            <td class="col-md-1">
                                 <label for=""> 颜色 </label>
                             </td>
                             <td class="col-md-1">
+                                <label for=""> 尺寸 </label>
+                            </td>
+                            <td >
                                 <label for=""> 数量 </label>
                             </td>
-                            <td class="col-md-1">
+                            <td class="col-md-3">
                                 <label for=""> 价格 </label>
                             </td>
-                            <td class="col-md-1">
+                            <td >
                                 <label for=""> 动作 </label>
                             </td>
                         </tr>
                         @foreach ($orderItems as $item)
                             <tr>
-                                <td class="col-md-1">
+                                <td>
                                     <label for=""><img src="{{ asset( $item->product->product_thumbnail ) }}"
                                             height="50px;" width="50px;"> </label>
                                 </td>
-                                <td class="col-md-3">
+                                <td >
                                     <label for=""> {{ $item->product->product_name_bn }}</label>
                                 </td>
-                                <td class="col-md-3">
+                                <td >
                                     <label for=""> {{ $item->product->product_code }}</label>
                                 </td>
-                                <td class="col-md-2">
+                                <td >
                                     <label for=""> {{ $item->color }}</label>
                                 </td>
-                                <td class="col-md-2">
+                                <td >
                                     <label for=""> {{ $item->size }}</label>
                                 </td>
-                                <td class="col-md-2">
+                                <td >
                                     <label for=""> {{ $item->qty }}</label>
                                 </td>
 
@@ -187,7 +187,7 @@
                                     $file = App\Models\Product::where('id', $item->product_id)->first();
                                 @endphp
 
-                                <td class="col-md-1">
+                                <td >
                                     @if ($order->status == 'pending')
                                         <strong>
                                             <span class="badge badge-pill badge-success" style="background: #418DB9;"> 没有文件</span>
@@ -196,7 +196,7 @@
                                     @elseif($order->status != 'pending')
 
                                         <a target="_blank" class="btn btn-danger" href="{{ asset('upload/pdf/' . $file->digital_file) }}">
-                                            <i class="fa fa-download"></i>发票
+                                            <i class="fa fa-download"></i>开发票
                                         </a>
                                     @endif
                                 </td>
@@ -220,7 +220,7 @@
                 @csrf
                 <div class="form-group">
                     <label for="label"> 订单退货原因:</label>
-                    <textarea name="return_reason" id="" class="form-control" cols="30" rows="05">Return Reason</textarea>
+                    <textarea name="return_reason" id="" class="form-control" cols="30" rows="05" placeholder="退货原因"></textarea>
                 </div>
                 <button type="submit" class="btn btn-danger">订单退货</button>
             </form>

@@ -54,5 +54,7 @@
 @include('admin.dashboard_layout.script')
 {{-- Script End --}}
 
+@livewireScripts
+
 </body>
 </html>

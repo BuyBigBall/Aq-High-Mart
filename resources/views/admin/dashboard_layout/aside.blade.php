@@ -54,7 +54,7 @@
 
     <li class="treeview {{ ($route == 'products.index') ? 'active' : '' }}">
         <a href="#">
-        <i data-feather="mail"></i> <span>产品目录</span>
+        <i data-feather="mail"></i> <span>产品管理</span>
         <span class="pull-right-container">
             <i class="fa fa-angle-right pull-right"></i>
         </span>
@@ -64,7 +64,24 @@
                 <a href="{{ route('products.create') }}"><i class="ti-more"></i>添加产品</a>
             </li>
             <li class=" {{ ($route == 'products.index') ? 'active' : '' }}">
-                <a href="{{ route('products.index') }}"><i class="ti-more"></i>管理产品</a>
+                <a href="{{ route('products.index') }}"><i class="ti-more"></i>产品目录</a>
+            </li>
+        </ul>
+    </li>
+
+    <li class="treeview {{ ($route == 'users.index') ? 'active' : '' }}">
+        <a href="#">
+        <i data-feather="mail"></i> <span>用户管理</span>
+        <span class="pull-right-container">
+            <i class="fa fa-angle-right pull-right"></i>
+        </span>
+        </a>
+        <ul class="treeview-menu">
+            <li class=" {{ ($route == 'users.create') ? 'active' : '' }}">
+                <a href="{{ route('users.create') }}"><i class="ti-more"></i>添加用户</a>
+            </li>
+            <li class=" {{ ($route == 'users.index') ? 'active' : '' }}">
+                <a href="{{ route('users.index') }}"><i class="ti-more"></i>用户目录</a>
             </li>
         </ul>
     </li>

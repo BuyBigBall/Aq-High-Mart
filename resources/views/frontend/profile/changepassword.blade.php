@@ -2,7 +2,7 @@
 
 @section('userdashboard_content')
 <div class="card-body">
-    <form action="{{ route('user.update.password') }}" method="post">
+    <form action="{{ route('user.update.password') }}" method="post" onsubmit="return checkValid()">
         @csrf
             <div class="form-group">
                 <h5>当前密码字段 <span class="text-danger">*</span></h5>
@@ -36,4 +36,15 @@
             </div>
     </form>
 </div>
+<script>
+    function checkValid()
+    {
+        if( $("input[name='password_confirmation']").val() != $("input[name='password']").val() )
+        {
+            alert('确认密码不匹配');
+            return false;
+        }
+        return true;
+    }
+</script>
 @endsection

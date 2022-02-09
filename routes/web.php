@@ -26,6 +26,10 @@ use App\Http\Controllers\User\OrderDetailsController;
 use App\Http\Controllers\User\OrderHistoryController;
 use App\Http\Controllers\User\WishlistController;
 use App\Http\Livewire\Search;
+use App\Http\Livewire\Usermanage;
+use App\Http\Livewire\Usercreate;
+use App\Http\Livewire\Useredit;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -178,6 +182,11 @@ Route::middleware(['auth:admin'])->group(function(){
         Route::get('/changestatus', [ProductController::class, 'changeStatus'])->name('change-product-status');
         Route::get('/products/image/delete/{image_id}', [ProductController::class, 'deleteimage'])->name('delete-multiimage');
 
+        // user management
+        Route::get('/users/manage',             Usermanage::class)->name('users.index');
+        Route::get('/users/create',             Usercreate::class)->name('users.create');
+        Route::get('/users/edit/{user_id}',     Useredit::class)->name('users.edit');
+        
         // slider routes
         Route::resource('/slider', AdminSliderController::class);
         Route::get('/changesliderstatus', [AdminSliderController::class, 'changeSliderStatus'])->name('change-product-status');

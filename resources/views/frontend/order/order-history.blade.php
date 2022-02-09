@@ -13,7 +13,7 @@
                     <th>#</th>
                     <th>日期</th>
                     <th>发票号码</th>
-                    <th>全部的</th>
+                    <th>总金额</th>
                     <th>支付</th>
                     <th>状态</th>
                     <th>动作</th>
@@ -28,7 +28,8 @@
                     <td>{{ $order->amount }}</td>
                     <td>{{ $order->payment_method }}</td>
                     <td>
-                        @if ($order->status == 'pending')
+                        <!-- 
+                            @if ($order->status == 'pending')
                         <span class="badge badge-primary">{{ $order->status }}</span>
                         @elseif ($order->status == 'confirmed')
                         <span class="badge badge-secondary">{{ $order->status }}</span>
@@ -43,12 +44,14 @@
                         @else
                         <span class="badge badge-danger">{{ $order->status }}</span>
                         @endif
+                         -->
+                        <span class="badge badge-danger">{{ shipping_status_name( $order->status ) }}</span>
                     </td>
                     <td>
                         <a href="{{ route('order-deatils', $order->id) }}" class="btn btn-sm btn-primary">
-                            <i class="fa fa-eye"></i>View
+                            <i class="fa fa-eye"></i>查看
                         </a>
-                        <a href="{{ route('invoice-download', $order->id) }}" class="btn btn-sm btn-danger"><i class="fa fa-download"></i>Invoice</a>
+                        <a href="{{ route('invoice-download', $order->id) }}" class="btn btn-sm btn-danger"><i class="fa fa-download"></i>开发票</a>
                     </td>
                 </tr>
                 @empty
@@ -63,7 +66,8 @@
 @endsection
 
 @section('frontend_script')
-<script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+<!-- <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script> -->
+<script src="/frontend/assets/js/jquery.dataTables.min.js"></script>
 <script>
     $(document).ready( function () {
     $('#myOrder').DataTable();

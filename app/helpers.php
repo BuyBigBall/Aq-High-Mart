@@ -1,4 +1,24 @@
 <?php
+
+function userphoto($path)
+{
+    //if(!empty($path))     dd(__DIR__ . '/../public/uploads/' . ($path));
+    if( !!empty($path) || !file_exists(__DIR__ . '/../public/uploads/' . ($path)))
+    {
+        return asset('/assets/img/user.png');
+    }
+    return asset('uploads/'. $path);
+}
+
+function userstatus($status)
+{
+    if($status==0)   return "创建";
+    if($status==1)   return "活性";
+    if($status==2)   return "停用";
+    if($status==3)   return "已删除";
+    return "创建";
+}
+
 function order_text($order_num)
 {
     if($order_num==1)   return "登记顺序";
@@ -19,7 +39,7 @@ function product_tag_name($product)
 
 function shipping_status_name($status)
 {
-    if($status=='pendding')     return '待定中';
+    if($status=='pending')      return '待定中';
     if($status=='confirmed')    return '已确认';
     if($status=='processing')   return '处理中';
     if($status=='picked')       return '已拣货';
@@ -28,6 +48,13 @@ function shipping_status_name($status)
     if($status=='return')       return '退回';
     if($status=='cancel')       return '取消';
     return $status;
+}
+function chdate($date, $time=false)
+{
+    if( !!empty($date) )    return '';
+    if( !!empty($time) )    return date( 'Y年n月d日',  strtotime($date));
+
+    return date( 'Y年n月d日 H时i分s吵',  strtotime($date));
 }
 
 function agotime($date)
