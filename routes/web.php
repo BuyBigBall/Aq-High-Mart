@@ -22,6 +22,7 @@ use App\Http\Controllers\Frontend\CheckoutController;
 use App\Http\Controllers\Frontend\FrontendPageController;
 use App\Http\Controllers\Frontend\FrontendUserProfileController;
 use App\Http\Controllers\Frontend\LanguageController;
+use App\Http\Controllers\Frontend\PageController;
 use App\Http\Controllers\User\OrderDetailsController;
 use App\Http\Controllers\User\OrderHistoryController;
 use App\Http\Controllers\User\WishlistController;
@@ -49,41 +50,55 @@ Route::middleware(['auth:web'])->group(function(){
     Route::middleware(['auth:sanctum, web', 'verified'])->get('/dashboard',[FrontendUserProfileController::class, 'userdashboard'])->name('dashboard');
 
     Route::prefix('/user')->group(function () {
-        Route::get('/logout', [FrontendUserProfileController::class, 'userlogout'])->name('user.logout');
-        Route::get('/profile', [FrontendUserProfileController::class, 'userprofile'])->name('user.profile');
-        Route::post('/profile', [FrontendUserProfileController::class, 'userprofileupdate'])->name('user.profile');
-        Route::get('/password/change', [FrontendUserProfileController::class, 'userpasswordchange'])->name('user.change.password');
-        Route::post('/password/update', [FrontendUserProfileController::class, 'userpasswordupdate'])->name('user.update.password');
+        Route::get('/logout',                   [FrontendUserProfileController::class, 'userlogout'])->name('user.logout');
+        Route::get('/profile',                  [FrontendUserProfileController::class, 'userprofile'])->name('user.profile');
+        Route::post('/profile',                 [FrontendUserProfileController::class, 'userprofileupdate'])->name('user.profile');
+        Route::get('/password/change',          [FrontendUserProfileController::class, 'userpasswordchange'])->name('user.change.password');
+        Route::post('/password/update',         [FrontendUserProfileController::class, 'userpasswordupdate'])->name('user.update.password');
 
         // user order history
-        Route::get('/orders/history', [OrderHistoryController::class, 'orderHistory'])->name('user.orders');
+        Route::get('/orders/history',           [OrderHistoryController::class, 'orderHistory'])->name('user.orders');
     });
 });
 
 // Frontend Pages routes
-Route::get('/', [FrontendPageController::class,'home'])->name('home');
-Route::get('/category/{cate_id}', [FrontendPageController::class,'category'])->name('category');
+Route::get('/',                                 [FrontendPageController::class,'home'])->name('home');
+Route::get('/category/{cate_id}',               [FrontendPageController::class,'category'])->name('category');
 
-Route::get('/product/detail/{id}/{slug}', [FrontendPageController::class,'productDeatil'])->name('frontend-product-details');
-Route::get('/english/language', [LanguageController::class, 'englishLoad'])->name('english.language');
-Route::get('/chinese/language', [LanguageController::class, 'chineseLoad'])->name('chinese.language');
+Route::get('/product/detail/{id}/{slug}',       [FrontendPageController::class,'productDeatil'])->name('frontend-product-details');
+Route::get('/english/language',                 [LanguageController::class, 'englishLoad'])->name('english.language');
+Route::get('/chinese/language',                 [LanguageController::class, 'chineseLoad'])->name('chinese.language');
 
 // Tags wise products route
-Route::get('/product/tag/{tag}', [FrontendPageController::class, 'tagwiseProduct'])->name('product.tag');
+Route::get('/product/tag/{tag}',                [FrontendPageController::class, 'tagwiseProduct'])->name('product.tag');
 //subcategory wise products route
-Route::get('/subcategory/{id}/{slug}', [FrontendPageController::class,'subcategoryProducts'])->name('subcategory.products');
+Route::get('/subcategory/{id}/{slug}',          [FrontendPageController::class,'subcategoryProducts'])->name('subcategory.products');
 //subsubcategory wise products route
-Route::get('/subsubcategory/{id}/{slug}', [FrontendPageController::class,'subsubcategoryProducts'])->name('subsubcategory.products');
+Route::get('/subsubcategory/{id}/{slug}',       [FrontendPageController::class,'subsubcategoryProducts'])->name('subsubcategory.products');
 // AJAX Product data route
-Route::get('/product/view/modal/{id}',[FrontendPageController::class,'productviewAjax'])->name('productModalview');
+Route::get('/product/view/modal/{id}',          [FrontendPageController::class,'productviewAjax'])->name('productModalview');
 
 // Cart routes
 // Add to cart Product route
-Route::post('/cart/data/store/{id}', [CartController::class,'addToCart'])->name('productaddToCart');
+Route::post('/cart/data/store/{id}',            [CartController::class,'addToCart'])->name('productaddToCart');
 // mini cart product data get route
-Route::get('/product/mini/cart', [CartController::class,'getMiniCart'])->name('getMiniCartProduct');
+Route::get('/product/mini/cart',                [CartController::class,'getMiniCart'])->name('getMiniCartProduct');
 // remove item from mini cart route
-Route::get('/minicart/product-remove/{rowId}', [CartController::class,'removeMiniCart'])->name('removeMiniCartProduct');
+Route::get('/minicart/product-remove/{rowId}',  [CartController::class,'removeMiniCart'])->name('removeMiniCartProduct');
+
+Route::get('/contactus',    [PageController::class, 'contactus'])->name('contactus');
+Route::get('/faq',          [PageController::class, 'faq'])->name('faq');
+Route::get('/help',         [PageController::class, 'help'])->name('help');
+Route::get('/aboutus',      [PageController::class, 'aboutus'])->name('aboutus');
+Route::get('/services',     [PageController::class, 'services'])->name('services');
+Route::get('/company',      [PageController::class, 'company'])->name('company');
+Route::get('/invester',     [PageController::class, 'invester'])->name('invester');
+Route::get('/advanced',     [PageController::class, 'advanced'])->name('advanced');
+Route::get('/howtouse',     [PageController::class, 'howtouse'])->name('howtouse');
+Route::get('/blog',         [PageController::class, 'blog'])->name('blog');
+Route::get('/consultation', [PageController::class, 'consultation'])->name('consultation');
+Route::get('/specials',     [PageController::class, 'specials'])->name('specials');
+
 
 //Wishlist routes
 Route::group(['prefix' => 'user', 'middleware' => ['auth', 'user'], 'namespace' => 'User'], function()

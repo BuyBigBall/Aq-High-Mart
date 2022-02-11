@@ -13,7 +13,8 @@ class FrontendUserProfileController extends Controller
     public function userdashboard()
     {
         $user = Auth::user();
-        return view('dashboard', compact('user'));
+        //return view('dashboard', compact('user'));
+        return view('frontend.profile.home', compact('user'));
     }
     public function userlogout()
     {

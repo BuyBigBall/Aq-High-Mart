@@ -18,7 +18,10 @@
         <div class="row">
                 @include('frontend.profile.user-sidebar')
             <div class="col-md-10">
-                <div style="margin-bottom:3rem;">欢迎来到{{ env('APP_NAME') }} <strong>{{ Auth::user()->name }}</strong></div>
+                <div style="margin:3rem;">
+                    <h3>欢迎来到{{ env('APP_NAME') }}</h3>
+                    <strong>&nbsp;你好！{{ Auth::user()->name }}</strong>
+                </div>
                 @yield('userdashboard_content')
             </div>
         </div>

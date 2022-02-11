@@ -191,20 +191,20 @@
     <li class="treeview">
         <a href="#">
         <i data-feather="grid"></i>
-        <span>组件</span>
+        <span>网站管理</span>
         <span class="pull-right-container">
             <i class="fa fa-angle-right pull-right"></i>
         </span>
         </a>
         <ul class="treeview-menu">
-        <li><a href="components_alerts.html"><i class="ti-more"></i>警报</a></li>
-        <li><a href="components_badges.html"><i class="ti-more"></i>徽章</a></li>
-        <li><a href="components_buttons.html"><i class="ti-more"></i>纽扣</a></li>
-        <li><a href="components_sliders.html"><i class="ti-more"></i>滑块</a></li>
-        <li><a href="components_dropdown.html"><i class="ti-more"></i>落下</a></li>
-        <li><a href="components_modals.html"><i class="ti-more"></i>模态</a></li>
-        <li><a href="components_nestable.html"><i class="ti-more"></i>可嵌套</a></li>
-        <li><a href="components_progress_bars.html"><i class="ti-more"></i>进度条</a></li>
+            <li><a href="components_alerts.html"><i class="ti-more"></i>警报</a></li>
+            <li><a href="components_badges.html"><i class="ti-more"></i>徽章</a></li>
+            <li><a href="components_buttons.html"><i class="ti-more"></i>纽扣</a></li>
+            <li><a href="components_sliders.html"><i class="ti-more"></i>滑块</a></li>
+            <li><a href="components_dropdown.html"><i class="ti-more"></i>落下</a></li>
+            <li><a href="components_modals.html"><i class="ti-more"></i>模态</a></li>
+            <li><a href="components_nestable.html"><i class="ti-more"></i>可嵌套</a></li>
+            <li><a href="components_progress_bars.html"><i class="ti-more"></i>进度条</a></li>
         </ul>
     </li>
     </ul>
