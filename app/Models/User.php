@@ -32,7 +32,9 @@ class User extends Authenticatable
         'remember_token',
         'profile_photo_path',
         'role',
-        'status'
+        'status',
+        'money',
+        'point',
     ];
 
     /**

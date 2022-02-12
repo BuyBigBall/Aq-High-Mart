@@ -170,7 +170,8 @@ Route::middleware(['auth:admin'])->group(function(){
         Route::get('/edit/profile',[AdminProfileController::class, 'AdminProfileEdit'])->name('admin.profile.edit');
         Route::get('/change/password',[AdminProfileController::class, 'AdminPasswordChange'])->name('admin.change.password');
         Route::post('/change/password',[AdminProfileController::class, 'AdminPasswordUpdate'])->name('admin.password.update');
-
+        Route::post('/setting',[AdminProfileController::class, 'AdminPasswordUpdate'])->name('admin/settings');
+        
         Route::get('/', function () {
             return view('admin.index');
                 })->name('admin.dashboard');

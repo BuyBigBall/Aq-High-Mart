@@ -5,16 +5,20 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Option extends Model
+class MoneyHist extends Model
 {
+    use HasFactory;
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'key',
-        'val',
+        'money_type',       // 1-money, 2-point
+        'deal_type',        // 0-default,1-mnyin,2-mnyout,3-buy,4-return,5-cancel,6-delete
+        'deal_id',
+        'content',
+        'money',
     ];
 
     /**
@@ -23,8 +27,6 @@ class Option extends Model
      * @var array
      */
     protected $hidden = [
-        'created_at',
-        'updated_at',
     ];
 
     /**
@@ -33,7 +35,7 @@ class Option extends Model
      * @var array
      */
     protected $casts = [
-        'updated_at' => 'datetime',
+        'created_at' => 'datetime',
     ];
 
     /**

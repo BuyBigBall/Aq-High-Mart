@@ -1,4 +1,9 @@
 <?php
+use App\Models\Option;
+function GetSiteSetting($key)
+{
+    
+}
 
 function userphoto($path)
 {
