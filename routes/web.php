@@ -30,6 +30,7 @@ use App\Http\Livewire\Search;
 use App\Http\Livewire\Usermanage;
 use App\Http\Livewire\Usercreate;
 use App\Http\Livewire\Useredit;
+use App\Http\Livewire\Admin\Setting;
 
 
 /*
@@ -170,7 +171,7 @@ Route::middleware(['auth:admin'])->group(function(){
         Route::get('/edit/profile',[AdminProfileController::class, 'AdminProfileEdit'])->name('admin.profile.edit');
         Route::get('/change/password',[AdminProfileController::class, 'AdminPasswordChange'])->name('admin.change.password');
         Route::post('/change/password',[AdminProfileController::class, 'AdminPasswordUpdate'])->name('admin.password.update');
-        Route::get('/setting',[AdminProfileController::class, 'AdminPasswordUpdate'])->name('admin.settings');
+        Route::get('/setting',          Setting::class)->name('admin.settings');
         
         Route::get('/', function () {
             return view('admin.index');
