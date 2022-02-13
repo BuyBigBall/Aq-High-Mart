@@ -198,7 +198,7 @@
         </a>
         <ul class="treeview-menu">
             
-            <li><a href="{{ route('admin/settings') }}"><i class="ti-more"></i>网站设置</a></li>
+            <li><a href="{{ route('admin.settings') }}"><i class="ti-more"></i>网站设置</a></li>
             <!-- 
             <li><a href="components_badges.html"><i class="ti-more"></i>徽章</a></li>
             <li><a href="components_buttons.html"><i class="ti-more"></i>纽扣</a></li>

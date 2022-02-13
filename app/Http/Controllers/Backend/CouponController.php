@@ -7,6 +7,7 @@ use App\Http\Requests\CouponStoreRequest;
 use App\Models\Coupon;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CouponController extends Controller
 {
@@ -96,10 +97,15 @@ class CouponController extends Controller
     public function update(CouponStoreRequest $request, $id)
     {
         $coupon = Coupon::findOrFail($id);
+
+        // DB::listen(function ($query) {
+        //     echo $query->sql;
+        // });
+
         $coupon->update([
-            'coupon_name' => strtoupper($request->input('coupon_name')),
+            'coupon_name' => ($request->input('coupon_name')),
             'coupon_discount' => $request->input('coupon_discount'),
-            'coupon_validity' => $request->input('coupon_validity'),
+            'coupon_validity' => date('Y-n-d', strtotime($request->input('coupon_validity')) ),
             'coupon_status' => $request->input('coupon_status'),
         ]);
 
