@@ -77,7 +77,13 @@
                         <div class="action">
                             <ul class="list-unstyled">
                             <li class="add-cart-button btn-group">
-                                <button data-toggle="tooltip" class="btn btn-primary icon" type="button" title="添加购物车"> <i class="fa fa-shopping-cart"></i> </button>
+                                <!-- data-toggle="tooltip"  -->
+                                <button class="btn btn-primary icon" type="button" 
+                                            data-toggle="modal"
+                                            data-target="#productViewModal" 
+                                            onclick="productView(this.id)"
+                                            id="{{ $product->id }}"
+                                        title="添加购物车"> <i class="fa fa-shopping-cart"></i> </button>
                                 <button class="btn btn-primary cart-btn" type="button">添加到购物车</button>
                             </li>
                             <li class="lnk wishlist">
@@ -155,7 +161,13 @@
                         <div class="action">
                             <ul class="list-unstyled">
                             <li class="add-cart-button btn-group">
-                                <button data-toggle="tooltip" class="btn btn-primary icon" type="button" title="添加购物车"> <i class="fa fa-shopping-cart"></i> </button>
+                                <!-- data-toggle="tooltip"  -->
+                                <button class="btn btn-primary icon" type="button" 
+                                    data-toggle="modal"
+                                    data-target="#productViewModal" 
+                                    onclick="productView(this.id)"
+                                    id="{{ $product->id }}"
+                                    title="添加购物车"> <i class="fa fa-shopping-cart"></i> </button>
                                 <button class="btn btn-primary cart-btn" type="button">添加到购物车</button>
                             </li>
                             <li class="lnk wishlist"> <a data-toggle="tooltip" class="add-to-cart" href="{{ route('frontend-product-details',['id' => $product->id, 'slug' => $product->product_slug_bn]) }}" title="Wishlist"> <i class="icon fa fa-heart"></i> </a> </li>

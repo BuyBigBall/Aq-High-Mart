@@ -55,8 +55,10 @@
                                 <ul class="list-unstyled">
                                     <li class="add-cart-button btn-group">
                                         @if ($product->product_qty>0)
-                                        <button class="btn btn-primary icon" type="button" data-toggle="modal"
-                                            data-target="#productViewModal" onclick="productView(this.id)"
+                                        <button class="btn btn-primary icon" type="button" 
+                                            data-toggle="modal"
+                                            data-target="#productViewModal" 
+                                            onclick="productView(this.id)"
                                             id="{{ $product->id }}">
                                             <i class="fa fa-shopping-cart"></i>
                                         </button>
