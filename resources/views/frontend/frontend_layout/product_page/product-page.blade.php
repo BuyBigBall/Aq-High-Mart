@@ -235,7 +235,7 @@
                                             <div class="form-group">
                                                 @if ($product->product_size_en == NULL)
                                                 @else
-                                                <label class="info-title control-label">选择尺寸 <span>*</span></label>
+                                                <label class="info-title control-label">选择大小 <span>*</span></label>
                                                 <select class="form-control unicase-form-control selectpicker" style="display: none;"
                                                 id="size">
                                                     <option selected="" disabled="">--选择大小--</option>

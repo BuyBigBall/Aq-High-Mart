@@ -59,6 +59,7 @@ class CartController extends Controller
             //         'color' => $request->color,
             //         ]
             // ]);
+            //dd($request);
             Cart::add(
                 $id,
                 $request->product_name,
@@ -71,7 +72,7 @@ class CartController extends Controller
                     'color' => $request->color,
                     ]
             );
-            return response()->json(['success' => 'Successfully added on your cart'],200);
+            return response()->json(['success' => '已成功加入购物车'],200);
         }
     }
 

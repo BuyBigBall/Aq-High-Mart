@@ -68,13 +68,13 @@
                 </div>
                 <div class="col-md-4">
                     <div class="form-group" id="colorArea">
-                        <label for="color">Choose Color</label>
+                        <label for="color">选择色彩</label>
                         <select class="form-control" id="color" name="color">
                             <option>--选择颜色--</option>
                         </select>
                     </div>
                     <div class="form-group" id="sizeArea">
-                        <label for="size">Choose Size</label>
+                        <label for="size">选择大小</label>
                         <select class="form-control" id="size" name="size">
                             <option>--选择大小--</option>
                         </select>
@@ -111,10 +111,10 @@
             url: '/product/view/modal/'+id,
             dataType: 'json',
             success: function(data){
-                $('#pname').text(data.product.product_name_en);
+                $('#pname').text(data.product.product_name_bn);
                 $('#pcode').text(data.product.product_code);
-                $('#category').text(data.product.category.category_name_en);
-                $('#brand').text(data.product.brand.brand_name_en);
+                $('#category').text(data.product.category.category_name_bn);
+                $('#brand').text(data.product.brand.brand_name_bn);
                 $('#pimage').attr('src', '/'+data.product.product_thumbnail);
 
                 $('#product_id').val(id);
@@ -133,26 +133,26 @@
                 if(data.product.product_qty > 0)
                 {
                     $('#Outofstock').text('');
-                    $('#Instock').text('In Stock');
+                    $('#Instock').text('库存');
                 }else{
                     $('#Instock').text('');
-                    $('#Outofstock').text('OUT of Stock');
+                    $('#Outofstock').text('没有库存');
                 }
 
                 // color and size
                 $('select[name="color"]').empty();
-                $.each(data.colors_en, function(key,value){
+                $.each(data.colors_bn, function(key,value){
                     $('select[name="color"]').append('<option value=" '+value+' ">'+value+'</option>')
-                    if(data.colors_en == ""){
+                    if(data.colors_bn == ""){
                         $('#colorArea').hide()
                     }else{
                         $('#colorArea').show()
                     }
                 })
                 $('select[name="size"]').empty();
-                $.each(data.size_en, function(key,value){
+                $.each(data.size_bn, function(key,value){
                     $('select[name="size"]').append('<option value=" '+value+' ">'+value+'</option>')
-                    if(data.size_en == ""){
+                    if(data.size_bn == ""){
                         $('#sizeArea').hide()
                     }else{
                         $('#sizeArea').show()
