@@ -5,17 +5,13 @@
             <div class="header-top-inner">
                 <div class="cnt-account">
                     <ul class="list-unstyled">
-                        @if (session()->get('language') == 'english')
-                            <li><a href="{{ route('dashboard') }}"><i class="icon fa fa-user"></i>My Account</a></li>
-                        @else
-                            <li><a href="{{ route('dashboard') }}"><i class="icon fa fa-user"></i>我的帐户</a>
-                                </li>
-                        @endif
-                        <li><a href="{{ route('listWishlist') }}"><i class="icon fa fa-heart"></i>收藏夹</a></li>
-                        <li><a href="{{ route('myCartView') }}"><i class="icon fa fa-shopping-cart"></i>购物车</a></li>
                         @auth
-                            <li><a href="{{ route('checkout-page') }}"><i class="icon fa fa-check"></i>买单</a></li>
+                            <!-- <li><a href="{{ route('checkout-page') }}"><i class="icon fa fa-check"></i>买单</a></li> -->
+                            <!-- <li><a href="{{ route('dashboard') }}"><i class="icon fa fa-user"></i>我的帐户</a></li> -->
+                            <li><a href="{{ route('dashboard') }}"><i class="icon fa fa-rmb"></i>我的余额 : {{Auth::user()->money}}元 / {{Auth::user()->point}}点</a></li>
                         @endauth
+                        <!-- <li><a href="{{ route('listWishlist') }}"><i class="icon fa fa-heart"></i>收藏夹</a></li> -->
+                        <li><a href="{{ route('myCartView') }}"><i class="icon fa fa-shopping-cart"></i>购物车</a></li>
 
                         <li>
                             @auth

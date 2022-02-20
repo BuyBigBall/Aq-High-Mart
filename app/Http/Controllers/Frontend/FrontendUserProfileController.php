@@ -20,7 +20,7 @@ class FrontendUserProfileController extends Controller
     {
         Auth::logout();
         $notification = [
-            'message' => 'Logout Successfull',
+            'message' => '成功登出',
             'alert-type' => 'success',
         ];
         return redirect()->route('login')->with($notification);

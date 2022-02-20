@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cn">
 <head>
 <!-- Meta -->
 <meta charset="utf-8">
@@ -39,7 +39,9 @@
     <div class="modal-content" style="width: 800px; height:300px;">
         <div class="modal-header">
         <h5 class="modal-title" id="productViewModalLabel"><span id="pname"></span></h5>
-        <button type="button" id="closeModal" class="close" data-dismiss="modal" aria-label="Close">
+        <button type="button" id="closeModal" class="close" data-dismiss="modal" aria-label="Close"
+            style="margin-top:-25px !important;"
+            >
             <span aria-hidden="true">&times;</span>
         </button>
         </div>
@@ -230,12 +232,12 @@
                         <div class="row">
                             <div class="col-xs-4">
                                 <div class="image">
-                                    <a href="#"><div style="max-height:50px; overflow-y:hidden;"><img src="${value.options.image}" alt="" ></div></a>
+                                    <a href="/product/detail/${value.id}"><div style="max-height:50px; overflow-y:hidden;"><img src="/${value.options.image}" alt="" ></div></a>
                                 </div>
                             </div>
                             <div class="col-xs-7">
                                 <h3 class="name"><a href="index.php?page-detail">${value.name}</a></h3>
-                                <div class="price">$${value.price}X${value.qty}</div>
+                                <div class="price">${value.price}元 X ${value.qty}</div>
                             </div>
                             <div class="col-xs-1 action"> <button type="submit" id="${value.rowId}" onclick="miniCartRemove(this.id)"><i class="fa fa-trash"></i></button> </div>
                         </div>

@@ -83,7 +83,7 @@ class AttemptToAuthenticate
 
         // print_r($request->filled('remember'));
         // print("<br>");
-        // dd($next);
+        //dd($next);
         return $next($request);
     }
 

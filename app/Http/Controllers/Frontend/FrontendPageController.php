@@ -77,7 +77,7 @@ class FrontendPageController extends Controller
 
     public function productDeatil($id, $slug)
     {
-        $categories = Category::with(['subcategory'])->orderBy('category_name_en', 'ASC')->get();
+        $categories = Category::with(['subcategory'])->orderBy('category_name_bn', 'ASC')->get();
         $product = Product::with(['images'])->findOrFail($id);
         $colors_en = explode(',', $product->product_color_en);
         $colors_bn = explode(',', $product->product_color_bn);

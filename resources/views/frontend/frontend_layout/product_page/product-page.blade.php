@@ -194,12 +194,12 @@
                                                         title="" href="#" data-original-title="Wishlist">
                                                         <i class="fa fa-heart"></i>
                                                     </a>
-                                                    <a class="btn btn-primary" data-toggle="tooltip" data-placement="right"
+                                                    <!-- <a class="btn btn-primary" data-toggle="tooltip" data-placement="right"
                                                         title="" href="#" data-original-title="Add to Compare">
                                                         <i class="fa fa-signal"></i>
-                                                    </a>
+                                                    </a> -->
                                                     <a class="btn btn-primary" data-toggle="tooltip" data-placement="right"
-                                                        title="" href="#" data-original-title="E-mail">
+                                                        title="" href="#" data-original-title="E-mail" href="email:">
                                                         <i class="fa fa-envelope"></i>
                                                     </a>
                                                 </div>
