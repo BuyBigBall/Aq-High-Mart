@@ -14,8 +14,9 @@ class MoneyHist extends Model
      * @var array
      */
     protected $fillable = [
+        'user_id',
         'money_type',       // 1-money, 2-point
-        'deal_type',        // 0-default,1-mnyin,2-mnyout,3-buy,4-return,5-cancel,6-delete
+        'deal_type',        // 0-default,1-mnyin,2-mnyout,3-buy,4-return,5-cancel,6-delete,7-register,8-login
         'deal_id',
         'content',
         'money',

@@ -46,6 +46,24 @@
                                 <label  class="form-control-label col-1">分</label>
                             </div>
                         </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="user-name" class="form-control-label col-4">签到积分</label>
+                                <div class="col-7">
+                                    <input wire:model="login_point" class="form-control" type="text"  id="login-point"/>
+                                </div>
+                                <label  class="form-control-label col-1">分</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="user-name" class="form-control-label col-4">商品购买积分</label>
+                                <div class="col-7">
+                                    <input wire:model="buy_point" class="form-control" type="text"  id="buy-point"/>
+                                </div>
+                                <label  class="form-control-label col-1">分</label>
+                            </div>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" 

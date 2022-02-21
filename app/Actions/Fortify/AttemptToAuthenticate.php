@@ -47,6 +47,7 @@ class AttemptToAuthenticate
     public function handle($request, $next)
     {
         //dd(Fortify::$authenticateUsingCallback);
+
         if (Fortify::$authenticateUsingCallback) {
             return $this->handleUsingCustomCallback($request, $next);
         }
