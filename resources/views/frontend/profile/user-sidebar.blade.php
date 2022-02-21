@@ -13,6 +13,8 @@
         <a href="{{ route('user.profile') }}" class="btn btn-primary btn-sm btn-block {{ ($route == 'user.profile') ? 'active' : '' }}">资料更新</a>
         <a href="{{ route('user.change.password') }}" class="btn btn-primary btn-sm btn-block {{ ($route == 'user.change.password') ? 'active' : '' }}">更改密码</a>
         <a href="{{ route('user.orders') }}" class="btn btn-primary btn-sm btn-block {{ ($route == 'user.orders') ? 'active' : '' }}">订单历史</a>
+        <a href="{{ route('user.moneys') }}" class="btn btn-primary btn-sm btn-block {{ ($route == 'user.moneys') ? 'active' : '' }}">余额历史</a>
+        <a href="{{ route('user.points') }}" class="btn btn-primary btn-sm btn-block {{ ($route == 'user.points') ? 'active' : '' }}">积分历史</a>
         <a href="{{ route('user.return-orders') }}" class="btn btn-primary btn-sm btn-block {{ ($route == 'user.return-orders') ? 'active' : '' }}">退货单</a>
         <a href="{{ route('user.cancel-orders') }}" class="btn btn-primary btn-sm btn-block {{ ($route == 'user.cancel-orders') ? 'active' : '' }}">取消订单</a>
         <a href="{{ route('user.logout') }}" class="btn btn-primary btn-sm btn-block">登出</a>

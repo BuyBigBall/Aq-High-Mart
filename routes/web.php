@@ -59,6 +59,8 @@ Route::middleware(['auth:web'])->group(function(){
 
         // user order history
         Route::get('/orders/history',           [OrderHistoryController::class, 'orderHistory'])->name('user.orders');
+        Route::get('/points/history',           [OrderHistoryController::class, 'pointHistory'])->name('user.points');
+        Route::get('/moneys/history',           [OrderHistoryController::class, 'moneyHistory'])->name('user.moneys');
     });
 });
 

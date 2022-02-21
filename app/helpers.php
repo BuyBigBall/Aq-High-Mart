@@ -1,5 +1,66 @@
 <?php
 use App\Models\Option;
+
+function CalcNewBalance($bal, $hist)
+{
+    if($hist->money_type==1)    //money
+    {
+        if( $hist->deal_type==1 )         $bal -= $hist->money;
+        else                              $bal += $hist->money;
+    }
+    if($hist->money_type==2)    //point
+    {
+        if( $hist->deal_type==1 )         $bal -= $hist->money;
+        else if( $hist->deal_type==3 )    $bal -= $hist->money;
+        else if( $hist->deal_type==7 )    $bal -= $hist->money;
+        else if( $hist->deal_type==8 )    $bal -= $hist->money;
+        else                            $bal += $hist->money;
+    }
+
+    return $bal;
+}
+function GetTransactionName($typenum)
+{
+    //1-mnyin,2-mnyout,3-buy,4-return,5-cancel,6-delete,7-register,8-login
+    if($typenum==1) return "充值";
+    if($typenum==2) return "消费";  //by buying goods spend point
+    if($typenum==3) return "购买";  //by buying goods spend money or add point
+    if($typenum==4) return "退回";
+    if($typenum==5) return "取消";
+    if($typenum==6) return "删除";
+    if($typenum==7) return "注册";
+    if($typenum==8) return "登陆";
+}
+function GetHistMoneyL($hist)
+{
+    if($hist->money_type==1)    //money
+    {
+        if( $hist->deal_type==1 ) return $hist->money;
+        else                    return '';
+    }
+    if($hist->money_type==2)    //point
+    {
+        if( $hist->deal_type==1 )         return $hist->money;
+        else if( $hist->deal_type==3 )    return $hist->money;
+        else if( $hist->deal_type==7 )    return $hist->money;
+        else if( $hist->deal_type==8 )    return $hist->money;
+        else                            return '';
+    }
+}
+function GetHistMoneyR($hist)
+{
+    if($hist->money_type==1)    //money
+    {
+        if( $hist->deal_type==1 ) return '';
+        else                    return $hist->money;
+    }
+    if($hist->money_type==2)    //point
+    {
+        if( $hist->deal_type==2 )         return $hist->money;
+        else                            return '';
+    }
+}
+
 function GetSiteSetting($key)
 {
     
