@@ -46,4 +46,11 @@ class MoneyHist extends Model
      */
     protected $appends = [
     ];
+
+
+    public function user()
+    {
+        return $this->belongsTo(User::class)->withDefault();
+    }
+
 }

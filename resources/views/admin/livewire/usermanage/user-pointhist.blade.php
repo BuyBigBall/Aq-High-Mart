@@ -55,33 +55,38 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach($pagination as $user)
+                                            @foreach($pagination as $hist_item)
                                             <tr>
                                                 <td class="text-center pe-1">
-                                                    <p class="text-xs font-weight-bold mb-0">{{$user->id}}</p>
+                                                    <p class="text-xs font-weight-bold mb-0">{{$hist_item->id}}</p>
                                                 </td>
                                                 <td class="text-center pe-1 ">
-                                                    <a href="" class="text-dark font-weight-bold">
-                                                        <p class="text-xs font-weight-bold mb-0">{{$user->name}}</p>
+                                                    <a
+                                                        href="{{ route('users.edit', $hist_item->user_id) }}"
+                                                        class="mx-1 font-weight-bold"
+                                                        data-bs-toggle="tooltip"
+                                                        data-bs-original-title="编辑用户"
+                                                        >
+                                                        {{$hist_item->user->name}}<br>{{$hist_item->user->email}}
                                                     </a>
                                                 </td>
                                                 <td class="text-center pe-1" style="overflow-wrap: anywhere;">
-                                                    <p class="text-xs font-weight-bold mb-0">{{$user->email}}</p>
+                                                    <p class="text-xs font-weight-bold mb-0">{{ $hist_item->created_at }}</p>
                                                 </td>
                                                 <td class="text-center pe-1">
-                                                    <p class="text-xs font-weight-bold mb-0">{{ $user->phone_number }}</p>
+                                                    <p class="text-xs font-weight-bold mb-0">{{ GetTransactionName($hist_item->deal_type) }}</p>
                                                 </td>
                                                 <td class="text-center pe-1">
-                                                    <p class="text-xs font-weight-bold mb-0">{{$user->role}}</p>
+                                                    <p class="text-xs font-weight-bold mb-0">{{ $hist_item->content }}</p>
                                                 </td>
                                                 <td class="text-center pe-1">
-                                                    <span class="text-secondary text-xs font-weight-bold">{{$user->created_at}}</span>
+                                                    <span class="text-secondary text-xs font-weight-bold">{{ GetHistMoneyL( $hist_item) }}</span>
                                                 </td>
                                                 <td class="text-center pe-1">
-                                                    <span class="text-secondary text-xs font-weight-bold">{{ ($user->money) }}</span>
+                                                    <span class="text-secondary text-xs font-weight-bold">{{ GetHistMoneyR( $hist_item) }}</span>
                                                 </td>
-                                                <td class="text-center pe-1">
-                                                    <span class="text-secondary text-xs font-weight-bold">{{ ($user->point) }}</span>
+                                                <td class="hidden text-center pe-1">
+                                                    <span class="text-secondary text-xs font-weight-bold">{{ $hist_item->user->point }}</span>
                                                 </td>
                                                 
                                             </tr>
@@ -102,9 +107,5 @@
     <!-- /.row -->
 
     <script>
-        function deleteUser(del_id)
-        {
-            window.livewire.emit('deleteUser', del_id);
-        }
     </script>
 </div>
