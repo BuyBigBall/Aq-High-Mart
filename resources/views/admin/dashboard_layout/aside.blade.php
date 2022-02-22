@@ -83,6 +83,12 @@
             <li class=" {{ ($route == 'users.index') ? 'active' : '' }}">
                 <a href="{{ route('users.index') }}"><i class="ti-more"></i>用户目录</a>
             </li>
+            <li class=" {{ ($route == 'users.money_hist') ? 'active' : '' }}">
+                <a href="{{ route('users.money_hist') }}"><i class="ti-more"></i>用户金额历史</a>
+            </li>
+            <li class=" {{ ($route == 'users.point_hist') ? 'active' : '' }}">
+                <a href="{{ route('users.point_hist') }}"><i class="ti-more"></i>用户积分历史</a>
+            </li>
         </ul>
     </li>
 

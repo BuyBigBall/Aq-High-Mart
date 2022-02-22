@@ -31,7 +31,8 @@ use App\Http\Livewire\Usermanage;
 use App\Http\Livewire\Usercreate;
 use App\Http\Livewire\Useredit;
 use App\Http\Livewire\Admin\Setting;
-
+use App\Http\Livewire\UserMoneyhist;
+use App\Http\Livewire\UserPointhist;
 
 /*
 |--------------------------------------------------------------------------
@@ -205,6 +206,8 @@ Route::middleware(['auth:admin'])->group(function(){
         Route::get('/users/manage',             Usermanage::class)->name('users.index');
         Route::get('/users/create',             Usercreate::class)->name('users.create');
         Route::get('/users/edit/{user_id}',     Useredit::class)->name('users.edit');
+        Route::get('/users/hist/money',         UserMoneyhist::class)->name('users.money_hist');
+        Route::get('/users/hist/point',         UserPointhist::class)->name('users.point_hist');
         
         // slider routes
         Route::resource('/slider', AdminSliderController::class);
