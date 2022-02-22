@@ -37,39 +37,63 @@
                         <div class="form-group">
                             <label for="user-name" class="form-control-label">用户名</label>
                             <div class="">
-                                <input wire:model="user.name" class="form-control" type="text" placeholder="名称" id="user-name"/>
+                                <input wire:model="user_name" 
+                                    class="form-control" type="text" placeholder="名称" id="user-name"/>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="user-email" class="form-control-label">电子邮件</label>
                             <div class="">
                                 <input
-                                    wire:model="user.email"
+                                    wire:model="user_email"
                                     class="form-control"
                                     type="email"
                                     placeholder="yourself@example.com"
-                                    value="{{ $user->email }}"
                                     id="user-email" />
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="user." class="form-control-label">电话</label>
+                            <label for="user-phone" class="form-control-label">电话</label>
                             <div class="">
-                                <input wire:model="user.phone_number"
-                                    class="form-control" type="tel" placeholder="15336608297" id="" />
+                                <input wire:model="user_phone"
+                                    class="form-control" type="tel" 
+                                        placeholder="15336608297" id="user-phone" />
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="about">用户密码</label>
+                            <label for="user-money">会员余额</label>
                             <div class="">
                                 <input 
-                                    class="form-control" type="password" placeholder="" id="" onchange="livewire.emit('updatedUserPassword', $(this).val() )" />
+                                    wire:model="user_money"
+                                    
+                                    class="form-control" type="number" placeholder="" id="user-money"  />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="user-point">会员积分</label>
+                            <div class="">
+                                <input 
+                                    wire:model="user_point"
+                                   
+                                    class="form-control" type="text" placeholder="" id="user-point"  />
+                                    <!-- onchange="livewire.emit('updatedUserPoint', $(this).val() )" -->
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="pwd">用户密码</label>
+                            <div class="">
+                                <input 
+                                    class="form-control" type="password" placeholder="" id="pwd" 
+                                    onchange="livewire.emit('updatedUserPassword', $(this).val() )" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="about">状态</label>
                             <div class="">
-                                <select  class="form-control" id="role" onchange="livewire.emit('updatedUserStatus', $(this).val() )" >
+                                <select  class="form-control" id="role" 
+                                        wire:model="user_status"
+                                     >
+                                     <!-- onchange="livewire.emit('updatedUserStatus', $(this).val() )" -->
                                     <option value='0' {{ $user->status==0 ? 'selected' : '' }} >创建</option>
                                     <option value='1' {{ $user->status==1 ? 'selected' : '' }} >活性</option>
                                     <option value='2' {{ $user->status==2 ? 'selected' : '' }} >停用</option>

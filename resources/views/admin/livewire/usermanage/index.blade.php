@@ -48,6 +48,12 @@
                                                     创建日期</th>
                                                 <th
                                                     class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                    会员余额</th>
+                                                <th
+                                                    class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                    会员积分</th>
+                                                <th
+                                                    class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                                     状态</th>
                                                 <th
                                                     class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"
@@ -78,6 +84,12 @@
                                                 </td>
                                                 <td class="text-center pe-1">
                                                     <span class="text-secondary text-xs font-weight-bold">{{$user->created_at}}</span>
+                                                </td>
+                                                <td class="text-center pe-1">
+                                                    <span class="text-secondary text-xs font-weight-bold">{{ ($user->money) }}</span>
+                                                </td>
+                                                <td class="text-center pe-1">
+                                                    <span class="text-secondary text-xs font-weight-bold">{{ ($user->point) }}</span>
                                                 </td>
                                                 <td class="text-center pe-1">
                                                     <span class="text-secondary text-xs font-weight-bold">{{ userstatus($user->status) }}</span>
