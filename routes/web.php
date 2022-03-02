@@ -33,6 +33,7 @@ use App\Http\Livewire\Useredit;
 use App\Http\Livewire\Admin\Setting;
 use App\Http\Livewire\UserMoneyhist;
 use App\Http\Livewire\UserPointhist;
+use App\Http\Livewire\Admin\AdminDashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -176,9 +177,10 @@ Route::middleware(['auth:admin'])->group(function(){
         Route::post('/change/password',[AdminProfileController::class, 'AdminPasswordUpdate'])->name('admin.password.update');
         Route::get('/setting',          Setting::class)->name('admin.settings');
         
-        Route::get('/', function () {
-            return view('admin.index');
-                })->name('admin.dashboard');
+        // Route::get('/', function () {
+        //     return view('admin.index');
+        //         })->name('admin.dashboard');
+        Route::get('/', AdminDashboard::class )->name('admin.dashboard');
     });
 
     // Admin Dashboard routes
