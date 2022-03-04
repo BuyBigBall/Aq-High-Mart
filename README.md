@@ -72,3 +72,103 @@ Finally we are ready to run our project using this command
 ```sh
 php artisan serve
 ```
+
+
+
+
+<h1>Migration Generate</h1>
+
+<h2>Install</h2>
+
+The recommended way to install this is through composer:
+
+    <b>composer require --dev "kitloong/laravel-migrations-generator"</b>
+
+Laravel Setup
+
+Laravel will automatically register service provider for you.
+
+
+<h2>Usage</h2>
+
+To generate migrations from a database, you need to have your database setup in Laravel's config (config/database.php).
+
+
+To create migrations for all the tables, run:
+
+    <b>php artisan migrate:generate</b>
+
+You can specify the tables you wish to generate using:
+
+php artisan migrate:generate --tables="table1,table2,table3,table4,table5"
+
+You can also ignore tables with:
+
+php artisan migrate:generate --ignore="table3,table4,table5"
+
+Laravel Migrations Generator will first generate all the tables, columns and indexes, and afterwards setup all the foreign key constraints.
+
+So make sure you include all the tables listed in the foreign keys so that they are present when the foreign keys are created.
+
+You can also specify the connection name if you are not using your default connection with:
+
+php artisan migrate:generate --connection="connection_name"
+
+Squash migrations
+
+By default, Generator will generate multiple migration files for each table.
+
+You can squash all migrations into a single file with:
+
+php artisan migrate:generate --squash
+
+Options
+
+Run php artisan help migrate:generate for a list of options.
+
+Options	Description
+
+-c, --connection[=CONNECTION]	The database connection to use
+
+-t, --tables[=TABLES]	A list of Tables or Views you wish to Generate Migrations for separated by a comma: users,posts,comments
+
+-i, --ignore[=IGNORE]	A list of Tables or Views you wish to ignore, separated by a comma: users,posts,comments
+
+-p, --path[=PATH]	Where should the file be created?
+
+-tp, --template-path[=TEMPLATE-PATH]	The location of the template for this generator
+
+--date[=DATE]	Migrations will be created with specified date. Views and Foreign keys will be created with + 1 second. Date should be in format suitable for Carbon::parse
+
+--table-filename[=TABLE-FILENAME]	Define table migration filename, default pattern: [datetime_prefix]\_create_[table]_table.php
+
+--view-filename[=VIEW-FILENAME]	Define view migration filename, default pattern: [datetime_prefix]\_create_[table]_view.php
+
+--fk-filename[=FK-FILENAME]	Define foreign key migration filename, default pattern: [datetime_prefix]\_add_foreign_keys_to_[table]_table.php
+
+--default-index-names	Don't use db index names for migrations
+
+--default-fk-names	Don't use db foreign key names for migrations
+
+--use-db-collation	Follow db collations for migrations
+
+--skip-views	Don't generate views
+
+--squash	Generate all migrations into a single file
+
+Thank You
+
+Thanks to Bernhard Breytenbach for his great work. This package is cloned from https://github.com/Xethron/migrations-generator.
+
+Thanks to Jeffrey Way for his amazing Laravel-4-Generators package. This package depends greatly on his work.
+
+
+<H2>Seed Generate Package</H2>
+    <b>composer require orangehill/iseed</b>
+
+
+<h2>Seed Generate</h2>
+
+<b>
+php artisan iseed admins,brands,categories,coupons,failed_jobs,images,migrations,money_hists,options,order_items,orders,password_resets,personal_access_tokens,products,products,sessions,ship_districts,ship_divisions,ship_states,sliders,sub_categories,sub_sub_categories,users,wishlists
+</b>
