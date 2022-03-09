@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-
+use Illuminate\Support\Facades\Schema;
 class OrdersTableSeeder extends Seeder
 {
 
@@ -14,9 +14,9 @@ class OrdersTableSeeder extends Seeder
      */
     public function run()
     {
-        
+        Schema::disableForeignKeyConstraints();
 
-        \DB::table('orders')->delete();
+        \DB::table('orders')->truncate();
         
         \DB::table('orders')->insert(array (
             0 => 
@@ -90,7 +90,7 @@ class OrdersTableSeeder extends Seeder
                 'updated_at' => '2022-02-05 01:48:52',
             ),
         ));
-        
+        Schema::enableForeignKeyConstraints();
         
     }
 }

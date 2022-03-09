@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-
+use Illuminate\Support\Facades\Schema;
 class SubCategoriesTableSeeder extends Seeder
 {
 
@@ -14,9 +14,9 @@ class SubCategoriesTableSeeder extends Seeder
      */
     public function run()
     {
-        
+        Schema::disableForeignKeyConstraints();
 
-        \DB::table('sub_categories')->delete();
+        \DB::table('sub_categories')->truncate();
         
         \DB::table('sub_categories')->insert(array (
             0 => 
@@ -98,6 +98,6 @@ class SubCategoriesTableSeeder extends Seeder
             ),
         ));
         
-        
+        Schema::enableForeignKeyConstraints();
     }
 }

@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-
+use Illuminate\Support\Facades\Schema;
 class OptionsTableSeeder extends Seeder
 {
 
@@ -14,9 +14,9 @@ class OptionsTableSeeder extends Seeder
      */
     public function run()
     {
-        
+        Schema::disableForeignKeyConstraints();
 
-        \DB::table('options')->delete();
+        \DB::table('options')->truncate();
         
         \DB::table('options')->insert(array (
             0 => 
@@ -45,6 +45,6 @@ class OptionsTableSeeder extends Seeder
             ),
         ));
         
-        
+        Schema::enableForeignKeyConstraints();
     }
 }

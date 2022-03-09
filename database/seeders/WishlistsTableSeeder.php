@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-
+use Illuminate\Support\Facades\Schema;
 class WishlistsTableSeeder extends Seeder
 {
 
@@ -15,10 +15,9 @@ class WishlistsTableSeeder extends Seeder
     public function run()
     {
         
-
-        \DB::table('wishlists')->delete();
-        
-        
+        Schema::disableForeignKeyConstraints();
+        \DB::table('wishlists')->truncate();
+        Schema::enableForeignKeyConstraints();
         
     }
 }

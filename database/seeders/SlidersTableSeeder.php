@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-
+use Illuminate\Support\Facades\Schema;
 class SlidersTableSeeder extends Seeder
 {
 
@@ -14,9 +14,9 @@ class SlidersTableSeeder extends Seeder
      */
     public function run()
     {
-        
+        Schema::disableForeignKeyConstraints();
 
-        \DB::table('sliders')->delete();
+        \DB::table('sliders')->truncate();
         
         \DB::table('sliders')->insert(array (
             0 => 
@@ -42,7 +42,7 @@ class SlidersTableSeeder extends Seeder
                 'updated_at' => '2022-02-03 06:36:04',
             ),
         ));
-        
+        Schema::enableForeignKeyConstraints();
         
     }
 }

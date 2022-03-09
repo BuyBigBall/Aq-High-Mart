@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-
+use Illuminate\Support\Facades\Schema;
 class MoneyHistsTableSeeder extends Seeder
 {
 
@@ -14,9 +14,9 @@ class MoneyHistsTableSeeder extends Seeder
      */
     public function run()
     {
-        
+        Schema::disableForeignKeyConstraints();
 
-        \DB::table('money_hists')->delete();
+        \DB::table('money_hists')->truncate();
         
         \DB::table('money_hists')->insert(array (
             0 => 
@@ -93,6 +93,6 @@ class MoneyHistsTableSeeder extends Seeder
             ),
         ));
         
-        
+        Schema::enableForeignKeyConstraints();
     }
 }

@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Schema;
 
 class AdminsTableSeeder extends Seeder
 {
@@ -15,9 +16,9 @@ class AdminsTableSeeder extends Seeder
     public function run()
     {
         
-
-        \DB::table('admins')->delete();
-        
+        Schema::disableForeignKeyConstraints();
+        //\DB::table('admins')->delete();
+        \DB::table('admins')->truncate();
         \DB::table('admins')->insert(array (
             0 => 
             array (
@@ -34,6 +35,6 @@ class AdminsTableSeeder extends Seeder
             ),
         ));
         
-        
+        Schema::enableForeignKeyConstraints();
     }
 }

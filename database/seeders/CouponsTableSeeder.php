@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-
+use Illuminate\Support\Facades\Schema;
 class CouponsTableSeeder extends Seeder
 {
 
@@ -14,9 +14,10 @@ class CouponsTableSeeder extends Seeder
      */
     public function run()
     {
-        
+        Schema::disableForeignKeyConstraints();
 
-        \DB::table('coupons')->delete();
+        //\DB::table('coupons')->delete();
+        \DB::table('coupons')->truncate();
         
         \DB::table('coupons')->insert(array (
             0 => 
@@ -41,6 +42,6 @@ class CouponsTableSeeder extends Seeder
             ),
         ));
         
-        
+        Schema::enableForeignKeyConstraints();
     }
 }

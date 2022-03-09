@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-
+use Illuminate\Support\Facades\Schema;
 class MigrationsTableSeeder extends Seeder
 {
 
@@ -15,8 +15,8 @@ class MigrationsTableSeeder extends Seeder
     public function run()
     {
         
-
-        \DB::table('migrations')->delete();
+        Schema::disableForeignKeyConstraints();
+        \DB::table('migrations')->truncate();
         
         \DB::table('migrations')->insert(array (
             0 => 
@@ -147,6 +147,6 @@ class MigrationsTableSeeder extends Seeder
             ),
         ));
         
-        
+        Schema::enableForeignKeyConstraints();
     }
 }

@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-
+use Illuminate\Support\Facades\Schema;
 class SessionsTableSeeder extends Seeder
 {
 
@@ -14,9 +14,9 @@ class SessionsTableSeeder extends Seeder
      */
     public function run()
     {
-        
+        Schema::disableForeignKeyConstraints();
 
-        \DB::table('sessions')->delete();
+        \DB::table('sessions')->truncate();
         
         \DB::table('sessions')->insert(array (
             0 => 
@@ -29,7 +29,7 @@ class SessionsTableSeeder extends Seeder
                 'last_activity' => 1646240610,
             ),
         ));
-        
+        Schema::enableForeignKeyConstraints();
         
     }
 }

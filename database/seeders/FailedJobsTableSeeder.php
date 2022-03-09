@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-
+use Illuminate\Support\Facades\Schema;
 class FailedJobsTableSeeder extends Seeder
 {
 
@@ -15,10 +15,10 @@ class FailedJobsTableSeeder extends Seeder
     public function run()
     {
         
-
-        \DB::table('failed_jobs')->delete();
-        
-        
+        Schema::disableForeignKeyConstraints();
+        //\DB::table('failed_jobs')->delete();
+        \DB::table('failed_jobs')->truncate();
+        Schema::enableForeignKeyConstraints();
         
     }
 }

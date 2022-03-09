@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-
+use Illuminate\Support\Facades\Schema;
 class ShipDivisionsTableSeeder extends Seeder
 {
 
@@ -15,8 +15,8 @@ class ShipDivisionsTableSeeder extends Seeder
     public function run()
     {
         
-
-        \DB::table('ship_divisions')->delete();
+        Schema::disableForeignKeyConstraints();
+        \DB::table('ship_divisions')->truncate();
         
         \DB::table('ship_divisions')->insert(array (
             0 => 
@@ -259,6 +259,6 @@ class ShipDivisionsTableSeeder extends Seeder
             ),
         ));
         
-        
+        Schema::enableForeignKeyConstraints();
     }
 }

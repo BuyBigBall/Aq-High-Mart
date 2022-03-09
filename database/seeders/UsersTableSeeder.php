@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-
+use Illuminate\Support\Facades\Schema;
 class UsersTableSeeder extends Seeder
 {
 
@@ -15,8 +15,8 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         
-
-        \DB::table('users')->delete();
+        Schema::disableForeignKeyConstraints();
+        \DB::table('users')->truncate();
         
         \DB::table('users')->insert(array (
             0 => 
@@ -81,6 +81,6 @@ class UsersTableSeeder extends Seeder
             ),
         ));
         
-        
+        Schema::enableForeignKeyConstraints();
     }
 }

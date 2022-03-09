@@ -13,15 +13,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call([
-            AdminSeeder::class,
-            UserSeeder::class,
-            BrandSeeder::class,
-            CategorySeeder::class,
-            SubCategorySeeder::class,
-            SubSubCategorySeeder::class,
-            ProductSeeder::class,
-        ]);
+        // $this->call([
+        //     AdminSeeder::class,
+        //     UserSeeder::class,
+        //     BrandSeeder::class,
+        //     CategorySeeder::class,
+        //     SubCategorySeeder::class,
+        //     SubSubCategorySeeder::class,
+        //     ProductSeeder::class,
+        // ]);
         $this->call(AdminsTableSeeder::class);
         $this->call(BrandsTableSeeder::class);
         $this->call(CategoriesTableSeeder::class);

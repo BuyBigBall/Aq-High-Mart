@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-
+use Illuminate\Support\Facades\Schema;
 class ImagesTableSeeder extends Seeder
 {
 
@@ -15,8 +15,8 @@ class ImagesTableSeeder extends Seeder
     public function run()
     {
         
-
-        \DB::table('images')->delete();
+        Schema::disableForeignKeyConstraints();
+        \DB::table('images')->truncate();
         
         \DB::table('images')->insert(array (
             0 => 
@@ -53,6 +53,6 @@ class ImagesTableSeeder extends Seeder
             ),
         ));
         
-        
+        Schema::enableForeignKeyConstraints();
     }
 }
