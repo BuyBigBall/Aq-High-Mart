@@ -172,3 +172,6 @@ Thanks to Jeffrey Way for his amazing Laravel-4-Generators package. This package
 <b>
 php artisan iseed admins,brands,categories,coupons,failed_jobs,images,migrations,money_hists,options,order_items,orders,password_resets,personal_access_tokens,products,products,sessions,ship_districts,ship_divisions,ship_states,sliders,sub_categories,sub_sub_categories,users,wishlists
 </b>
+
+
+you can test by signuped user or by user@gmail.com/12345678
