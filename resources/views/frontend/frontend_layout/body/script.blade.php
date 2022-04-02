@@ -2,10 +2,10 @@
 
 <!-- For demo purposes – can be removed on production : End -->
 <!-- JavaScripts placed at the end of the document so the pages load faster -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="{{ asset('ajax') }}/libs/jquery/3.5.1/jquery.min.js"></script>
 
-<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="{{ asset('ajax') }}/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="{{ asset('ajax') }}/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
 
 <script src="{{ asset('frontend') }}/assets/js/bootstrap.min.js"></script>
